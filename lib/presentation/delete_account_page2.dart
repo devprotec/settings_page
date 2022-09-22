@@ -54,37 +54,46 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                   ),
                 ),
                 Constants.spaceMediumColumn,
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_it_was_not_effe".tr,
-                ),
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_i_have_another".tr,
-                ),
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_this_was_a_test".tr,
-                ),
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_it_was_dificult".tr,
-                ),
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_i_have_another".tr,
-                ),
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_it_lacks_key_fe".tr,
-                ),
-                ChechboxWithTextWidget(
-                  initialValue: confirmDeleteChecked,
-                  checkBoxMessage: "msg_i_use_another_a".tr,
-                ),
-                SizedBox(
-                  height: 24,
-                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 27.0),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_it_was_not_effe".tr,
+                        ),
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_i_have_another".tr,
+                        ),
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_this_was_a_test".tr,
+                        ),
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_it_was_dificult".tr,
+                        ),
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_i_have_another".tr,
+                        ),
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_it_lacks_key_fe".tr,
+                        ),
+                        ChechboxWithTextWidget(
+                          initialValue: confirmDeleteChecked,
+                          checkBoxMessage: "msg_i_use_another_a".tr,
+                        ),
+                        SizedBox(
+                          height: 24,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
 
                 /* ButtonWidget(
                   buttonName: "lbl_leave_feedback".tr, 

@@ -5,9 +5,13 @@ import 'package:settings_page/presentation/privacy_and_security_screen.dart';
 import 'package:settings_page/widgets/setting_listTile.dart';
 import 'package:settings_page/widgets/language_bottom_sheet.dart';
 
+//import 'package:settings_page/widgets/columWidget.dart';
+
+
 import '../theme/app_decoration.dart';
 import '../util/constants.dart';
 import '../util/math_utils.dart';
+
 
 class MainSettingsPage extends StatefulWidget {
   MainSettingsPage({Key? key}) : super(key: key);
@@ -43,12 +47,16 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
     "assets/images/img_icon_9.png",
   ];
 
+
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
+
           preferredSize: Size.fromHeight(50),
           child: Container(
               margin: getMargin(left: 12, right: 12),
@@ -67,6 +75,9 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
                       ),
                     )
                   ]))),
+
+      
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -188,7 +199,10 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
                 style: Constants.fainted_logout,
               ),
             ),
+
             Constants.spaceMediumColumn,
+
+
           ],
         ),
       ),

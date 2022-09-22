@@ -1,50 +1,42 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
-  final String text;
-  final VoidCallback onPressed;
-  const Button({Key? key, required this.text, required this.onPressed})
-      : super(key: key);
+
+
+
+
+
+class ButtonWidget extends StatelessWidget {
+  final String buttonName;
+  final Color buttonColor;
+  final double buttonWidth;
+  final Function buttonAction;
+  final TextStyle fontStyle;
+
+  const ButtonWidget({
+    Key? key,
+    required this.buttonName,
+    required this.buttonColor,
+    required this.buttonWidth,
+    required this.buttonAction,
+    required this.fontStyle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: PhysicalModel(
-        color: const Color(0xFF0095E9),
-        shadowColor: const Color(0xFF0095E9),
-        elevation: 5,
-        borderRadius: BorderRadius.circular(8),
-        child: Container(
-          //  margin: const EdgeInsets.symmetric(vertical: 10),
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          width: double.infinity,
-          decoration: BoxDecoration(
-            gradient:  LinearGradient(
-              colors: [
-                Color(0xFF00ACE9),
-                Color(0xFF0095E9),
-              ],
-              begin: FractionalOffset(0.0, 0.0),
-              end: FractionalOffset(1.0, 0.0),
-              stops: [0.0, 1.0],
-              tileMode: TileMode.clamp,
-            ),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Center(
-            child: Text(
-              text.toUpperCase(),
-              style: const TextStyle(
-                letterSpacing: 1.5,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontSize: 14,
-              ),
-            ),
-          ),
-        ),
+    return MaterialButton(
+      onPressed: () => buttonAction,
+      child: Text(
+        buttonName,
+        style: fontStyle,
       ),
+      color: buttonColor,
+      elevation: 0,
+      minWidth: buttonWidth,
+      height: 50,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      padding: EdgeInsets.symmetric(vertical: 12.0),
     );
   }
 }

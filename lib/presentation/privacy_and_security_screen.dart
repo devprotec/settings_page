@@ -1,4 +1,5 @@
 import 'package:settings_page/presentation/change_password_page.dart';
+import 'package:settings_page/presentation/delete_account_page1.dart';
 import 'package:settings_page/util/exports.dart';
 
 import '../util/image_constant.dart';
@@ -68,6 +69,7 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
             imageFile: "assets/images/img_icon_12.png",
             settingsName: "Delete Account",
             hasSubtitle: false,
+            voidCallback: () => Get.to(DeleteAccountPage1()),
           ),
         ]),
       ),

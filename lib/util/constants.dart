@@ -57,6 +57,12 @@ class Constants {
   static Widget spaceMediumColumn = SizedBox(
     height: 20,
   );
+  static Widget spaceExtraSmallColumn = SizedBox(
+    height: 8,
+  );
+  static Widget spaceSemiMediumColumn = SizedBox(
+    height: 16,
+  );
   static Widget spaceSmallColumn = SizedBox(
     height: 10,
   );
@@ -67,13 +73,17 @@ class Constants {
     width: 30,
   );
 
+  static Widget spaceSemiBigColumn = SizedBox(
+    height: 30,
+  );
+
   static TextStyle normalTextStyle = TextStyle(
       fontSize: 16,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w500,
       color: Colors.black);
   static TextStyle titleTextStyle = TextStyle(
-    fontSize: 24,
+    fontSize: 18,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
     color: Colors.black,
@@ -84,11 +94,13 @@ class Constants {
       fontWeight: FontWeight.w400,
       color: fromHex('#34405E'));
 
+
   static TextStyle languageTextStyle = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 16,
     fontFamily: 'Poppins',
   );
+
 
   static TextStyle fainted_logout = TextStyle(
       fontSize: 16,

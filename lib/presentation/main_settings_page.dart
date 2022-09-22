@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:settings_page/widgets/app_bar_widget.dart';
 import 'package:settings_page/widgets/columWidget.dart';
 
 import '../theme/app_decoration.dart';
@@ -18,22 +19,9 @@ class MainSettingsPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50),
-        child: Container(
-          margin: getMargin(left: 12, right: 12),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            Constants.arrowBacks,
-            Container(
-              width: size.width * 0.8,
-              child: Center(
-                child: Text(
-                  "lbl_settings".tr,
-                  style: Constants.titleTextStyle,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ]),
+        child: AppbarWidget(
+          appBarTitle: "lbl_settings".tr,
+          hasActions: true,
         ),
       ),
       body: SingleChildScrollView(

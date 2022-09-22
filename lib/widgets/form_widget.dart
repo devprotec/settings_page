@@ -17,23 +17,27 @@ class InputForms extends StatefulWidget {
   final IconData? hiddenPasswordIcon;
   final Function(String)? validation;
   final Function(String?)? onChange;
+  final double? contentPadding;
+  double height;
+
   // ignore: use_key_in_widget_constructors
-  const InputForms({
-    this.description,
-    required this.notifier,
-    this.icon,
-    this.suffixicon,
-    this.placeholder,
-    this.suffixIconSize,
-    this.inputType = TextInputType.text,
-    this.enabled = true,
-    required this.obscure,
-    required this.onChange,
-    this.validation,
-    this.visiblePasswordIcon,
-    this.hiddenPasswordIcon,
-    this.descriptionTextStyle
-  });
+  InputForms(
+      {this.description,
+      required this.notifier,
+      this.icon,
+      this.suffixicon,
+      this.placeholder,
+      this.suffixIconSize,
+      this.inputType = TextInputType.text,
+      this.enabled = true,
+      required this.obscure,
+      required this.onChange,
+      this.validation,
+      this.visiblePasswordIcon,
+      this.hiddenPasswordIcon,
+      this.descriptionTextStyle,
+      this.height = 48,
+      this.contentPadding});
   @override
   _InputFormsState createState() => _InputFormsState();
 }
@@ -64,7 +68,7 @@ class _InputFormsState extends State<InputForms> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(
-        vertical: 10,
+        vertical: 8,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,12 +79,13 @@ class _InputFormsState extends State<InputForms> {
               valueListenable: _inFocus,
               builder: (_, focus, __) => Text(
                 widget.description!,
-                style: widget.descriptionTextStyle ?? TextStyle(
-                  fontSize: 13,
-                  color: focus as bool
-                      ? Constants.mainColor
-                      : const Color(0xff34405E),
-                ),
+                style: widget.descriptionTextStyle ??
+                    TextStyle(
+                      fontSize: 13,
+                      color: focus as bool
+                          ? Constants.mainColor
+                          : const Color(0xff34405E),
+                    ),
               ),
             ),
           ],
@@ -92,7 +97,7 @@ class _InputFormsState extends State<InputForms> {
                 borderRadius: BorderRadius.circular(8),
                 color: const Color(0xffF4F5FB),
               ),
-              child: TextFormField(
+              child: TextField(
                 autocorrect: false,
                 keyboardType: widget.inputType,
                 focusNode: _focus,
@@ -107,6 +112,8 @@ class _InputFormsState extends State<InputForms> {
                 decoration: InputDecoration(
                   suffixStyle: TextStyle(fontSize: 12),
                   isDense: true,
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: widget.contentPadding ?? 16),
                   errorStyle: const TextStyle(
                     fontSize: 11,
                     color: Colors.red,
@@ -174,15 +181,17 @@ class _InputFormsState extends State<InputForms> {
                       : null,
                   suffixIcon: widget.obscure
                       ? IconButton(
-                        iconSize: widget.suffixIconSize ?? 18.0,
+                          iconSize: widget.suffixIconSize ?? 18.0,
                           onPressed: () {
                             setState(() {
                               seePassword = !seePassword;
                             });
                           },
                           icon: seePassword
-                              ?  Icon(widget.visiblePasswordIcon ?? Icons.visibility_off)
-                              :  Icon(widget.hiddenPasswordIcon ?? Icons.visibility))
+                              ? Icon(widget.visiblePasswordIcon ??
+                                  Icons.visibility_off)
+                              : Icon(widget.hiddenPasswordIcon ??
+                                  Icons.visibility))
                       : null,
                 ),
               ),
@@ -204,8 +213,10 @@ class LongText extends StatefulWidget {
   final bool obscure;
   final Function(String)? validation;
   final Function(String?)? onChange;
+  double height;
+
   // ignore: use_key_in_widget_constructors
-  const LongText({
+  LongText({
     required this.description,
     required this.notifier,
     this.icon,
@@ -215,6 +226,7 @@ class LongText extends StatefulWidget {
     this.obscure = false,
     required this.onChange,
     this.validation,
+    this.height = 48,
   });
   @override
   _LongTextState createState() => _LongTextState();

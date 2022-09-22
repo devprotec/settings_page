@@ -6,9 +6,11 @@ import 'package:settings_page/presentation/account_deleted_page.dart';
 import 'package:settings_page/theme/app_style.dart';
 import 'package:settings_page/widgets/app_bar_widget.dart';
 import 'package:settings_page/widgets/button_widget.dart';
+import 'package:settings_page/widgets/form_widget.dart';
 
 import '../util/constants.dart';
 import '../util/math_utils.dart';
+import '../widgets/button.dart';
 import '../widgets/checkbox_with_text_widget.dart';
 
 class DeleteAccountPage2 extends StatefulWidget {
@@ -17,11 +19,13 @@ class DeleteAccountPage2 extends StatefulWidget {
 }
 
 class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
+  final nextAppToUseField = ValueNotifier<String>('');
   bool confirmDeleteChecked = false;
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -34,14 +38,18 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            padding: const EdgeInsets.only(top: 16),
+            padding: const EdgeInsets.only(top: 16, bottom: 60.0),
             width: width,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "msg_we_are_sad_to_s".tr,
-                  style: AppStyle.txtPoppinsSemiBold24Gray900,
+                Container(
+                  width: width,
+                  child: Text(
+                    "msg_we_are_sad_to_s".tr,
+                    style: AppStyle.txtPoppinsSemiBold24Gray900,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 SizedBox(
                   height: 8,
@@ -55,9 +63,10 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                 ),
                 Constants.spaceMediumColumn,
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 27.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ChechboxWithTextWidget(
                           initialValue: confirmDeleteChecked,
@@ -93,14 +102,59 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                       ],
                     ),
                   ),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "msg_which_applicati".tr,
+                          style: AppStyle.feedbackTextStyle,
+                        ),
+                        //Constants.spaceExtraSmallColumn,
+                        InputForms(
+                          suffixIconSize: 12,
+                          descriptionTextStyle: Constants.subtitleTextStyle,
+                          enabled: true,
+                          obscure: false,
+                          notifier: nextAppToUseField,
+                          //controller: passwordController,
+                          inputType: TextInputType.text,
 
-                /* ButtonWidget(
-                  buttonName: "lbl_leave_feedback".tr, 
-                  buttonColor: buttonColor, 
-                  buttonWidth: buttonWidth, 
-                  buttonAction: buttonAction, 
-                  fontStyle: fontStyle,) */
+                          onChange: (val) {
+                            nextAppToUseField.value = val!;
+                          },
+                        ),
+                        Constants.spaceExtraMediumColumn,
+                        Text(
+                          "msg_which_applicati".tr,
+                          style: AppStyle.feedbackTextStyle,
+                        ),
+                        InputForms(
+                          contentPadding: 40,
+                          suffixIconSize: 12,
+                          enabled: true,
+                          obscure: false,
+                          notifier: nextAppToUseField,
+                          //controller: passwordController,
+                          inputType: TextInputType.text,
+                          onChange: (val) {
+                            nextAppToUseField.value = val!;
+                          },
+                        ),
+                        Constants.spaceExtraMediumColumn,
+                        Button(
+                          onPressed: () {
+                            Get.to(AccountDeletedPage());
+                          },
+                          text: "lbl_leave_feedback".tr,
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),

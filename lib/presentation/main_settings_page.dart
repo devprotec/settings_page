@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:settings_page/controllers/settings_controller.dart';
 import 'package:settings_page/presentation/privacy_and_security_screen.dart';
 import 'package:settings_page/widgets/app_bar_widget.dart';
-import '../controllers/settings_controller.dart';
-import '../dummy_stuffs/dummy_lang_bottomSheet.dart';
+import 'package:settings_page/widgets/setting_listTile.dart';
+import 'package:settings_page/widgets/language_bottom_sheet.dart';
+
+//import 'package:settings_page/widgets/columWidget.dart';
+
 import '../theme/app_decoration.dart';
 import '../util/constants.dart';
 import '../util/math_utils.dart';
-import '../widgets/setting_listTile.dart';
 
 class MainSettingsPage extends StatefulWidget {
   MainSettingsPage({Key? key}) : super(key: key);
@@ -49,12 +52,8 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
         child: Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppbarWidget(
-          appBarTitle: "lbl_settings".tr,
-          hasActions: true,
-        ),
-      ),
+          preferredSize: Size.fromHeight(50),
+          child: AppbarWidget(appBarTitle: "Settings", hasActions: true)),
       body: SingleChildScrollView(
         child: Column(
           children: [

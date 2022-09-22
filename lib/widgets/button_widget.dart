@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-
-
-
-
-
 class ButtonWidget extends StatelessWidget {
   final String buttonName;
   final Color buttonColor;
   final double buttonWidth;
-  final Function buttonAction;
+  final VoidCallback buttonAction;
   final TextStyle fontStyle;
 
   const ButtonWidget({
@@ -24,7 +19,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () => buttonAction,
+      onPressed: buttonAction,
       child: Text(
         buttonName,
         style: fontStyle,

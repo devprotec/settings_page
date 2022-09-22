@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'exports.dart';
+
 class Constants {
   static Color gray7000f = fromHex('#0f5e5f6d');
 
@@ -44,11 +46,13 @@ class Constants {
   static Color lightBlueA700 = fromHex('#0095e9');
 
   static Color lightBlueA70099 = fromHex('#990196ea');
+  static Color mainColor = const Color(0xff161B46);
 
   static Color whiteA700 = fromHex('#ffffff');
   static Color insideIconCircleColor = fromHex('#CDF1FF');
   static Color insideIconColor = fromHex('#CDF1FF');
   static Color forwardIconColor = fromHex('#AEB2BF');
+  static Color successPasswordColor = fromHex("#00ACE9");
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,
@@ -64,6 +68,9 @@ class Constants {
   );
   static Widget spaceMediumRow = SizedBox(
     width: 20,
+  );
+  static Widget spaceLargeColumn = SizedBox(
+    width: 30,
   );
 
   static Widget spaceSemiBigColumn = SizedBox(
@@ -87,18 +94,29 @@ class Constants {
       fontWeight: FontWeight.w400,
       color: fromHex('#34405E'));
 
+
+  static TextStyle languageTextStyle = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    fontFamily: 'Poppins',
+  );
+
+
   static TextStyle fainted_logout = TextStyle(
       fontSize: 16,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
       color: fromHex('#6E768D'));
 
-  static Widget arrowBacks = IconButton(
-    onPressed: () {},
+  static Widget arrowBacks (){ 
+    return IconButton(
+    onPressed: () {
+      Get.back();
+    },
     icon: Icon(Icons.arrow_back),
     iconSize: 30,
     color: Constants.fromHex('#6E768D'),
-  );
+  );}
 
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();

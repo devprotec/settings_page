@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       locale: Get.deviceLocale, //for setting localization strings
       fallbackLocale: Locale('en', 'US'),
       title: 'settings_page',
-      home: DeleteAccountPage1(),
+      home: MainSettingsPage(),
     );
   }
 }

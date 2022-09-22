@@ -1,16 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:settings_page/presentation/privacy_and_security_screen.dart';
 import 'package:settings_page/widgets/app_bar_widget.dart';
-import 'package:settings_page/widgets/columWidget.dart';
-
+import '../controllers/settings_controller.dart';
+import '../dummy_stuffs/dummy_lang_bottomSheet.dart';
 import '../theme/app_decoration.dart';
 import '../util/constants.dart';
 import '../util/math_utils.dart';
+import '../widgets/setting_listTile.dart';
 
-class MainSettingsPage extends StatelessWidget {
-  static const String routeName = "main_settings";
+class MainSettingsPage extends StatefulWidget {
+  MainSettingsPage({Key? key}) : super(key: key);
 
-  const MainSettingsPage({Key? key}) : super(key: key);
+  @override
+  State<MainSettingsPage> createState() => _MainSettingsPageState();
+}
+
+class _MainSettingsPageState extends State<MainSettingsPage> {
+  var settingsController = Get.put(SettingsController());
+  final settingsName = [
+    "Notifications",
+    "Privacy & Security",
+    "Become Professional",
+    "Units & Timezone",
+    "Language",
+    "Orders",
+    "Integration",
+    "About",
+    "Support",
+    "Leave Feedback"
+  ];
+  final settingsPicturePath = [
+    "assets/images/img_icon_32X32.png",
+    "assets/images/img_icon_1.png",
+    "assets/images/img_icon_2.png",
+    "assets/images/img_icon_3.png",
+    "assets/images/img_icon_4.png",
+    "assets/images/img_icon_5.png",
+    "assets/images/img_icon_6.png",
+    "assets/images/img_icon_7.png",
+    "assets/images/img_icon_8.png",
+    "assets/images/img_icon_9.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,31 +69,60 @@ class MainSettingsPage extends StatelessWidget {
                   .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
               child: Column(
                 children: [
-                  ColumnWidget(
-                    imageFile: "assets/images/img_icon_32X32.png",
-                    settingName: "Notifications",
-                    hasSubtitle: false,
-                  ),
-                  ColumnWidget(
-                    imageFile: "assets/images/img_icon_1.png",
-                    settingName: "Privacy & Security",
-                    hasSubtitle: false,
-                  ),
-                  ColumnWidget(
-                    imageFile: "assets/images/img_icon_2.png",
-                    settingName: "Become Professional",
-                    hasSubtitle: false,
-                  ),
-                  ColumnWidget(
-                    imageFile: "assets/images/img_icon_3.png",
-                    settingName: "Units & Timezone",
-                    hasSubtitle: false,
-                  ),
-                  ColumnWidget(
+                  // for (int i = 0; i < 5; i++)
+                  //   i == 4
+                  //       ? Obx((() => SettingListTitle(
+                  //           imageFile: settingsPicturePath[i],
+                  //           settingsName: settingsName[i],
+                  //           hasSubtitle: true,
+                  //           subTitleText: "${settingsController.selectedLanguage.value}",
+                  //           voidCallback: () {
+                  //             Get.bottomSheet(LanguageBottomSheet());
+                  //           })))
+                  //       : SettingListTitle(
+                  //           imageFile: settingsPicturePath[i],
+                  //           settingsName: settingsName[i],
+                  //           hasSubtitle: false,
+                  //         ),
+
+                  SettingListTitle(
+                      imageFile: settingsPicturePath[0],
+                      settingsName: settingsName[0],
+                      hasSubtitle: false,
+                      voidCallback: () {
+                        // Get.to(page);
+                      }),
+                  SettingListTitle(
+                      imageFile: settingsPicturePath[1],
+                      settingsName: settingsName[1],
+                      hasSubtitle: false,
+                      voidCallback: () {
+                        Get.to(PrivacyAndSecurityScreen(),
+                            transition: Transition.fade);
+                      }),
+                  SettingListTitle(
+                      imageFile: settingsPicturePath[2],
+                      settingsName: settingsName[2],
+                      hasSubtitle: false,
+                      voidCallback: () {
+                        // Get.to(page);
+                      }),
+                  SettingListTitle(
+                      imageFile: settingsPicturePath[3],
+                      settingsName: settingsName[3],
+                      hasSubtitle: false,
+                      voidCallback: () {
+                        // Get.to(page);
+                      }),
+                  Obx((() => SettingListTitle(
+                      imageFile: settingsPicturePath[4],
+                      settingsName: settingsName[4],
                       hasSubtitle: true,
-                      subTitleText: "English",
-                      imageFile: "assets/images/img_icon_4.png",
-                      settingName: "Language"),
+                      subTitleText:
+                          "${settingsController.selectedLanguage.value}",
+                      voidCallback: () {
+                        Get.bottomSheet(LanguageBottomSheet());
+                      })))
                 ],
               ),
             ),
@@ -77,14 +137,14 @@ class MainSettingsPage extends StatelessWidget {
                 decoration: AppDecoration.outlineLightblue90019
                     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
                 child: Column(children: [
-                  ColumnWidget(
+                  SettingListTitle(
                     imageFile: "assets/images/img_icon_5.png",
-                    settingName: "Orders",
+                    settingsName: "Orders",
                     hasSubtitle: false,
                   ),
-                  ColumnWidget(
+                  SettingListTitle(
                     imageFile: "assets/images/img_icon_6.png",
-                    settingName: "Integration",
+                    settingsName: "Integration",
                     hasSubtitle: false,
                   ),
                 ])),
@@ -95,19 +155,19 @@ class MainSettingsPage extends StatelessWidget {
                 decoration: AppDecoration.outlineLightblue90019
                     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
                 child: Column(children: [
-                  ColumnWidget(
+                  SettingListTitle(
                     imageFile: "assets/images/img_icon_7.png",
-                    settingName: "About",
+                    settingsName: "About",
                     hasSubtitle: false,
                   ),
-                  ColumnWidget(
+                  SettingListTitle(
                     imageFile: "assets/images/img_icon_8.png",
-                    settingName: "Support",
+                    settingsName: "Support",
                     hasSubtitle: false,
                   ),
-                  ColumnWidget(
+                  SettingListTitle(
                     imageFile: "assets/images/img_icon_9.png",
-                    settingName: "Leave Feedback",
+                    settingsName: "Leave Feedback",
                     hasSubtitle: false,
                   ),
                 ])),
@@ -118,6 +178,7 @@ class MainSettingsPage extends StatelessWidget {
                 style: Constants.fainted_logout,
               ),
             ),
+            Constants.spaceMediumColumn,
           ],
         ),
       ),

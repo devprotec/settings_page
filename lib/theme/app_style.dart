@@ -197,4 +197,40 @@ class AppStyle {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w500,
   );
+
+  static TextStyle normalTextStyle = TextStyle(
+      fontSize: 16,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
+      color: Colors.black);
+  static TextStyle titleTextStyle = TextStyle(
+    fontSize: 18,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+  static TextStyle subtitleTextStyle = TextStyle(
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+    color: Constants.fromHex('#34405E'),
+  );
+
+  static TextStyle feedbackTextStyle = TextStyle(
+      fontSize: 14,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
+      color: Constants.fromHex('#34405E'));
+
+  static TextStyle languageTextStyle = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    fontFamily: 'Poppins',
+  );
+
+  static TextStyle fainted_logout = TextStyle(
+      fontSize: 16,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+      color: Constants.fromHex('#6E768D'));
 }

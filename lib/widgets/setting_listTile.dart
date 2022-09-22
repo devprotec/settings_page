@@ -43,3 +43,74 @@ class SettingListTitle extends StatelessWidget {
     );
   }
 }
+
+class SettingListTitleCompact extends StatelessWidget {
+  final String imageFile;
+  final String settingsName;
+  final VoidCallback? voidCallback;
+  final bool? hasSubtitle;
+  final String? subTitleText;
+  final bool hasTrailing;
+  final Widget? trailingWidget;
+
+  const SettingListTitleCompact({
+    Key? key,
+    required this.imageFile,
+    required this.settingsName,
+    this.voidCallback,
+    this.hasSubtitle,
+    this.subTitleText,
+    required this.hasTrailing,
+    this.trailingWidget,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    /* return ListTile(
+      onTap: voidCallback,
+      leading: ImageWidget(imageFile: imageFile),
+      title: Text(
+        settingsName,
+        style: Constants.normalTextStyle,
+      ),
+      trailing: hasTrailing
+          ? trailingWidget
+          : SizedBox(
+              width: 10,
+            ),
+      subtitle: hasSubtitle!
+          ? Text(
+              subTitleText!,
+              style: Constants.subtitleTextStyle,
+            )
+          : SizedBox.shrink(),
+    ); */
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: Row(
+        children: [
+          Row(
+            children: [
+              ImageWidget(imageFile: imageFile),
+              SizedBox(
+                width: 12.0,
+              ),
+              Text(
+                settingsName,
+                style: Constants.normalTextStyle,
+              ),
+            ],
+          ),
+          Container(
+            child: hasTrailing
+                ? trailingWidget
+                : SizedBox(
+                    width: 10,
+                  ),
+          )
+        ],
+      ),
+    );
+  }
+}

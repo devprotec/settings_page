@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:settings_page/presentation/select_role_page.dart';
 import 'package:settings_page/util/constants.dart';
 import 'package:settings_page/widgets/button_widget.dart';
 
@@ -56,7 +57,9 @@ class AccountDeletedPage extends StatelessWidget {
                   buttonName: "lbl_go_to_log_in".tr,
                   buttonColor: Constants.lightBlue50,
                   buttonWidth: width,
-                  buttonAction: () {},
+                  buttonAction: () {
+                    Get.to(SelectRolePage());
+                  },
                   fontStyle: AppStyle.txtPoppinsSemiBold14LightBlue700,
                 ),
               ),

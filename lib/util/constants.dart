@@ -67,6 +67,9 @@ class Constants {
   static Widget spaceSemiMediumColumn = SizedBox(
     height: 16,
   );
+  static Widget spaceExtraMediumColumn = SizedBox(
+    height: 24,
+  );
   static Widget spaceSmallColumn = SizedBox(
     height: 10,
   );
@@ -98,13 +101,11 @@ class Constants {
       fontWeight: FontWeight.w400,
       color: fromHex('#34405E'));
 
-
   static TextStyle languageTextStyle = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 16,
     fontFamily: 'Poppins',
   );
-
 
   static TextStyle fainted_logout = TextStyle(
       fontSize: 16,
@@ -112,15 +113,16 @@ class Constants {
       fontWeight: FontWeight.w600,
       color: fromHex('#6E768D'));
 
-  static Widget arrowBacks (){ 
+  static Widget arrowBacks() {
     return IconButton(
-    onPressed: () {
-      Get.back();
-    },
-    icon: Icon(Icons.arrow_back),
-    iconSize: 30,
-    color: Constants.fromHex('#6E768D'),
-  );}
+      onPressed: () {
+        Get.back();
+      },
+      icon: Icon(Icons.arrow_back),
+      iconSize: 30,
+      color: Constants.fromHex('#6E768D'),
+    );
+  }
 
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();

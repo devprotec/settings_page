@@ -1,29 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ErrorMessage extends StatelessWidget {
   final String message;
-  const ErrorMessage({Key? key, required this.message}) : super(key: key);
+  final Color? messageBackgroundColor;
+  final IconData? infoIcon;
+  final Color? messageColor;
+  const ErrorMessage(
+      {Key? key,
+      required this.message,
+      this.infoIcon,
+       this.messageBackgroundColor,
+      
+       this.messageColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: const Color(0xffFFF2F0),
+        color: messageBackgroundColor ?? Color(0xffFFF2F0),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Icon(
-          Icons.info,
-          color: Color(0xffE74C3C),
+        Icon(
+          
+          infoIcon ?? Icons.info,
+          color: messageColor ?? Color(0xffE74C3C),
+          size:18,
         ),
-        const SizedBox(width: 5),
+        const SizedBox(width: 10),
         Flexible(
           child: Text(
             message,
-            style: const TextStyle(
-              color: Color(0xffE74C3C),
+            style: TextStyle(
+              color: messageColor ?? Color(0xffE74C3C),
             ),
           ),
         ),

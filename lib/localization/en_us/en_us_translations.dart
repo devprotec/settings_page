@@ -41,7 +41,7 @@ final Map<String, String> enUs = {
   "msg_profile_have": "Profile - Have 2 or More Roles",
   "lbl_leave_feedback": "LEAVE FEEDBACK",
   "lbl_account_deleted": "Account Deleted",
-  "msg_passwords_chang": "Passwords Changed Successfully",
+  "msg_passwords_chang": "Password Changed Successfully",
   "msg_profile_setti": "Profile - Settings",
   "msg_profile_priva7": "Profile - Privacy & Security - Password",
   "lbl_integrations": "Integrations ",
@@ -84,4 +84,5 @@ final Map<String, String> enUs = {
   'newpassword': "New Password",
   'confpassword': "Confirm Password",
   'currentpassword': "Current Password",
+  'passwords_do': "Passwords do not match"
 };

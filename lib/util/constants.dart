@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 import 'exports.dart';
 
@@ -44,6 +43,11 @@ class Constants {
   static Color yellow900 = fromHex('#e57e25');
 
   static Color lightBlueA700 = fromHex('#0095e9');
+  static Color errorBackgroundcolor = Color(0xffFFF2F0);
+  static Color errorColor = Color(0xffE74C3C);
+  static Color successColor = fromHex('#24AE5F');
+  static Color successBacgroundColor = fromHex('#EBFBF2');
+
 
   static Color lightBlueA70099 = fromHex('#990196ea');
   static Color mainColor = const Color(0xff161B46);

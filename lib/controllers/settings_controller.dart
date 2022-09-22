@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:settings_page/presentation/privacy_and_security_screen.dart';
 
 
 class SettingsController extends GetxController{
@@ -13,11 +14,13 @@ class SettingsController extends GetxController{
     if (newPassword == confirmPassword) {
       //To-Do
       // implement change password
-      passwordChangedIsSuccessful.value == true;
+      passwordChangedIsSuccessful.value = true;
       changePasswordError.value = false;
+      Get.to(PrivacyAndSecurityScreen());
     } else {
       changePasswordError.value = true;
-      changePasswordErrorMessage.value = "Password do not match";
+      changePasswordErrorMessage.value = "passwords_do".tr;
+
     }
   }
 

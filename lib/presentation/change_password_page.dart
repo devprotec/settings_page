@@ -48,7 +48,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: size.height * 0.05),
-    
+
                 AnimatedCrossFade(
                     firstChild: Center(
                         child: CommonImageView(
@@ -56,14 +56,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                             height: getVerticalSize(147.00),
                             width: getHorizontalSize(160.00))),
                     secondChild: const SizedBox(),
-                    crossFadeState: MediaQuery.of(context).viewInsets.bottom == 0
-                        ? CrossFadeState.showFirst
-                        : CrossFadeState.showSecond,
+                    crossFadeState:
+                        MediaQuery.of(context).viewInsets.bottom == 0
+                            ? CrossFadeState.showFirst
+                            : CrossFadeState.showSecond,
                     duration: const Duration(milliseconds: 400)),
-    
+
                 Obx(() => controller.changePasswordError.value
                     ? ErrorMessage(
-                        message: controller.changePasswordErrorMessage.value)
+                        message: controller.changePasswordErrorMessage.value,
+                      )
                     : SizedBox.shrink()),
                 Constants.spaceMediumColumn,
                 InputForms(
@@ -77,7 +79,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   notifier: currentPassword,
                   //controller: passwordController,
                   inputType: TextInputType.text,
-    
+
                   onChange: (val) {
                     currentPassword.value = val!;
                   },
@@ -93,7 +95,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   notifier: newPassword,
                   //controller: passwordController,
                   inputType: TextInputType.text,
-    
+
                   onChange: (val) {
                     newPassword.value = val!;
                   },

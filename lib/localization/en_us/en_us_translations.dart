@@ -74,5 +74,14 @@ final Map<String, String> enUs = {
   "lbl_delete_account": "Delete Account",
   "msg_non_certified_s": "Non-Certified Sports Coach",
   "lbl_orders": "Orders",
-  "msg_which_applicati": "Which Application Will You Use Now?"
+  "msg_which_applicati": "Which Application Will You Use Now?",
+  'characters': "At least 8 characters",
+  'lowercase': "At least one lovercase letter (a-z)",
+  'uppercase': "At least one uppercase letter (A-Z)",
+  'numbers': "At least one number (0-9)",
+  'passwordchanged': "Password Changed",
+  'passcontains': "Password should contain:",
+  'newpassword': "New Password",
+  'confpassword': "Confirm Password",
+  'currentpassword': "Current Password",
 };

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:settings_page/widgets/columWidget.dart';
 
-
 import '../theme/app_decoration.dart';
 import '../util/constants.dart';
 import '../util/math_utils.dart';
 
 class MainSettingsPage extends StatelessWidget {
+  static const String routeName = "main_settings";
+
   const MainSettingsPage({Key? key}) : super(key: key);
 
   @override
@@ -16,24 +17,25 @@ class MainSettingsPage extends StatelessWidget {
         child: Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
-          child: Container(
-              margin: getMargin(left: 12, right: 12),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Constants.arrowBacks,
-                    Container(
-                      width: size.width * 0.8,
-                      child: Center(
-                        child: Text(
-                          "lbl_settings".tr,
-                          style: Constants.titleTextStyle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    )
-                  ]))),
+        preferredSize: Size.fromHeight(50),
+        child: Container(
+          margin: getMargin(left: 12, right: 12),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            Constants.arrowBacks,
+            Container(
+              width: size.width * 0.8,
+              child: Center(
+                child: Text(
+                  "lbl_settings".tr,
+                  style: Constants.titleTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ]),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -100,8 +102,7 @@ class MainSettingsPage extends StatelessWidget {
                 ])),
             Constants.spaceSmallColumn,
             Container(
-                margin:
-                    EdgeInsets.only(top: 15, left: 15, right: 15),
+                margin: EdgeInsets.only(top: 15, left: 15, right: 15),
                 width: double.infinity,
                 decoration: AppDecoration.outlineLightblue90019
                     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
@@ -122,11 +123,13 @@ class MainSettingsPage extends StatelessWidget {
                     hasSubtitle: false,
                   ),
                 ])),
-
-                Constants.spaceMediumColumn,
-                Center(child: Text("LOG OUT", style: Constants.fainted_logout ,),),
-
-
+            Constants.spaceMediumColumn,
+            Center(
+              child: Text(
+                "LOG OUT",
+                style: Constants.fainted_logout,
+              ),
+            ),
           ],
         ),
       ),

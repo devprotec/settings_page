@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../util/constants.dart';
 import '../util/math_utils.dart';
 
@@ -159,6 +158,24 @@ class AppStyle {
     color: Constants.gray900,
     fontSize: getFontSize(
       18,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtPoppinsSemiBold14WhiteA700 = TextStyle(
+    color: Constants.whiteA700,
+    fontSize: getFontSize(
+      14,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtPoppinsSemiBold14LightBlue700 = TextStyle(
+    color: Constants.lightBlue700,
+    fontSize: getFontSize(
+      14,
     ),
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,

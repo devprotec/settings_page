@@ -27,85 +27,87 @@ class SelectRolePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppbarWidget(
-          hasActions: true,
-          appBarTitle: "msg_select_your_rol".tr,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: AppbarWidget(
+            hasActions: true,
+            appBarTitle: "msg_select_your_rol".tr,
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[0],
-                settingsName: settingsName[0],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[1],
-                settingsName: settingsName[1],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[2],
-                settingsName: settingsName[2],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[3],
-                settingsName: settingsName[3],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[4],
-                settingsName: settingsName[4],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[5],
-                settingsName: settingsName[5],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[6],
-                settingsName: settingsName[6],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-            ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[0],
+                  settingsName: settingsName[0],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[1],
+                  settingsName: settingsName[1],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[2],
+                  settingsName: settingsName[2],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[3],
+                  settingsName: settingsName[3],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[4],
+                  settingsName: settingsName[4],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[5],
+                  settingsName: settingsName[5],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[6],
+                  settingsName: settingsName[6],
+                  hasSubtitle: false,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  hasTrailing: false,
+                ),
+              ],
+            ),
           ),
         ),
       ),

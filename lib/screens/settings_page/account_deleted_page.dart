@@ -6,17 +6,15 @@ class AccountDeletedPage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppbarWidget(
-          hasActions: false,
-          appBarTitle: "lbl_account_deleted".tr
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: AppbarWidget(
+              hasActions: false, appBarTitle: "lbl_account_deleted".tr),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
+        body: Container(
           width: width,
           height: height,
           padding: EdgeInsets.only(bottom: 45),
@@ -31,9 +29,8 @@ class AccountDeletedPage extends StatelessWidget {
                       height: 20,
                     ),
                     CommonImageView(
-                      svgPath:ImageConstant.imgBluemondaypan,
-                      
-                      ),
+                      svgPath: ImageConstant.imgBluemondaypan,
+                    ),
                     Constants.spaceSemiBigColumn,
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 65.0),

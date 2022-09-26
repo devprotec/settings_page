@@ -20,7 +20,6 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
           child: AppbarWidget(
             hasActions: true,
             appBarTitle: "lbl_delete_accou".tr,
-            trailingWidget: Text('Create'),
           ),
         ),
         body: SingleChildScrollView(

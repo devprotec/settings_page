@@ -113,7 +113,7 @@ class _InputFormsState extends State<InputForms> {
                   suffixStyle: TextStyle(fontSize: 12),
                   isDense: true,
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: widget.contentPadding ?? 16),
+                      vertical: widget.contentPadding ?? 16, horizontal: 10),
                   errorStyle: const TextStyle(
                     fontSize: 11,
                     color: Colors.red,

@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:settings_page/util/enum.dart';
 
+import '../models/role.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/setting_listTile.dart';
 
 class SelectRolePage extends StatelessWidget {
+  List<Role> newRole = [
+    Role("msg_certified_sport".tr, Status.Active),
+    Role("msg_non_certified_s".tr, Status.Active),
+    Role("lbl_reseller".tr, Status.Active),
+    Role("lbl_b2b_partner".tr, Status.Active),
+    Role("msg_corporate_partn".tr, Status.Pending),
+    Role("msg_wellness_profes".tr, Status.Pending),
+    Role("msg_knowledge_profe".tr, Status.Inactive),
+  ];
+
   final settingsPicturePath = [
     "assets/images/img_vector.png",
     "assets/images/img_vector.png",
@@ -27,7 +39,9 @@ class SelectRolePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    double height = MediaQuery.of(context).size.height;
+    return SafeArea(
+        child: Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50),
@@ -39,76 +53,84 @@ class SelectRolePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[0],
-                settingsName: settingsName[0],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[1],
-                settingsName: settingsName[1],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[2],
-                settingsName: settingsName[2],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[3],
-                settingsName: settingsName[3],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[4],
-                settingsName: settingsName[4],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[5],
-                settingsName: settingsName[5],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-              SettingListTitleCompact(
-                imageFile: settingsPicturePath[6],
-                settingsName: settingsName[6],
-                hasSubtitle: false,
-                voidCallback: () {
-                  // Get.to(page);
-                },
-                hasTrailing: false,
-              ),
-            ],
+          child: Container(
+            height: height,
+            child: ListView.builder(
+                itemCount: newRole.length,
+                shrinkWrap: true,
+                physics: BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics(),
+                ),
+                itemBuilder: (context, index) {
+                  return SettingListTitleCompact(
+                    imageFile: settingsPicturePath[index],
+                    settingsName: settingsName[index],
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[index].status,
+                  );
+                }),
           ),
         ),
       ),
-    );
+    ));
   }
 }
+/* 
+Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SettingListTitleCompact(
+                    imageFile: settingsPicturePath[0],
+                    settingsName: settingsName[0],
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[0].status),
+                SettingListTitleCompact(
+                    imageFile: settingsPicturePath[1],
+                    settingsName: newRole[1].text,
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[1].status),
+                SettingListTitleCompact(
+                    imageFile: settingsPicturePath[2],
+                    settingsName: newRole[2].text,
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[2].status),
+                SettingListTitleCompact(
+                    imageFile: settingsPicturePath[3],
+                    settingsName: newRole[3].text,
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[3].status),
+                SettingListTitleCompact(
+                    imageFile: settingsPicturePath[4],
+                    settingsName: newRole[4].text,
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[4].status),
+                SettingListTitleCompact(
+                    imageFile: settingsPicturePath[5],
+                    settingsName: newRole[5].text,
+                    voidCallback: () {
+                      // Get.to(page);
+                    },
+                    status: newRole[5].status),
+                SettingListTitleCompact(
+                  imageFile: settingsPicturePath[6],
+                  settingsName: newRole[6].text,
+                  voidCallback: () {
+                    // Get.to(page);
+                  },
+                  status: newRole[6].status,
+                ),
+              ],
+            ),
+ */

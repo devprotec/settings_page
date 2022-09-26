@@ -1,4 +1,3 @@
-
 import 'exports.dart';
 
 class Constants {
@@ -48,7 +47,6 @@ class Constants {
   static Color successColor = fromHex('#24AE5F');
   static Color successBacgroundColor = fromHex('#EBFBF2');
 
-
   static Color lightBlueA70099 = fromHex('#990196ea');
   static Color mainColor = const Color(0xff161B46);
 
@@ -57,6 +55,10 @@ class Constants {
   static Color insideIconColor = fromHex('#CDF1FF');
   static Color forwardIconColor = fromHex('#AEB2BF');
   static Color successPasswordColor = fromHex("#00ACE9");
+  static Color inactiveStatusColorGray = fromHex("#F4F5FB");
+  static Color activeIconColor = fromHex("#0199E9");
+  static Color inactiveIconColor = fromHex("#6E768D");
+  static Color pendingCircleColor = fromHex("#FFF2E7");
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,
@@ -96,10 +98,18 @@ class Constants {
     color: Colors.black,
   );
   static TextStyle subtitleTextStyle = TextStyle(
-      fontSize: 14,
-      fontFamily: 'Poppins',
-      fontWeight: FontWeight.w400,
-      color: fromHex('#34405E'));
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+    color: fromHex('#34405E'),
+  );
+
+  static TextStyle inactiveSubtitleTextStyle = TextStyle(
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+    color: fromHex('#6E768D'),
+  );
 
   static TextStyle languageTextStyle = TextStyle(
     fontWeight: FontWeight.w400,

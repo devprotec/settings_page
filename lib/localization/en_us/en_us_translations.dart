@@ -21,7 +21,7 @@ final Map<String, String> enUs = {
   "msg_you_will_lost_a":
       "You will lose all the information about you. This cannot be undone",
   "lbl_reseller": "Reseller",
-  "lbl_create": "Create",
+  "lbl_create": "CREATE",
   "msg_become_professi": "Become Professional",
   "lbl_notifications": "Notifications",
   "msg_what_can_we_do": "What Can We Do to Improve",

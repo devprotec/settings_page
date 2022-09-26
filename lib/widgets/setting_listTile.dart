@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:settings_page/theme/app_style.dart';
+import 'package:settings_page/util/enum.dart';
 import 'package:settings_page/widgets/icon_widget.dart';
 
 import '../util/constants.dart';
@@ -50,8 +53,8 @@ class SettingListTitleCompact extends StatelessWidget {
   final VoidCallback? voidCallback;
   final bool? hasSubtitle;
   final String? subTitleText;
-  final bool hasTrailing;
-  final Widget? trailingWidget;
+  final Status? status;
+  //final String status;
 
   const SettingListTitleCompact({
     Key? key,
@@ -60,57 +63,76 @@ class SettingListTitleCompact extends StatelessWidget {
     this.voidCallback,
     this.hasSubtitle,
     this.subTitleText,
-    required this.hasTrailing,
-    this.trailingWidget,
+    this.status,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    /* return ListTile(
-      onTap: voidCallback,
-      leading: ImageWidget(imageFile: imageFile),
-      title: Text(
-        settingsName,
-        style: Constants.normalTextStyle,
-      ),
-      trailing: hasTrailing
-          ? trailingWidget
-          : SizedBox(
-              width: 10,
-            ),
-      subtitle: hasSubtitle!
-          ? Text(
-              subTitleText!,
-              style: Constants.subtitleTextStyle,
-            )
-          : SizedBox.shrink(),
-    ); */
-
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+            crossAxisAlignment: status == Status.Inactive
+                ? CrossAxisAlignment.center
+                : CrossAxisAlignment.start,
             children: [
-              ImageWidget(imageFile: imageFile),
+              ImageWidgetWithStatus(
+                imageFile: imageFile,
+                status: status,
+              ),
               SizedBox(
                 width: 12.0,
               ),
-              Text(
-                settingsName,
-                style: Constants.normalTextStyle,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    settingsName,
+                    style: status == Status.Inactive
+                        ? Constants.inactiveSubtitleTextStyle
+                        : Constants.subtitleTextStyle,
+                  ),
+                  status == Status.Inactive
+                      ? Container()
+                      : Container(
+                          child: status == Status.Active
+                              ? activeText()
+                              : pendingText(),
+                        )
+                ],
               ),
             ],
           ),
           Container(
-            child: hasTrailing
-                ? trailingWidget
-                : SizedBox(
-                    width: 10,
-                  ),
+            child: status == Status.Inactive
+                ? GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      "lbl_create".tr,
+                      style: AppStyle.txtPoppinsSemiBold12,
+                    ),
+                  )
+                : Container(),
           )
         ],
       ),
+    );
+  }
+
+  Widget activeText() {
+    return Text(
+      "lbl_active".tr,
+      style: AppStyle.txtPoppinsMedium12,
+    );
+  }
+
+  Widget pendingText() {
+    return Text(
+      "lbl_pending".tr,
+      style: AppStyle.txtPoppinsMedium12Yellow900,
     );
   }
 }

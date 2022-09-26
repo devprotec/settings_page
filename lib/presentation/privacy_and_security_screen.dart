@@ -1,12 +1,5 @@
-import 'package:settings_page/presentation/change_password_page.dart';
-import 'package:settings_page/presentation/delete_account_page1.dart';
-import 'package:settings_page/util/custom_icons_icons.dart';
 import 'package:settings_page/util/exports.dart';
-import 'package:settings_page/widgets/app_bar_widget.dart';
-import 'package:settings_page/widgets/error_message.dart';
 
-import '../util/image_constant.dart';
-import '../widgets/common_image_view.dart';
 
 class PrivacyAndSecurityScreen extends StatefulWidget {
   const PrivacyAndSecurityScreen({Key? key}) : super(key: key);

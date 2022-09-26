@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:settings_page/util/constants.dart';
-
-
-import '../util/math_utils.dart';
+import 'package:settings_page/util/exports.dart';
 
 class AppDecoration {
   static BoxDecoration get outlineLightblue90019 => BoxDecoration(

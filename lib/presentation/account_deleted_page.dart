@@ -1,12 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:settings_page/presentation/select_role_page.dart';
-import 'package:settings_page/util/constants.dart';
-import 'package:settings_page/widgets/button_widget.dart';
-
-import '../theme/app_style.dart';
-import '../widgets/app_bar_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class AccountDeletedPage extends StatelessWidget {
   @override
@@ -20,7 +12,7 @@ class AccountDeletedPage extends StatelessWidget {
         preferredSize: Size.fromHeight(50),
         child: AppbarWidget(
           hasActions: false,
-          appBarTitle: 'Account Deleted',
+          appBarTitle: "lbl_account_deleted".tr
         ),
       ),
       body: Container(
@@ -37,7 +29,7 @@ class AccountDeletedPage extends StatelessWidget {
                   SizedBox(
                     height: 40,
                   ),
-                  Image.asset("assets/images/account_deleted_alert.png"),
+                  CommonImageView(svgPath:ImageConstant.imgBluemondaypan),
                   Constants.spaceSemiBigColumn,
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 65.0),
@@ -53,14 +45,14 @@ class AccountDeletedPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Container(
-                child: ButtonWidget(
-                  buttonName: "lbl_go_to_log_in".tr,
+                child: Button(
+                  text: "lbl_go_to_log_in".tr,
                   buttonColor: Constants.lightBlue50,
-                  buttonWidth: width,
-                  buttonAction: () {
+                  buttonElevation: 0,
+                  onPressed: () {
                     Get.to(SelectRolePage());
                   },
-                  fontStyle: AppStyle.txtPoppinsSemiBold14LightBlue700,
+                  textColor: Constants.lightBlue700,
                 ),
               ),
             )

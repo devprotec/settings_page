@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:settings_page/widgets/icon_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
-import '../util/constants.dart';
+
 
 class SettingListTitle extends StatelessWidget {
   final String imageFile;

@@ -1,15 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:settings_page/presentation/account_deleted_page.dart';
-import 'package:settings_page/presentation/delete_account_page2.dart';
-import 'package:settings_page/theme/app_style.dart';
-import 'package:settings_page/widgets/app_bar_widget.dart';
-
-import '../util/constants.dart';
-import '../util/math_utils.dart';
-import '../widgets/checkbox_with_text_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class DeleteAccountPage1 extends StatefulWidget {
   @override
@@ -41,7 +30,8 @@ class _DeleteAccountPage1State extends State<DeleteAccountPage1> {
                 SizedBox(
                   height: 40,
                 ),
-                Image.asset("assets/images/delete_account_alert.png"),
+                //Image.asset("assets/images/delete_account_alert.png"),
+                CommonImageView(svgPath: ImageConstant.imgIllustration206X206,),
                 SizedBox(
                   height: 26,
                 ),

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../util/constants.dart';
+import 'package:settings_page/util/exports.dart';
 
 class InputForms extends StatefulWidget {
   final String? description;
@@ -18,7 +16,7 @@ class InputForms extends StatefulWidget {
   final Function(String)? validation;
   final Function(String?)? onChange;
   final double? contentPadding;
-  double height;
+  
 
   // ignore: use_key_in_widget_constructors
   InputForms(
@@ -36,7 +34,6 @@ class InputForms extends StatefulWidget {
       this.visiblePasswordIcon,
       this.hiddenPasswordIcon,
       this.descriptionTextStyle,
-      this.height = 48,
       this.contentPadding});
   @override
   _InputFormsState createState() => _InputFormsState();

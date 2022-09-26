@@ -1,17 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:settings_page/presentation/account_deleted_page.dart';
-import 'package:settings_page/theme/app_style.dart';
-import 'package:settings_page/widgets/app_bar_widget.dart';
-import 'package:settings_page/widgets/button_widget.dart';
-import 'package:settings_page/widgets/form_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
-import '../util/constants.dart';
-import '../util/math_utils.dart';
-import '../widgets/button.dart';
-import '../widgets/checkbox_with_text_widget.dart';
 
 class DeleteAccountPage2 extends StatefulWidget {
   @override

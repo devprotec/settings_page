@@ -1,5 +1,4 @@
-import 'package:get/get.dart';
-import 'package:settings_page/presentation/privacy_and_security_screen.dart';
+import 'package:settings_page/util/exports.dart';
 
 
 class SettingsController extends GetxController{

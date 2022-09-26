@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../widgets/app_bar_widget.dart';
-import '../widgets/setting_listTile.dart';
+import 'package:settings_page/util/exports.dart';
 
 class SelectRolePage extends StatelessWidget {
   final settingsPicturePath = [

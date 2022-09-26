@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../util/constants.dart';
-import '../util/math_utils.dart';
+import 'package:settings_page/util/exports.dart';
 
 class AppStyle {
   static TextStyle txtRobotoRegular20Black90012 = TextStyle(

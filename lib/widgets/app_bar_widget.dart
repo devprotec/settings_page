@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:settings_page/util/exports.dart';
 
 
-import '../util/constants.dart';
+
 
 class AppbarWidget extends StatelessWidget {
   final String appBarTitle;

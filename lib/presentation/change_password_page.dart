@@ -1,20 +1,4 @@
-import 'dart:developer';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:settings_page/controllers/settings_controller.dart';
-import 'package:settings_page/widgets/error_message.dart';
-
-import '../util/constants.dart';
-import '../util/custom_icons_icons.dart';
-import '../util/image_constant.dart';
-import '../util/math_utils.dart';
-import '../widgets/app_bar_widget.dart';
-import '../widgets/button.dart';
-import '../widgets/button_widget.dart';
-import '../widgets/common_image_view.dart';
-import '../widgets/form_widget.dart';
-import '../widgets/small_text_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   const ChangePasswordPage({Key? key}) : super(key: key);

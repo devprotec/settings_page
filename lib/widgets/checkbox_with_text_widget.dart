@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:settings_page/util/constants.dart';
-
-import '../theme/app_style.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ChechboxWithTextWidget extends StatefulWidget {
   late bool? initialValue;
@@ -20,7 +16,6 @@ class _ChechboxWithTextWidgetState extends State<ChechboxWithTextWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      //crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Checkbox(

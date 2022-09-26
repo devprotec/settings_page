@@ -13,7 +13,6 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -21,7 +20,7 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
           preferredSize: Size.fromHeight(50),
           child: AppbarWidget(
             hasActions: true,
-            appBarTitle: 'Delete Account',
+            appBarTitle: "lbl_delete_accou".tr
           ),
         ),
         body: SingleChildScrollView(
@@ -108,7 +107,6 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                           enabled: true,
                           obscure: false,
                           notifier: nextAppToUseField,
-                          //controller: passwordController,
                           inputType: TextInputType.text,
 
                           onChange: (val) {
@@ -126,7 +124,6 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                           enabled: true,
                           obscure: false,
                           notifier: nextAppToUseField,
-                          //controller: passwordController,
                           inputType: TextInputType.text,
                           onChange: (val) {
                             nextAppToUseField.value = val!;

@@ -17,11 +17,11 @@ final Map<String, String> enUs = {
   "msg_select_your_rol": "Select Your Role",
   "lbl_change_password": "Change Password",
   "msg_it_s_too_expens": "It’s too expensive",
-  "lbl_log_out": "Log OUT",
+  "lbl_log_out": "LOG OUT",
   "msg_you_will_lost_a":
       "You will lose all the information about you. This cannot be undone",
   "lbl_reseller": "Reseller",
-  "lbl_create": "Create",
+  "lbl_create": "CREATE",
   "msg_become_professi": "Become Professional",
   "lbl_notifications": "Notifications",
   "msg_what_can_we_do": "What Can We Do to Improve",
@@ -72,6 +72,7 @@ final Map<String, String> enUs = {
   "msg_change_to_profe": "Change to Professional",
   "lbl_language": "Language",
   "lbl_delete_account": "DELETE ACCOUNT",
+  "lbl_delete_accou": "Delete Acount",
   "msg_non_certified_s": "Non-Certified Sports Coach",
   "lbl_orders": "Orders",
   "msg_which_applicati": "Which Application Will You Use Now?",
@@ -84,5 +85,11 @@ final Map<String, String> enUs = {
   'newpassword': "New Password",
   'confpassword': "Confirm Password",
   'currentpassword': "Current Password",
-  'passwords_do': "Passwords do not match"
+  'passwords_do': "Passwords do not match",
+  'terms_condtions': "Terms & Conditions",
+  'this_field_cannot': "This field cannot be empty",
+  'enter_a_valid_email': "Enter a valid email address",
+  'enter_a_valid_phone': "Enter a valid phone number",
+  'enter_a_valid_imei' : "Enter a valid IMEI number",
+  'enter_a_valid_voter' : "Enter a valid voter's ID number"
 };

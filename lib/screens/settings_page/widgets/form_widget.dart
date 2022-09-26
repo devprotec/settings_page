@@ -110,7 +110,7 @@ class _InputFormsState extends State<InputForms> {
                   suffixStyle: TextStyle(fontSize: 12),
                   isDense: true,
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: widget.contentPadding ?? 16),
+                      vertical: widget.contentPadding ?? 16, horizontal: 10),
                   errorStyle: const TextStyle(
                     fontSize: 11,
                     color: Colors.red,
@@ -534,7 +534,7 @@ validateEmail(String value) {
   }
   // ignore: unnecessary_null_comparison
   if (!regex.hasMatch(value) || value == null) {
-    return 'Enter a valid email address';
+    return 'enter_a_valid_email'.tr;
   } else {
     return null;
   }
@@ -542,7 +542,7 @@ validateEmail(String value) {
 
 nameValidation(String value) {
   if (value.isEmpty) {
-    return "This field cannot be empty";
+    return 'this_field_cannot'.tr;
   } else {
     return null;
   }
@@ -553,7 +553,7 @@ validateContactNumber(String value) {
     return null;
   }
   if (value.length < 10 || value.length > 10) {
-    return 'Enter valid phone number';
+    return 'enter_a_valid_phone'.tr;
   } else {
     return null;
   }
@@ -564,7 +564,7 @@ validateIMEINumber(String value) {
     return null;
   }
   if (value.length != 15) {
-    return 'Enter valid IMEI number';
+    return 'enter_a_valid_imei'.tr;
   } else {
     return null;
   }
@@ -575,7 +575,7 @@ validateYearNumber(String value) {
     return null;
   }
   if (value.length != 4) {
-    return 'Enter valid phone number';
+    return 'enter_a_valid_phone'.tr;
   } else {
     return null;
   }
@@ -586,7 +586,7 @@ validateVoterNumber(String value) {
     return null;
   }
   if (value.length < 10 || value.length > 10) {
-    return 'Enter valid voters id number';
+    return 'enter_a_valid_voter'.tr;
   } else {
     return null;
   }

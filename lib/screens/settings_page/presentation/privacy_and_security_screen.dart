@@ -47,17 +47,17 @@ class _PrivacyAndSecurityScreenPage extends State<PrivacyAndSecurityScreen> {
                       Get.to(ChangePasswordPage(), transition: Transition.fade);
                     },
                     imageFile: "assets/images/img_icon_10.png",
-                    settingsName: "Change Password",
+                    settingsName: "lbl_change_password".tr,
                     hasSubtitle: false,
                   ),
                   SettingListTitle(
                     imageFile: "assets/images/img_icon_11.png",
-                    settingsName: "Terms & Conditions",
+                    settingsName: 'terms_condtions'.tr,
                     hasSubtitle: false,
                   ),
                   SettingListTitle(
                     imageFile: "assets/images/img_icon_12.png",
-                    settingsName: "Delete Account",
+                    settingsName: "lbl_delete_accou".tr,
                     hasSubtitle: false,
                     voidCallback: () => Get.to(DeleteAccountPage1()),
                   ),

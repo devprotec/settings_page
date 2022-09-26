@@ -1,11 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:settings_page/presentation/delete_account_page1.dart';
-import 'package:settings_page/presentation/main_settings_page.dart';
-import 'package:settings_page/util/constants.dart';
+import 'package:settings_page/util/exports.dart';
 
-import 'localization/app_localization.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

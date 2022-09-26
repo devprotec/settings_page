@@ -18,7 +18,7 @@ class _DeleteAccountPage1State extends State<DeleteAccountPage1> {
           preferredSize: Size.fromHeight(50),
           child: AppbarWidget(
             hasActions: true,
-            appBarTitle: 'Delete Account',
+            appBarTitle: "lbl_delete_accou".tr,
           ),
         ),
         body: SingleChildScrollView(
@@ -30,7 +30,6 @@ class _DeleteAccountPage1State extends State<DeleteAccountPage1> {
                 SizedBox(
                   height: 40,
                 ),
-                //Image.asset("assets/images/delete_account_alert.png"),
                 CommonImageView(svgPath: ImageConstant.imgIllustration206X206,),
                 SizedBox(
                   height: 26,

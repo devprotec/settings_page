@@ -1,5 +1,7 @@
 import 'package:settings_page/util/exports.dart';
 
+import 'privacy_and_security_screen.dart';
+
 class MainSettingsPage extends StatefulWidget {
   MainSettingsPage({Key? key}) : super(key: key);
 
@@ -10,16 +12,16 @@ class MainSettingsPage extends StatefulWidget {
 class _MainSettingsPageState extends State<MainSettingsPage> {
   var settingsController = Get.put(SettingsController());
   final settingsName = [
-    "Notifications",
-    "Privacy & Security",
-    "Become Professional",
-    "Units & Timezone",
-    "Language",
-    "Orders",
-    "Integration",
-    "About",
-    "Support",
-    "Leave Feedback"
+    "lbl_notifications".tr,
+    "msg_privacy_secur".tr,
+    "msg_become_professi".tr,
+    "msg_units_timezon".tr,
+    "lbl_language".tr,
+    "lbl_orders".tr,
+    "lbl_integrations".tr,
+    "lbl_about".tr,
+    "lbl_support".tr,
+    "lbl_leave_feedback".tr
   ];
   final settingsPicturePath = [
     "assets/images/img_icon_32X32.png",
@@ -41,7 +43,7 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(50),
-          child: AppbarWidget(appBarTitle: "Settings", hasActions: true)),
+          child: AppbarWidget(appBarTitle: "lbl_settings".tr, hasActions: true)),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -125,13 +127,13 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
                     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
                 child: Column(children: [
                   SettingListTitle(
-                    imageFile: "assets/images/img_icon_5.png",
-                    settingsName: "Orders",
+                    imageFile: settingsPicturePath[5],
+                    settingsName: settingsName[5],
                     hasSubtitle: false,
                   ),
                   SettingListTitle(
-                    imageFile: "assets/images/img_icon_6.png",
-                    settingsName: "Integration",
+                    imageFile: settingsPicturePath[6],
+                    settingsName: settingsName[6],
                     hasSubtitle: false,
                   ),
                 ])),
@@ -143,25 +145,25 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
                     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
                 child: Column(children: [
                   SettingListTitle(
-                    imageFile: "assets/images/img_icon_7.png",
-                    settingsName: "About",
+                    imageFile: settingsPicturePath[7],
+                    settingsName: settingsName[7],
                     hasSubtitle: false,
                   ),
                   SettingListTitle(
-                    imageFile: "assets/images/img_icon_8.png",
-                    settingsName: "Support",
+                    imageFile: settingsPicturePath[8],
+                    settingsName: settingsName[8],
                     hasSubtitle: false,
                   ),
                   SettingListTitle(
-                    imageFile: "assets/images/img_icon_9.png",
-                    settingsName: "Leave Feedback",
+                    imageFile: settingsPicturePath[9],
+                    settingsName:settingsName[9],
                     hasSubtitle: false,
                   ),
                 ])),
             Constants.spaceMediumColumn,
             Center(
               child: Text(
-                "LOG OUT",
+                "lbl_log_out".tr,
                 style: Constants.fainted_logout,
               ),
             ),

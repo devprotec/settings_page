@@ -36,6 +36,15 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle txtPoppinsMedium12Green600 = TextStyle(
+    color: Constants.green600,
+    fontSize: getFontSize(
+      12,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle txtPoppinsSemiBold24 = TextStyle(
     color: Constants.bluegray900,
     fontSize: getFontSize(
@@ -230,4 +239,32 @@ class AppStyle {
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
       color: Constants.fromHex('#6E768D'));
+
+
+  static poppinsTextstyle(double fontSize, FontWeight fontWeight, Color textColor){
+    return TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: textColor
+    );
+  }
+
+  static sfProTextTextstyle(double fontSize, FontWeight fontWeight, Color textColor){
+    return TextStyle(
+      fontFamily: 'SF Pro Text',
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: textColor
+    );
+  }
+
+  static sfProDisplayextstyle(double fontSize, FontWeight fontWeight, Color textColor){
+    return TextStyle(
+      fontFamily: 'SF Pro Display',
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: textColor
+    );
+  }
 }

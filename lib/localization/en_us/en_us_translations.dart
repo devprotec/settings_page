@@ -92,4 +92,5 @@ final Map<String, String> enUs = {
   'enter_a_valid_phone': "Enter a valid phone number",
   'enter_a_valid_imei' : "Enter a valid IMEI number",
   'enter_a_valid_voter' : "Enter a valid voter's ID number"
+  
 };

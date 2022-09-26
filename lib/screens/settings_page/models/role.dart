@@ -1,4 +1,4 @@
-import '../util/enum.dart';
+import '../../../util/enum.dart';
 
 class Role {
   final String text;

@@ -1,6 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-
 class DeleteAccountPage2 extends StatefulWidget {
   @override
   State<DeleteAccountPage2> createState() => _DeleteAccountPage2State();
@@ -20,7 +19,7 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
           preferredSize: Size.fromHeight(50),
           child: AppbarWidget(
             hasActions: true,
-            appBarTitle: "lbl_delete_accou".tr
+            appBarTitle: "lbl_delete_accou".tr,
           ),
         ),
         body: SingleChildScrollView(
@@ -108,7 +107,6 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                           obscure: false,
                           notifier: nextAppToUseField,
                           inputType: TextInputType.text,
-
                           onChange: (val) {
                             nextAppToUseField.value = val!;
                           },

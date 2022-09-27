@@ -124,13 +124,12 @@ class Constants {
       color: fromHex('#6E768D'));
 
   static Widget arrowBacks() {
-    return IconButton(
-      onPressed: () {
-        Get.back();
-      },
-      icon: Icon(Icons.arrow_back),
-      iconSize: 30,
-      color: Constants.fromHex('#6E768D'),
+    return GestureDetector(
+      onTap: () => Get.back(),
+      child: Icon(
+        Icons.arrow_back,
+        color: Constants.fromHex('#6E768D'),
+      ),
     );
   }
 

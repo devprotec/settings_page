@@ -1,8 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-
-
-
 class SelectRolePage extends StatelessWidget {
   List<Role> newRole = [
     Role("msg_certified_sport".tr, Status.Active),
@@ -22,16 +19,6 @@ class SelectRolePage extends StatelessWidget {
     "assets/images/img_vector_12X14.png",
     "assets/images/img_vector_14X10.png",
     "assets/images/img_vector_13X12.png",
-  ];
-
-  final settingsName = [
-    "msg_certified_sport".tr,
-    "msg_non_certified_s".tr,
-    "lbl_reseller".tr,
-    "lbl_b2b_partner".tr,
-    "msg_corporate_partn".tr,
-    "msg_wellness_profes".tr,
-    "msg_knowledge_profe".tr,
   ];
 
   @override
@@ -61,9 +48,8 @@ class SelectRolePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return SettingListTitleCompact(
                     imageFile: settingsPicturePath[index],
-                    settingsName: settingsName[index],
-                    voidCallback: () {
-                    },
+                    settingsName: newRole[index].text,
+                    voidCallback: () {},
                     status: newRole[index].status,
                   );
                 }),
@@ -73,60 +59,3 @@ class SelectRolePage extends StatelessWidget {
     ));
   }
 }
-/* 
-Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SettingListTitleCompact(
-                    imageFile: settingsPicturePath[0],
-                    settingsName: settingsName[0],
-                    voidCallback: () {
-                      // Get.to(page);
-                    },
-                    status: newRole[0].status),
-                SettingListTitleCompact(
-                    imageFile: settingsPicturePath[1],
-                    settingsName: newRole[1].text,
-                    voidCallback: () {
-                      // Get.to(page);
-                    },
-                    status: newRole[1].status),
-                SettingListTitleCompact(
-                    imageFile: settingsPicturePath[2],
-                    settingsName: newRole[2].text,
-                    voidCallback: () {
-                      // Get.to(page);
-                    },
-                    status: newRole[2].status),
-                SettingListTitleCompact(
-                    imageFile: settingsPicturePath[3],
-                    settingsName: newRole[3].text,
-                    voidCallback: () {
-                      // Get.to(page);
-                    },
-                    status: newRole[3].status),
-                SettingListTitleCompact(
-                    imageFile: settingsPicturePath[4],
-                    settingsName: newRole[4].text,
-                    voidCallback: () {
-                      // Get.to(page);
-                    },
-                    status: newRole[4].status),
-                SettingListTitleCompact(
-                    imageFile: settingsPicturePath[5],
-                    settingsName: newRole[5].text,
-                    voidCallback: () {
-                      // Get.to(page);
-                    },
-                    status: newRole[5].status),
-                SettingListTitleCompact(
-                  imageFile: settingsPicturePath[6],
-                  settingsName: newRole[6].text,
-                  voidCallback: () {
-                    // Get.to(page);
-                  },
-                  status: newRole[6].status,
-                ),
-              ],
-            ),
- */

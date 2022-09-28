@@ -14,19 +14,19 @@ class AppbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.only(top: 10.0),
       child: Stack(
         children: [
           Container(
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5.0),
-                child: Text(
-                  appBarTitle,
-                  style: Constants.titleTextStyle,
-                  textAlign: TextAlign.center,
-                ),
+            width: width,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: Text(
+                appBarTitle,
+                style: Constants.titleTextStyle,
+                textAlign: TextAlign.center,
               ),
             ),
           ),

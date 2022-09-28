@@ -1,3 +1,4 @@
+import 'package:settings_page/screens/events/empty_create_event_page.dart';
 import 'package:settings_page/util/exports.dart';
 
 class SelectRolePage extends StatelessWidget {
@@ -46,11 +47,16 @@ class SelectRolePage extends StatelessWidget {
                   parent: AlwaysScrollableScrollPhysics(),
                 ),
                 itemBuilder: (context, index) {
-                  return SettingListTitleCompact(
-                    imageFile: settingsPicturePath[index],
-                    settingsName: newRole[index].text,
-                    voidCallback: () {},
-                    status: newRole[index].status,
+                  return GestureDetector(
+                    onTap: () {
+                      Get.to(EmptyCreateEventPage());
+                    },
+                    child: SettingListTitleCompact(
+                      imageFile: settingsPicturePath[index],
+                      settingsName: newRole[index].text,
+                      voidCallback: () {},
+                      status: newRole[index].status,
+                    ),
                   );
                 }),
           ),

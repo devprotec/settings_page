@@ -59,6 +59,7 @@ class Constants {
   static Color activeIconColor = fromHex("#0199E9");
   static Color inactiveIconColor = fromHex("#6E768D");
   static Color pendingCircleColor = fromHex("#FFF2E7");
+  static Color horizontalLineColor = fromHex("#E6E8F3");
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,
@@ -131,6 +132,14 @@ class Constants {
         color: Constants.fromHex('#6E768D'),
       ),
     );
+  }
+
+  static Widget trailingWidget(String iconLocation, VoidCallback voidCallback) {
+    return GestureDetector(
+        onTap: voidCallback,
+        child: CommonImageView(
+          svgPath: iconLocation,
+        ));
   }
 
   static Color fromHex(String hexString) {

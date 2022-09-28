@@ -45,6 +45,15 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle txtPoppinsSemiBoldGray24 = TextStyle(
+    color: Constants.forwardIconColor,
+    fontSize: getFontSize(
+      24,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle txtRobotoRegular20Black900 = TextStyle(
     color: Constants.black900,
     fontSize: getFontSize(

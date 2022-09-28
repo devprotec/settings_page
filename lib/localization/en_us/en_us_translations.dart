@@ -39,7 +39,7 @@ final Map<String, String> enUs = {
       "It was not effective, I didn’t see the results\nI wanted",
   "lbl_customer": "Customer",
   "msg_profile_have": "Profile - Have 2 or More Roles",
-  "lbl_leave_feedback": "LEAVE FEEDBACK",
+  "lbl_leave_feedback_caps": "LEAVE FEEDBACK",
   "lbl_account_deleted": "Account Deleted",
   "msg_passwords_chang": "Password Changed Successfully",
   "msg_profile_setti": "Profile - Settings",
@@ -90,10 +90,15 @@ final Map<String, String> enUs = {
   'this_field_cannot': "This field cannot be empty",
   'enter_a_valid_email': "Enter a valid email address",
   'enter_a_valid_phone': "Enter a valid phone number",
+<<<<<<< HEAD
   'enter_a_valid_imei' : "Enter a valid IMEI number",
   'enter_a_valid_voter' : "Enter a valid voter's ID number",
   'msg_network_err': 'Network Error',
   'msg_something_went_wrong': 'Something Went Wrong!',
+=======
+  'enter_a_valid_imei': "Enter a valid IMEI number",
+  'enter_a_valid_voter': "Enter a valid voter's ID number",
+>>>>>>> 52ba3a07c0e4357c4b385f39b0b24d313d29d9ce
   "msg_give_advance_ho":
       "Give advance how the user can prepare themself for the activity",
   "lbl_thu": "Thu",
@@ -112,7 +117,10 @@ final Map<String, String> enUs = {
   "msg_ce_aa_media4": "CE: AA: Media: Added",
   "lbl_tereza_c": "Tereza C.",
   "lbl_tue_21_nov": "Tue, 21 Nov",
+<<<<<<< HEAD
   "lbl_app_navigation": "App Navigation",
+=======
+>>>>>>> 52ba3a07c0e4357c4b385f39b0b24d313d29d9ce
   "msg_edit_e_activit": "Edit E: Activity Preview",
   "lbl_copy_address": "Copy Address",
   "msg_assessment_em": "Assessment:: Empty One",
@@ -312,7 +320,6 @@ final Map<String, String> enUs = {
   "lbl_aerobic_dancing": "Aerobic Dancing",
   "lbl_event_one": "Event one",
   "lbl_yes_delete": "Yes, Delete",
-  "msg_wellness_profes": "Wellness Professional",
   "lbl_422": "42",
   "msg_this_section_is": "This section is required to fill",
   "lbl_url": "URL",
@@ -358,7 +365,6 @@ final Map<String, String> enUs = {
   "msg_09_00_am_11_0": "09:00 AM – 11:00 AM",
   "lbl_add_organiser": "add organiser",
   "lbl_2022": "2022",
-  "lbl_pending": "Pending",
   "msg_add_professiona2": "Add professional",
   "msg_fit_healthy": "Fit & healthy - what’s the secret?",
   "msg_cp_preview_act13": "CP: Preview Activity User : Online : Scroll",
@@ -366,7 +372,6 @@ final Map<String, String> enUs = {
   "lbl_in_sport_place": "In Sport Place",
   "lbl_wellness": "Wellness",
   "lbl_nutrition": "Nutrition",
-  "lbl_active": "Active",
   "msg_8_cups_water_pe": "8 cups water\nper day",
   "lbl_healthy_foods": "Healthy Foods",
   "lbl_duplicate": "Duplicate",
@@ -406,7 +411,7 @@ final Map<String, String> enUs = {
   "msg_ce_preview_act2": "CE: Preview Activity: Online One",
   "msg_ce_preview_act3": "CE: Preview Activity: Hybrid Two",
   "lbl_healthy_eat": "Healthy Eat",
-  "lbl": r"$",
+  "lbl_r": r"$",
   "msg_ce_preview_act8": "CE: Preview Activity: Hybrid",
   "lbl_online": "Online",
   "msg_ce_preview_act9": "CE: Preview Activity: Location: Scroll",
@@ -537,8 +542,6 @@ final Map<String, String> enUs = {
   "msg_participants_o": "Participants (Optional)",
   "lbl_overall_goal": "Overall Goal",
   "lbl_add_activity": "Add Activity",
-  "msg_check_your_app":
-      "Check your app's UI from the below demo screens of your app.",
   "lbl_ce": "ce",
   "lbl_10_99": "10.99",
   "lbl_share_link": "Share link",

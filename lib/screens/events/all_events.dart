@@ -8,23 +8,125 @@ class AllEvents extends StatefulWidget {
 }
 
 class _AllEventsState extends State<AllEvents> {
+  late final eventsList = <EventDataModel>[event1, event2, event3];
+  late var activeEventsList = <EventDataModel>[];
+  late var draftEventsList = <EventDataModel>[];
+  late var expiredEventsList = <EventDataModel>[];
+  int currentTab = 0;
+  final List<Tab> tabs = <Tab>[
+    const Tab(text: 'All'),
+    const Tab(text: 'Active'),
+    const Tab(text: 'Draft'),
+    const Tab(text: 'Expired'),
+  ];
+
+  @override
+  void initState() {
+    eventsList.forEach((element) {
+      element.eventStatus == "Active"
+          ? activeEventsList.add(element)
+          : element.eventStatus == "Draft"
+              ? draftEventsList.add(element)
+              : element.eventStatus == "Expired"
+                  ? expiredEventsList.add(element)
+                  : null;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    double _height = Get.height;
+    double _width = Get.width;
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Container(
-              decoration: AppDecoration.fillGray100
-                  .copyWith(borderRadius: BorderRadiusStyle.roundedBorder8),
-              child: Row(
-                children: [
-                  Text("lbl_all".tr),
-
-                ],
+        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ButtonIcon(
+              icon: Icons.add_rounded, onPressed: () {}, text: 'create program'),
+        ),
+        body: Container(
+          height: _height,
+          width: _width,
+          color: Colors.white,
+          child: Column(
+            children: [
+              Constants.spaceLargeColumn,
+              Constants.spaceSmallColumn,
+              Constants.spaceSmallColumn,
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                child: CustomTabs(
+                  tabs: tabs,
+                  switchTab: (index) {
+                    setState(() {
+                      currentTab = index;
+                    });
+                  },
+                ),
               ),
-            )
-          ],
+              Expanded(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, left: 16, right: 16, bottom: 100),
+                  child: currentTab == 0
+                      ? ListView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          itemCount: eventsList.length,
+                          itemBuilder: ((context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 5),
+                              child: EventCard(eventDataModel: eventsList[index]));
+                          }),
+                        )
+                      : currentTab == 1
+                          ? ListView.builder(
+                              physics: const BouncingScrollPhysics(),
+                              padding: EdgeInsets.zero,
+                              itemCount: activeEventsList.length,
+                              itemBuilder: ((context, index) {
+                                return Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: EventCard(eventDataModel: activeEventsList[index])
+                                );
+                              }),
+                            )
+                          : currentTab == 2
+                              ? ListView.builder(
+                                  physics: const BouncingScrollPhysics(),
+                                  padding: EdgeInsets.zero,
+                                  itemCount: draftEventsList.length,
+                                  itemBuilder: ((context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: EventCard(eventDataModel: draftEventsList[index])
+                                    );
+                                  }),
+                                )
+                          : currentTab == 3
+                              ? ListView.builder(
+                                  physics: const BouncingScrollPhysics(),
+                                  padding: EdgeInsets.zero,
+                                  itemCount: expiredEventsList.length,
+                                  itemBuilder: ((context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: EventCard(eventDataModel: expiredEventsList[index])
+                                    );
+                                  }),
+                                )
+                              : const SizedBox(),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

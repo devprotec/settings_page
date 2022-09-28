@@ -60,6 +60,7 @@ class Constants {
   static Color activeIconColor = fromHex("#0199E9");
   static Color inactiveIconColor = fromHex("#6E768D");
   static Color pendingCircleColor = fromHex("#FFF2E7");
+  static final size = Get.size;
 
   static Color green7007f = fromHex('#7f219653');
 

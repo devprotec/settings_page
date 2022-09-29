@@ -60,6 +60,7 @@ class Constants {
   static Color inactiveIconColor = fromHex("#6E768D");
   static Color pendingCircleColor = fromHex("#FFF2E7");
   static Color horizontalLineColor = fromHex("#E6E8F3");
+  static Color bottomSheetTextColor = fromHex("#007AFF");
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,

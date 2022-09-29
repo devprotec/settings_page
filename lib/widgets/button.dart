@@ -45,8 +45,8 @@ class Button extends StatelessWidget {
               child: Text(
                 text.toUpperCase(),
                 style: TextStyle(
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.8,
+                  fontWeight: FontWeight.w600,
                   color: textColor ?? Colors.white,
                   fontSize: 14,
                 ),

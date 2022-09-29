@@ -26,42 +26,43 @@ class SelectRolePage extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
-        child: Scaffold(
-      backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppbarWidget(
-          hasActions: true,
-          appBarTitle: "msg_select_your_rol".tr,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: AppbarWidget(
+            hasActions: true,
+            appBarTitle: "msg_select_your_rol".tr,
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Container(
-            height: height,
-            child: ListView.builder(
-                itemCount: newRole.length,
-                shrinkWrap: true,
-                physics: BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics(),
-                ),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Get.to(EmptyCreateEventPage());
-                    },
-                    child: SettingListTitleCompact(
-                      imageFile: settingsPicturePath[index],
-                      settingsName: newRole[index].text,
-                      voidCallback: () {},
-                      status: newRole[index].status,
-                    ),
-                  );
-                }),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Container(
+              height: height,
+              child: ListView.builder(
+                  itemCount: newRole.length,
+                  shrinkWrap: true,
+                  physics: BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics(),
+                  ),
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(EmptyCreateEventPage());
+                      },
+                      child: SettingListTitleCompact(
+                        imageFile: settingsPicturePath[index],
+                        settingsName: newRole[index].text,
+                        voidCallback: () {},
+                        status: newRole[index].status,
+                      ),
+                    );
+                  }),
+            ),
           ),
         ),
       ),
-    ));
+    );
   }
 }

@@ -160,6 +160,15 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle errorTxtPoppinsRegular14Red500 = TextStyle(
+    color: Constants.red500,
+    fontSize: getFontSize(
+      12,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
   static TextStyle txtPoppinsSemiBold18 = TextStyle(
     color: Constants.gray900,
     fontSize: getFontSize(
@@ -222,6 +231,13 @@ class AppStyle {
     color: Constants.fromHex('#34405E'),
   );
 
+  static TextStyle activityTextStyle = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: Constants.fromHex('#34405E'),
+  );
+
   static TextStyle feedbackTextStyle = TextStyle(
       fontSize: 14,
       fontFamily: 'Poppins',
@@ -238,5 +254,11 @@ class AppStyle {
       fontSize: 16,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
+      color: Constants.fromHex('#6E768D'));
+
+  static TextStyle crumbTextColor = TextStyle(
+      fontSize: 12,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
       color: Constants.fromHex('#6E768D'));
 }

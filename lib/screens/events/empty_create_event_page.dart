@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:get/get_connect/sockets/src/socket_notifier.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:settings_page/screens/events/mhc_gallery.dart';
@@ -165,7 +166,10 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                                 ),
                               ],
                               cancelButton: CupertinoActionSheetAction(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.close(1);
+                                },
+                                isDestructiveAction: true,
                                 child: Text(
                                   'Cancel',
                                   style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:settings_page/util/exports.dart';
 
+
 class ChechboxWithTextWidget extends StatefulWidget {
   late bool? initialValue;
   final String checkBoxMessage;

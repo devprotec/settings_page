@@ -32,3 +32,6 @@ export '../util/enum.dart';
 export '../models/role.dart';
 export '../localization/app_localization.dart';
 export '../screens/settings_page/main_settings_page.dart';
+export '../../widgets/tabs.dart';
+export 'package:settings_page/widgets/event_card.dart';
+export '../../models/events_data_model.dart';

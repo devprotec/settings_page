@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:settings_page/screens/events/all_events.dart';
 import 'package:settings_page/util/exports.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       locale: Get.deviceLocale, //for setting localization strings
       fallbackLocale: Locale('en', 'US'),
       title: 'settings_page',
-      home: MainSettingsPage(),
+      home: AllEvents(),
     );
   }
 }

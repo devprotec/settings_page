@@ -90,8 +90,15 @@ final Map<String, String> enUs = {
   'this_field_cannot': "This field cannot be empty",
   'enter_a_valid_email': "Enter a valid email address",
   'enter_a_valid_phone': "Enter a valid phone number",
+<<<<<<< HEAD
+  'enter_a_valid_imei' : "Enter a valid IMEI number",
+  'enter_a_valid_voter' : "Enter a valid voter's ID number",
+  'msg_network_err': 'Network Error',
+  'msg_something_went_wrong': 'Something Went Wrong!',
+=======
   'enter_a_valid_imei': "Enter a valid IMEI number",
   'enter_a_valid_voter': "Enter a valid voter's ID number",
+>>>>>>> 52ba3a07c0e4357c4b385f39b0b24d313d29d9ce
   "msg_give_advance_ho":
       "Give advance how the user can prepare themself for the activity",
   "lbl_thu": "Thu",
@@ -110,6 +117,10 @@ final Map<String, String> enUs = {
   "msg_ce_aa_media4": "CE: AA: Media: Added",
   "lbl_tereza_c": "Tereza C.",
   "lbl_tue_21_nov": "Tue, 21 Nov",
+<<<<<<< HEAD
+  "lbl_app_navigation": "App Navigation",
+=======
+>>>>>>> 52ba3a07c0e4357c4b385f39b0b24d313d29d9ce
   "msg_edit_e_activit": "Edit E: Activity Preview",
   "lbl_copy_address": "Copy Address",
   "msg_assessment_em": "Assessment:: Empty One",

@@ -1,10 +1,11 @@
 import 'exports.dart';
 
 class Constants {
+  static Color indigo50 = fromHex('#e6e8f3');
   static Color gray7000f = fromHex('#0f5e5f6d');
-
+  static Color bluegray200 = fromHex('#aeb2bf');
   static Color bluegray50 = fromHex('#edeef1');
-
+  static Color purple300 = fromHex('#b75fdb');
   static Color gray901 = fromHex('#0b0e23');
 
   static Color gray900 = fromHex('#0e1339');
@@ -59,8 +60,6 @@ class Constants {
   static Color activeIconColor = fromHex("#0199E9");
   static Color inactiveIconColor = fromHex("#6E768D");
   static Color pendingCircleColor = fromHex("#FFF2E7");
-  static Color horizontalLineColor = fromHex("#E6E8F3");
-  static Color bottomSheetTextColor = fromHex("#007AFF");
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,

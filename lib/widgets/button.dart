@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../util/exports.dart';
 
 class Button extends StatelessWidget {
   final String text;
@@ -53,5 +53,113 @@ class Button extends StatelessWidget {
             ),
           ),
         ));
+  }
+}
+
+
+class ButtonIcon extends StatelessWidget {
+  final String text;
+  final IconData icon;
+  final VoidCallback onPressed;
+  const ButtonIcon(
+      {Key? key,
+      required this.text,
+      required this.onPressed,
+      required this.icon})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        child: PhysicalModel(
+          color: const Color(0xFF0095E9),
+          shadowColor: const Color(0xFF0095E9),
+          elevation: 5,
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            //  margin: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0XFFE6E8F3),
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                  offset: Offset(0, 0), // changes position of shadow
+                ),
+                // BoxShadow(
+                //   color: Color(0XFFE6E8F3),
+                //   spreadRadius: 0.01,
+                //   blurRadius: 1,
+                //   offset: Offset(-0, -0), // changes position of shadow
+                // ),
+              ],
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xFF00ACE9),
+                  Color(0xFF0095E9),
+                ],
+                begin: FractionalOffset(0.0, 0.0),
+                end: FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(icon, color: Colors.white),
+                const SizedBox(width: 10),
+                Text(
+                  text.toUpperCase(),
+                  style: const TextStyle(
+                    letterSpacing: 1.8,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class CustomButton extends StatelessWidget {
+  
+  final String text;
+  final Color textColor;
+  final Color backgroundColor;
+  const CustomButton(
+      {
+      required this.text,
+      required this.textColor,
+      required this.backgroundColor});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      height: 35,
+      width: 70,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: backgroundColor,
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: AppStyle.poppinsTextstyle(15, FontWeight.w500, textColor),
+        ),
+      ),
+    );
   }
 }

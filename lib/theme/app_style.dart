@@ -36,6 +36,15 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle txtPoppinsMedium12Green600 = TextStyle(
+    color: Constants.green600,
+    fontSize: getFontSize(
+      12,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle txtPoppinsSemiBold24 = TextStyle(
     color: Constants.bluegray900,
     fontSize: getFontSize(
@@ -255,10 +264,12 @@ class AppStyle {
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
       color: Constants.fromHex('#6E768D'));
-
+      
+      
   static TextStyle crumbTextColor = TextStyle(
       fontSize: 12,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w500,
       color: Constants.fromHex('#6E768D'));
 }
+

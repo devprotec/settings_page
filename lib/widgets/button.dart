@@ -25,8 +25,7 @@ class Button extends StatelessWidget {
           elevation: buttonElevation ?? 5,
           borderRadius: BorderRadius.circular(8),
           child: Container(
-            //  margin: const EdgeInsets.symmetric(vertical: 10),
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            height: 48.0,
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(

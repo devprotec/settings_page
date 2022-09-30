@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:settings_page/util/exports.dart';
 
+import '../../widgets/row_bottomed_buttons.dart';
+
 class MHCGallery extends StatelessWidget {
   List imageFileLocations = [
     "assets/images/fitness1.jpeg",
@@ -56,6 +58,7 @@ class MHCGallery extends StatelessWidget {
           ),
         ),
         body: Stack(
+          clipBehavior: Clip.none,
           children: [
             SingleChildScrollView(
               child: Padding(
@@ -91,36 +94,15 @@ class MHCGallery extends StatelessWidget {
               top: height * 0.768,
               left: 0,
               right: 0,
-              bottom: height * 0.0467,
+              bottom: height * 0.0567,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Container(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Button(
-                          text: "lbl_back".tr..toUpperCase(),
-                          onPressed: () {},
-                          textColor: Constants.lightBlue700,
-                          buttonColor: Constants.lightBlue50,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Expanded(
-                        flex: 6,
-                        child: Button(
-                          text: "lbl_set_cover".tr.toUpperCase(),
-                          onPressed: () {},
-                          textColor: Colors.white,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: RowBottomedButtons(
+                    leftButtonFunction: () => Get.back(),
+                    rightButtonFunction: () {},
+                    leftButtonTitle: "lbl_back2".tr,
+                    rightButtonTitle: "lbl_set_cover".tr,
+                  )),
             ),
           ],
         ),

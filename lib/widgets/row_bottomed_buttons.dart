@@ -25,9 +25,7 @@ class RowBottomedButtons extends StatelessWidget {
             flex: 3,
             child: Button(
               text: leftButtonTitle.toUpperCase(),
-              onPressed: () {
-                leftButtonFunction;
-              },
+              onPressed: leftButtonFunction,
               textColor: Constants.lightBlue700,
               buttonColor: Constants.lightBlue50,
             ),
@@ -39,9 +37,7 @@ class RowBottomedButtons extends StatelessWidget {
             flex: 6,
             child: Button(
               text: rightButtonTitle.toUpperCase(),
-              onPressed: () {
-                rightButtonFunction;
-              },
+              onPressed: rightButtonFunction,
               textColor: Colors.white,
             ),
           )

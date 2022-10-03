@@ -25,7 +25,7 @@ class Constants {
   static Color green600 = fromHex('#24ae5f');
 
   static Color gray100 = fromHex('#f4f5fa');
-  static Color gray150= fromHex('#e1e8ed');
+  static Color gray150 = fromHex('#e1e8ed');
 
   static Color red50 = fromHex('#fff1f0');
 
@@ -69,8 +69,6 @@ class Constants {
   static Color bluegray90066 = fromHex('#66151b46');
   static Color red51 = fromHex('#fff2f0');
 
-
-
   static Widget spaceMediumColumn = SizedBox(
     height: 20,
   );
@@ -92,7 +90,9 @@ class Constants {
   static Widget spaceLargeColumn = SizedBox(
     height: 30,
   );
-  static Widget spaceSmallRow = SizedBox(width: 10,);
+  static Widget spaceSmallRow = SizedBox(
+    width: 10,
+  );
   static Widget spaceSemiBigColumn = SizedBox(
     height: 30,
   );
@@ -107,6 +107,12 @@ class Constants {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
     color: Colors.black,
+  );
+  static TextStyle titleTextStyleWhite = TextStyle(
+    fontSize: 18,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
   );
   static TextStyle subtitleTextStyle = TextStyle(
     fontSize: 14,
@@ -134,21 +140,20 @@ class Constants {
       fontWeight: FontWeight.w600,
       color: fromHex('#6E768D'));
 
-  static Widget arrowBacks(Color color) {
+  static Widget arrowBacks({Color? color}) {
     return GestureDetector(
       onTap: () => Get.back(),
-      child: Icon(
-        Icons.arrow_back,
-        color: color  
-      ),
+      child: Icon(Icons.arrow_back, color: color),
     );
   }
 
-  static Widget trailingWidget(String iconLocation, VoidCallback voidCallback) {
+  static Widget trailingWidget(String iconLocation, VoidCallback voidCallback,
+      {Color? color}) {
     return GestureDetector(
         onTap: voidCallback,
         child: CommonImageView(
           svgPath: iconLocation,
+          color: color,
         ));
   }
 

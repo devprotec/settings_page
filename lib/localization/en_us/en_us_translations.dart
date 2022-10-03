@@ -750,9 +750,13 @@ final Map<String, String> enUs = {
   "msg_add_your_locati": "Add Your Location",
   "lbl_address": "Address",
   "lbl_event_duration": "Event Duration",
+  "lbl_my_sched": "My Schedule",
+  "lbl_there_is_no_sched": "There is No Scheduled Classes",
+  "lbl_setup_sched": "Set Up Schedule",
   "msg_arrival_of_part": "Arrival of Participants",
-  "msg_search_for_locati":"Search for Location",
-  "msg_share_your_locati":"Share Your Location",
+  "msg_search_for_locati": "Search for Location",
+  "msg_share_your_locati": "Share Your Location",
+  //"msg_search_for_locati":"Search for Location",
+  //"msg_share_your_locati":"Share Your Location",
   "msg_add_schedule":"add schedule"
-  
 };

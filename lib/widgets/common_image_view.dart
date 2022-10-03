@@ -13,6 +13,7 @@ class CommonImageView extends StatelessWidget {
   double? width;
   final BoxFit fit;
   final String placeHolder;
+  Color? color;
 
   ///a [CommonNetworkImageView] it can be used for showing any network images
   /// it will shows the placeholder image if image is not found on network
@@ -24,6 +25,7 @@ class CommonImageView extends StatelessWidget {
     this.height,
     this.width,
     this.fit = BoxFit.fill,
+    this.color,
     this.placeHolder = 'assets/images/image_not_found.png',
   });
 
@@ -42,6 +44,7 @@ class CommonImageView extends StatelessWidget {
           height: height,
           width: width,
           fit: fit,
+          color: color,
         ),
       );
     } else if (file != null && file!.path.isNotEmpty) {
@@ -78,6 +81,7 @@ class CommonImageView extends StatelessWidget {
         height: height,
         width: width,
         fit: fit,
+        color: color,
       );
     }
     return SizedBox();

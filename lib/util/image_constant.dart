@@ -18,6 +18,7 @@ class ImageConstant {
   static String imgClose = 'assets/images/img_close.svg';
 
   static String imgIcon8 = 'assets/images/img_icon_8.png';
+  static String imgCalender = 'assets/images/img_bag.svg';
 
   static String imgIllustration147X141 =
       'assets/images/img_illustration_147X141.svg';

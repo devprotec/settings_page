@@ -74,7 +74,7 @@ class AppStyle {
   static TextStyle txtPoppinsMedium14 = TextStyle(
     color: Constants.bluegray800,
     fontSize: getFontSize(
-      14,
+      16,
     ),
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w500,

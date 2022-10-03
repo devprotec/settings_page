@@ -34,8 +34,7 @@ dependencies:
   timeline_tile: ^2.0.0
   image_picker: ^0.8.5+3
   permission_handler: ^7.1.0
-
-
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies: 
   flutter_test: 

@@ -16,7 +16,12 @@ class InputForms extends StatefulWidget {
   final Function(String)? validation;
   final Function(String?)? onChange;
   final double? contentPadding;
-  
+  final double? horizontalContentPadding;
+  final Color? color;
+  final bool? filled;
+  final Widget? prefixIcon;
+  final int? maxLines;
+
 
   // ignore: use_key_in_widget_constructors
   InputForms(
@@ -34,7 +39,12 @@ class InputForms extends StatefulWidget {
       this.visiblePasswordIcon,
       this.hiddenPasswordIcon,
       this.descriptionTextStyle,
-      this.contentPadding});
+      this.contentPadding,
+      this.horizontalContentPadding,
+      this.color,
+      this.filled,
+      this.prefixIcon,
+      this.maxLines});
   @override
   _InputFormsState createState() => _InputFormsState();
 }
@@ -43,6 +53,7 @@ class _InputFormsState extends State<InputForms> {
   final FocusNode _focus = FocusNode();
   final _inFocus = ValueNotifier<bool>(false);
   TextEditingController controller = TextEditingController();
+  
   bool seePassword = true;
   @override
   void initState() {
@@ -95,6 +106,7 @@ class _InputFormsState extends State<InputForms> {
                 color: const Color(0xffF4F5FB),
               ),
               child: TextField(
+                maxLines: widget.maxLines ?? 1,
                 autocorrect: false,
                 keyboardType: widget.inputType,
                 focusNode: _focus,
@@ -107,10 +119,14 @@ class _InputFormsState extends State<InputForms> {
                   letterSpacing: 1.8,
                 ),
                 decoration: InputDecoration(
+                  filled: widget.filled ?? false,
+                  //prefix: widget.prefixIcon ?? null,
+                  fillColor:widget.color,
                   suffixStyle: TextStyle(fontSize: 12),
                   isDense: true,
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: widget.contentPadding ?? 16, horizontal: 10),
+                      vertical: widget.contentPadding ?? 16,
+                      horizontal: widget.horizontalContentPadding ?? 16),
                   errorStyle: const TextStyle(
                     fontSize: 11,
                     color: Colors.red,
@@ -174,8 +190,9 @@ class _InputFormsState extends State<InputForms> {
                                 ? Constants.mainColor
                                 : Colors.black54,
                           ),
+
                         )
-                      : null,
+                      : widget.prefixIcon != null ? widget.prefixIcon: null,
                   suffixIcon: widget.obscure
                       ? IconButton(
                           iconSize: widget.suffixIconSize ?? 18.0,

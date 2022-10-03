@@ -90,15 +90,8 @@ final Map<String, String> enUs = {
   'this_field_cannot': "This field cannot be empty",
   'enter_a_valid_email': "Enter a valid email address",
   'enter_a_valid_phone': "Enter a valid phone number",
-<<<<<<< HEAD
-  'enter_a_valid_imei' : "Enter a valid IMEI number",
-  'enter_a_valid_voter' : "Enter a valid voter's ID number",
-  'msg_network_err': 'Network Error',
-  'msg_something_went_wrong': 'Something Went Wrong!',
-=======
   'enter_a_valid_imei': "Enter a valid IMEI number",
   'enter_a_valid_voter': "Enter a valid voter's ID number",
->>>>>>> 52ba3a07c0e4357c4b385f39b0b24d313d29d9ce
   "msg_give_advance_ho":
       "Give advance how the user can prepare themself for the activity",
   "lbl_thu": "Thu",
@@ -117,10 +110,6 @@ final Map<String, String> enUs = {
   "msg_ce_aa_media4": "CE: AA: Media: Added",
   "lbl_tereza_c": "Tereza C.",
   "lbl_tue_21_nov": "Tue, 21 Nov",
-<<<<<<< HEAD
-  "lbl_app_navigation": "App Navigation",
-=======
->>>>>>> 52ba3a07c0e4357c4b385f39b0b24d313d29d9ce
   "msg_edit_e_activit": "Edit E: Activity Preview",
   "lbl_copy_address": "Copy Address",
   "msg_assessment_em": "Assessment:: Empty One",
@@ -264,7 +253,7 @@ final Map<String, String> enUs = {
   "msg_search_and_filt": "Search and Filter",
   "msg_activities_sche": "Activities Schedule",
   "lbl_done": "Done",
-  "lbl_organiser": "Organiser",
+  "lbl_organiser": "Organisers",
   "msg_6391_elgin_st2": "6391 Elgin St. Celina, Delaware 102...",
   "lbl_23_nov_2021": "23 Nov, 2021",
   "msg_there_are_no_bo": "There are no bootcamps yet",
@@ -629,6 +618,9 @@ final Map<String, String> enUs = {
   "msg_cp_preview_act5": "CP: Preview Activity User : Location",
   "msg_cp_preview_act6": "CP: Preview Activity User : Online Two",
   "msg_individual_rate": "Individual Rate: Lowest first ",
+  "msg_individual_rate_h": "Individual Rate: Highest first ",
+  "msg_group_rate_l": "Group Rate: Lowest first ",
+  "msg_group_rate_h": "Group Rate: Highest first ",
   "msg_cp_preview_act3": "CP: Preview Activity Coach : Hybrid",
   "msg_cp_preview_act4": "CP: Preview Activity Coach : Hybrid One",
   "msg_cp_preview_act2": "CP: Preview Activity Coach : Online One",

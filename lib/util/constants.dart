@@ -25,6 +25,7 @@ class Constants {
   static Color green600 = fromHex('#24ae5f');
 
   static Color gray100 = fromHex('#f4f5fa');
+  static Color gray150= fromHex('#e1e8ed');
 
   static Color red50 = fromHex('#fff1f0');
 
@@ -80,9 +81,9 @@ class Constants {
     width: 20,
   );
   static Widget spaceLargeColumn = SizedBox(
-    width: 30,
+    height: 30,
   );
-
+  static Widget spaceSmallRow = SizedBox(width: 10,);
   static Widget spaceSemiBigColumn = SizedBox(
     height: 30,
   );
@@ -124,12 +125,12 @@ class Constants {
       fontWeight: FontWeight.w600,
       color: fromHex('#6E768D'));
 
-  static Widget arrowBacks() {
+  static Widget arrowBacks(Color color) {
     return GestureDetector(
       onTap: () => Get.back(),
       child: Icon(
         Icons.arrow_back,
-        color: Constants.fromHex('#6E768D'),
+        color: color  
       ),
     );
   }

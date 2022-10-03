@@ -45,6 +45,15 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle txtPoppinsSemiBoldBlueGray18 = TextStyle(
+    color: Constants.bluegray900,
+    fontSize: getFontSize(
+      24,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle txtPoppinsSemiBoldGray24 = TextStyle(
     color: Constants.forwardIconColor,
     fontSize: getFontSize(

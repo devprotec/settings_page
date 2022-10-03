@@ -6,6 +6,7 @@ import 'package:get/get_connect/sockets/src/socket_notifier.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:settings_page/screens/events/mhc_gallery.dart';
+import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/util/exports.dart';
 import 'package:settings_page/widgets/timeline_widget.dart';
 import 'package:widget_mask/widget_mask.dart';
@@ -23,7 +24,8 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
   late TextEditingController _editingController;
   bool showError = true;
   final ImagePicker _picker = ImagePicker();
-  File? imageFile;
+  dynamic imageFile;
+  Color? appBarItemsColor;
 
   checkPermission(var source) async {
     var galleryStatus = await Permission.photos.status;
@@ -66,9 +68,21 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
     });
   }
 
+  Widget imagePopulator(dynamic imageFile) {
+    if (imageFile.runtimeType == String) {
+      return CommonImageView(
+        imagePath: imageFile,
+      );
+    }
+    return CommonImageView(
+      file: imageFile,
+    );
+  }
+
   @override
   void initState() {
     _editingController = TextEditingController(text: initialText);
+
     super.initState();
   }
 
@@ -76,6 +90,7 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -88,18 +103,20 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                 childSaveLayer: true,
                 mask: FittedBox(
                   fit: BoxFit.fill,
-                  child: Container(),
+                  child: imagePopulator(imageFile),
                 ),
                 child: CommonImageView(
                   svgPath: "assets/images/img_background_appbar.svg",
                 ),
               ),
               AppbarWidget(
+                itemsColor: imageFile == null ? appBarItemsColor : Colors.white,
                 hasActions: true,
                 appBarTitle: "lbl_create_event".tr,
                 trailingWidget: Constants.trailingWidget(
                   "assets/images/img_menu.svg",
                   () {},
+                  color: imageFile == null ? appBarItemsColor : Colors.white,
                 ),
               ),
               Padding(
@@ -149,8 +166,9 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                                   isDefaultAction: true,
                                 ),
                                 CupertinoActionSheetAction(
-                                  onPressed: () {
-                                    Get.to(MHCGallery());
+                                  onPressed: () async {
+                                    imageFile = await Get.to(MHCGallery());
+                                    setState(() {});
                                   },
                                   child: Text(
                                     "msg_add_from_mhc_ga".tr,

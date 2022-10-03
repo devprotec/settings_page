@@ -99,6 +99,12 @@ class Constants {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
+  static TextStyle titleTextStyleWhite = TextStyle(
+    fontSize: 18,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
   static TextStyle subtitleTextStyle = TextStyle(
     fontSize: 14,
     fontFamily: 'Poppins',
@@ -125,21 +131,23 @@ class Constants {
       fontWeight: FontWeight.w600,
       color: fromHex('#6E768D'));
 
-  static Widget arrowBacks() {
+  static Widget arrowBacks({Color? color}) {
     return GestureDetector(
       onTap: () => Get.back(),
       child: Icon(
         Icons.arrow_back,
-        color: Constants.fromHex('#6E768D'),
+        color: color ?? Constants.fromHex('#6E768D'),
       ),
     );
   }
 
-  static Widget trailingWidget(String iconLocation, VoidCallback voidCallback) {
+  static Widget trailingWidget(String iconLocation, VoidCallback voidCallback,
+      {Color? color}) {
     return GestureDetector(
         onTap: voidCallback,
         child: CommonImageView(
           svgPath: iconLocation,
+          color: color,
         ));
   }
 

@@ -12,7 +12,9 @@ class AccountDeletedPage extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(50),
           child: AppbarWidget(
-              hasActions: false, appBarTitle: "lbl_account_deleted".tr),
+            hasActions: false,
+            appBarTitle: "lbl_account_deleted".tr,
+          ),
         ),
         body: Container(
           width: width,

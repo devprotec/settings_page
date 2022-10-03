@@ -746,5 +746,6 @@ final Map<String, String> enUs = {
   "msg_use_your_locati": "Use Your Location",
   "lbl_address": "Address",
   "lbl_event_duration": "Event Duration",
+  "lbl_my_sched": "My Schedule",
   "msg_arrival_of_part": "Arrival of Participants"
 };

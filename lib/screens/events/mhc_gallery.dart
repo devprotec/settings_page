@@ -3,7 +3,15 @@ import 'package:settings_page/util/exports.dart';
 
 import '../../widgets/row_bottomed_buttons.dart';
 
-class MHCGallery extends StatelessWidget {
+class MHCGallery extends StatefulWidget {
+  @override
+  State<MHCGallery> createState() => _MHCGalleryState();
+}
+
+class _MHCGalleryState extends State<MHCGallery> {
+  bool isSelected = false;
+  String selectedImage = "";
+
   List imageFileLocations = [
     "assets/images/fitness1.jpeg",
     "assets/images/fitness2.jpeg",
@@ -39,6 +47,14 @@ class MHCGallery extends StatelessWidget {
     "assets/images/health2.jpeg",
   ];
 
+  int? optionSelected = 1000000000;
+
+  void toggleOptionSelected(int index) {
+    setState(() {
+      optionSelected = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -69,22 +85,58 @@ class MHCGallery extends StatelessWidget {
                   itemCount: imageFileLocations.length,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 7,
-                      mainAxisSpacing: 7,
-                      mainAxisExtent: height * 0.1079),
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 7,
+                    mainAxisSpacing: 7,
+                    mainAxisExtent: height * 0.1079,
+                  ),
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: CommonImageView(
-                          imagePath: imageFileLocations[index],
-                          fit: BoxFit.fill,
+                    return Stack(
+                      fit: StackFit.expand,
+                      clipBehavior: Clip.none,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            toggleOptionSelected(index);
+                            selectedImage = imageFileLocations[index];
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: CommonImageView(
+                                imagePath: imageFileLocations[index],
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              optionSelected = 1000000000;
+                              selectedImage = "";
+                            });
+                          },
+                          child: Visibility(
+                            visible: optionSelected == index,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: Colors.black.withOpacity(0.3),
+                              ),
+                              child: Center(
+                                child: Icon(
+                                  Icons.check,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     );
                   },
                 ),
@@ -96,13 +148,20 @@ class MHCGallery extends StatelessWidget {
               right: 0,
               bottom: height * 0.0567,
               child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: RowBottomedButtons(
-                    leftButtonFunction: () => Get.back(),
-                    rightButtonFunction: () {},
-                    leftButtonTitle: "lbl_back2".tr,
-                    rightButtonTitle: "lbl_set_cover".tr,
-                  )),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: RowBottomedButtons(
+                  leftButtonFunction: () => Get.back(),
+                  rightButtonFunction: () {
+                    if (selectedImage == "") {
+                      Get.snackbar("Caution", "No image selected");
+                    } else {
+                      Get.back(result: selectedImage);
+                    }
+                  },
+                  leftButtonTitle: "lbl_back2".tr,
+                  rightButtonTitle: "lbl_set_cover".tr,
+                ),
+              ),
             ),
           ],
         ),

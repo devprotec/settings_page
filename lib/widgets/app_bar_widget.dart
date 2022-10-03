@@ -4,13 +4,15 @@ class AppbarWidget extends StatelessWidget {
   final String appBarTitle;
   final bool hasActions;
   final Widget? trailingWidget;
+  final Color? itemsColor;
 
-  const AppbarWidget(
-      {Key? key,
-      required this.appBarTitle,
-      required this.hasActions,
-      this.trailingWidget})
-      : super(key: key);
+  const AppbarWidget({
+    Key? key,
+    required this.appBarTitle,
+    required this.hasActions,
+    this.trailingWidget,
+    this.itemsColor = Colors.black,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,9 @@ class AppbarWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: Text(
                 appBarTitle,
-                style: Constants.titleTextStyle,
+                style: itemsColor == Colors.white
+                    ? Constants.titleTextStyleWhite
+                    : Constants.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -38,7 +42,7 @@ class AppbarWidget extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Constants.arrowBacks(),
+                      Constants.arrowBacks(color: itemsColor),
                       trailingWidget ??
                           SizedBox(
                             width: 10.0,

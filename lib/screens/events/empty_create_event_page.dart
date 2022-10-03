@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:get/get_connect/sockets/src/socket_notifier.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:settings_page/screens/events/event_schedule.dart';
 import 'package:settings_page/screens/events/mhc_gallery.dart';
 import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/util/exports.dart';
 import 'package:settings_page/widgets/timeline_widget.dart';
 import 'package:widget_mask/widget_mask.dart';
+
 
 class EmptyCreateEventPage extends StatefulWidget {
   @override
@@ -141,9 +141,9 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                                     "lbl_take_a_photo".tr,
                                     style: TextStyle(
                                       fontSize: 18.0,
-                                      fontFamily: '.SF Pro Display',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
-                                      color: Constants.bottomSheetTextColor,
+                                      color: Constants.fromHex("#007AFF"),
                                       letterSpacing: 0.38,
                                     ),
                                   ),
@@ -157,9 +157,9 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                                     "lbl_add_from_device".tr,
                                     style: TextStyle(
                                       fontSize: 18.0,
-                                      fontFamily: '.SF Pro Display',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
-                                      color: Constants.bottomSheetTextColor,
+                                      color: Constants.fromHex("#007AFF"),
                                       letterSpacing: 0.38,
                                     ),
                                   ),
@@ -174,9 +174,9 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                                     "msg_add_from_mhc_ga".tr,
                                     style: TextStyle(
                                       fontSize: 18.0,
-                                      fontFamily: '.SF Pro Display',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
-                                      color: Constants.bottomSheetTextColor,
+                                      color: Constants.fromHex("#007AFF"),
                                       letterSpacing: 0.38,
                                     ),
                                   ),
@@ -189,11 +189,11 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                                 },
                                 isDestructiveAction: true,
                                 child: Text(
-                                  'Cancel',
+                                  'Cancel'.tr,
                                   style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.w600,
-                                    color: Constants.bottomSheetTextColor,
+                                    color: Constants.fromHex("#007AFF"),
                                     letterSpacing: 0.38,
                                   ),
                                 ),
@@ -236,6 +236,7 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                           ),
                         ),
                       ),
+
                       SizedBox(
                         height: 24.0,
                       ),
@@ -244,6 +245,21 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                         height: showError ? 14.0 : 24,
                       ),
                       TimelineWidget(
+
+                    ),
+                    SizedBox(
+                      height: 24.0,
+                    ),
+                    _editTitleTextField(),
+                    SizedBox(
+                      height: showError ? 14.0 : 24,
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(()=>GeneralInfoPage());
+                      },
+                      child: TimelineWidget(
+                       
                         isLast: false,
                         isFirst: true,
                         tileText: "msg_general_informa".tr,
@@ -254,7 +270,16 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                         tileTextColor: Constants.gray900,
                         showError: showError,
                       ),
+
                       TimelineWidget(
+
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(()=>EventSchdule());
+                      },
+                      child: TimelineWidget(
+
                         isLast: true,
                         isFirst: false,
                         tileText: "lbl_event_schedule".tr,
@@ -265,6 +290,7 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                         tileTextColor: Constants.gray900,
                         showError: showError,
                       ),
+
                     ],
                   ),
                   Constants.spaceLargeColumn,
@@ -281,6 +307,21 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                   ),
                 ],
               ),
+
+                    ),
+                  ],
+                ),
+                Button(
+                  onPressed: () {
+                    //Get.to(AccountDeletedPage());
+                    setState(() {
+                      showError = !showError;
+                    });
+                  },
+                  text: "lbl_publish_event".tr,
+                ),
+              ],
+
             ),
           ),
         ),

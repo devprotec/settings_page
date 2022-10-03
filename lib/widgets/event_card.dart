@@ -41,7 +41,7 @@ class EventCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       CustomButton(
-                          //width: 60,
+                          width: 80,
                           text: eventDataModel.eventStatus!.tr,
                           textColor: eventDataModel.eventStatus == "Expired"
                               ? Constants.red500

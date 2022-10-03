@@ -1,4 +1,4 @@
-
+import 'package:settings_page/screens/events/empty_create_event_page.dart';
 
 import '../../util/exports.dart';
 
@@ -58,7 +58,7 @@ class _AllEventsState extends State<AllEvents> {
           child: ButtonIcon(
               icon: Icons.add_rounded,
               onPressed: () {
-                Get.to(GeneralInfoPage());
+                Get.to(EmptyCreateEventPage());
               },
               text: "lbl_create_program".tr),
         ),
@@ -68,11 +68,9 @@ class _AllEventsState extends State<AllEvents> {
           color: Colors.white,
           child: Column(
             children: [
-             
               Constants.spaceMediumColumn,
               Padding(
-                padding:
-                    const EdgeInsets.symmetric( horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: CustomTabs(
                   tabs: tabs,
                   switchTab: (index) {
@@ -90,55 +88,72 @@ class _AllEventsState extends State<AllEvents> {
                       ? ListView.builder(
                           physics: const BouncingScrollPhysics(),
                           padding: EdgeInsets.zero,
-                          itemCount: eventsList.length,
+                          itemCount:
+                              eventsList.length == 0 ? 1 : eventsList.length,
                           itemBuilder: ((context, index) {
-                            return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 4.0, horizontal: 5),
-                                child: EventCard(
-                                    eventDataModel: eventsList[index]));
+                            return eventsList.length == 0
+                                ? emptyEvents()
+                                : Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 4.0, horizontal: 5),
+                                    child: EventCard(
+                                        eventDataModel: eventsList[index]));
                           }),
                         )
                       : currentTab == 1
                           ? ListView.builder(
                               physics: const BouncingScrollPhysics(),
                               padding: EdgeInsets.zero,
-                              itemCount: activeEventsList.length,
+                              itemCount: activeEventsList.length == 0
+                                  ? 1
+                                  : activeEventsList.length,
                               itemBuilder: ((context, index) {
-                                return Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 4.0),
-                                    child: EventCard(
-                                        eventDataModel:
-                                            activeEventsList[index]));
+                                return activeEventsList.length == 0
+                                    ? emptyEvents()
+                                    : Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 4.0),
+                                        child: EventCard(
+                                            eventDataModel:
+                                                activeEventsList[index]));
                               }),
                             )
                           : currentTab == 2
                               ? ListView.builder(
                                   physics: const BouncingScrollPhysics(),
                                   padding: EdgeInsets.zero,
-                                  itemCount: draftEventsList.length,
+                                  itemCount: draftEventsList.length == 0
+                                      ? 1
+                                      : draftEventsList.length,
                                   itemBuilder: ((context, index) {
-                                    return Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 4.0),
-                                        child: EventCard(
-                                            eventDataModel:
-                                                draftEventsList[index]));
+                                    return draftEventsList.length == 0
+                                        ? emptyEvents()
+                                        : Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 4.0),
+                                            child: EventCard(
+                                                eventDataModel:
+                                                    draftEventsList[index]));
                                   }),
                                 )
                               : currentTab == 3
                                   ? ListView.builder(
                                       physics: const BouncingScrollPhysics(),
                                       padding: EdgeInsets.zero,
-                                      itemCount: expiredEventsList.length,
+                                      itemCount: expiredEventsList.length == 0
+                                          ? 1
+                                          : expiredEventsList.length,
                                       itemBuilder: ((context, index) {
-                                        return Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 4.0),
-                                            child: EventCard(
-                                                eventDataModel:
-                                                    expiredEventsList[index]));
+                                        return expiredEventsList.length == 0
+                                            ? emptyEvents()
+                                            : Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 4.0),
+                                                child: EventCard(
+                                                    eventDataModel:
+                                                        expiredEventsList[
+                                                            index]));
                                       }),
                                     )
                                   : const SizedBox(),
@@ -148,6 +163,25 @@ class _AllEventsState extends State<AllEvents> {
           ),
         ),
       ),
+    );
+  }
+
+  emptyEvents() {
+    return Column(
+      children: [
+        Constants.spaceLargeColumn,
+        Constants.spaceLargeColumn,
+        CommonImageView(
+            svgPath: "assets/images/img_ill.svg",
+            height: getVerticalSize(246.00),
+            width: getHorizontalSize(222.00)),
+        Constants.spaceLargeColumn,
+        Text("msg_there_is_no_eve".tr,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.left,
+            style: AppStyle.poppinsTextstyle(
+                16, FontWeight.w500, Constants.fromHex("#34405E"))),
+      ],
     );
   }
 }

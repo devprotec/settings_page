@@ -77,7 +77,7 @@ EventDataModel event3 = EventDataModel(
   eventLocation: "Halo Salt Gym, 6392 Elgin St. Celina..." ,
   eventName:  "Healthy Eating Meetup",
   eventStartTime: "9:00 AM" ,
-  eventStatus: "Expired",
+  eventStatus: "Draft",
   eventSubCategory: "Meditation",
   isOnline: true,
 

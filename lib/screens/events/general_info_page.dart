@@ -278,10 +278,12 @@ class GeneralInfoPage extends GetView<EventsController> {
 
 class GeneralAddButton extends StatelessWidget {
   final String text;
-  const GeneralAddButton ({required this.text});
+  final MainAxisAlignment? mainAxisAlignment;
+  const GeneralAddButton ({required this.text, this.mainAxisAlignment});
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment?? MainAxisAlignment.start,
       children: [
         Constants.spaceMediumRow,
         CommonImageView(
@@ -290,7 +292,7 @@ class GeneralAddButton extends StatelessWidget {
             width: getSize(14.00)),
         Constants.spaceMediumRow,
         Text(
-          "lbl_add_organiser".tr.toUpperCase(),
+          text.tr.toUpperCase(),
           style: AppStyle.txtPoppinsSemiBold14LightBlue700,
         )
       ],

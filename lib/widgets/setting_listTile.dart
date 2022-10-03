@@ -1,9 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-
-
-
-
 class SettingListTitle extends StatelessWidget {
   final String imageFile;
   final String settingsName;
@@ -22,7 +18,7 @@ class SettingListTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      minVerticalPadding: 25.0,
+      //minVerticalPadding: 25.0,
       onTap: voidCallback,
       leading: ImageWidget(imageFile: imageFile),
       title: Text(

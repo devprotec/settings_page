@@ -54,6 +54,15 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle txtPoppinsSemiBoldGray24 = TextStyle(
+    color: Constants.forwardIconColor,
+    fontSize: getFontSize(
+      24,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle txtRobotoRegular20Black900 = TextStyle(
     color: Constants.black900,
     fontSize: getFontSize(
@@ -160,6 +169,15 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle errorTxtPoppinsRegular14Red500 = TextStyle(
+    color: Constants.red500,
+    fontSize: getFontSize(
+      12,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
   static TextStyle txtPoppinsSemiBold18 = TextStyle(
     color: Constants.gray900,
     fontSize: getFontSize(
@@ -222,6 +240,13 @@ class AppStyle {
     color: Constants.fromHex('#34405E'),
   );
 
+  static TextStyle activityTextStyle = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: Constants.fromHex('#34405E'),
+  );
+
   static TextStyle feedbackTextStyle = TextStyle(
       fontSize: 14,
       fontFamily: 'Poppins',
@@ -239,32 +264,12 @@ class AppStyle {
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
       color: Constants.fromHex('#6E768D'));
-
-
-  static poppinsTextstyle(double fontSize, FontWeight fontWeight, Color textColor){
-    return TextStyle(
+      
+      
+  static TextStyle crumbTextColor = TextStyle(
+      fontSize: 12,
       fontFamily: 'Poppins',
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: textColor
-    );
-  }
-
-  static sfProTextTextstyle(double fontSize, FontWeight fontWeight, Color textColor){
-    return TextStyle(
-      fontFamily: 'SF Pro Text',
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: textColor
-    );
-  }
-
-  static sfProDisplayextstyle(double fontSize, FontWeight fontWeight, Color textColor){
-    return TextStyle(
-      fontFamily: 'SF Pro Display',
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: textColor
-    );
-  }
+      fontWeight: FontWeight.w500,
+      color: Constants.fromHex('#6E768D'));
 }
+

@@ -27,9 +27,13 @@ class Button extends StatelessWidget {
           elevation: buttonElevation ?? 5,
           borderRadius: BorderRadius.circular(8),
           child: Container(
+
+            height: 48.0,
+
             height: height ?? null,
             //  margin: const EdgeInsets.symmetric(vertical: 10),
             padding: const EdgeInsets.symmetric(vertical: 20),
+
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -48,8 +52,8 @@ class Button extends StatelessWidget {
               child: Text(
                 text.toUpperCase(),
                 style: TextStyle(
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.8,
+                  fontWeight: FontWeight.w600,
                   color: textColor ?? Colors.white,
                   fontSize: 14,
                 ),

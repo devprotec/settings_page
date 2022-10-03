@@ -133,7 +133,7 @@ class _DeleteAccountPage2State extends State<DeleteAccountPage2> {
                             Get.to(AccountDeletedPage());
                           },
                           text: "lbl_leave_feedback".tr,
-                        )
+                        ),
                       ],
                     ),
                   ),

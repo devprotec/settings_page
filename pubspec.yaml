@@ -30,7 +30,12 @@ dependencies:
   shared_preferences: ^2.0.15
   cached_network_image: ^3.2.1
   flutter_svg: ^0.22.0
+  widget_mask: ^1.0.0+0
+  timeline_tile: ^2.0.0
+  image_picker: ^0.8.5+3
+  permission_handler: ^7.1.0
   flutter_rating_bar: ^4.0.1
+
 dev_dependencies: 
   flutter_test: 
     sdk: flutter

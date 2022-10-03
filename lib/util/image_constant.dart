@@ -1,8 +1,8 @@
 class ImageConstant {
   static String imgIllustration1 = 'assets/images/img_illustration_1.svg';
-
+  static String imgVideocamera = 'assets/images/img_videocamera.svg';
   static String imgVector14X13 = 'assets/images/img_vector_14X13.png';
-
+  static String imgvideocamera48X48 = 'assets/images/img_videocamera_48X48.svg';
   static String imgVector12X13 = 'assets/images/img_vector_12X13.png';
 
   static String imgIcon13 = 'assets/images/img_icon_13.png';
@@ -18,6 +18,7 @@ class ImageConstant {
   static String imgClose = 'assets/images/img_close.svg';
 
   static String imgIcon8 = 'assets/images/img_icon_8.png';
+  static String imgCalender = 'assets/images/img_bag.svg';
 
   static String imgIllustration147X141 =
       'assets/images/img_illustration_147X141.svg';

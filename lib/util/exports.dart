@@ -10,6 +10,8 @@ export 'package:settings_page/screens/settings_page/change_password_page.dart';
 export 'package:settings_page/screens/settings_page/delete_account_page1.dart';
 export 'package:settings_page/screens/settings_page/privacy_and_security_screen.dart';
 export 'package:settings_page/screens/settings_page/select_role_page.dart';
+export 'package:settings_page/screens/events/general_info_page.dart';
+export 'package:settings_page/widgets/bottomsheet_top_widgets.dart';
 
 export '../theme/app_decoration.dart';
 export '../util/constants.dart';
@@ -32,3 +34,7 @@ export '../util/enum.dart';
 export '../models/role.dart';
 export '../localization/app_localization.dart';
 export '../screens/settings_page/main_settings_page.dart';
+export '../../widgets/tabs.dart';
+export 'package:settings_page/widgets/event_card.dart';
+export '../../models/events_data_model.dart';
+export '../../widgets/select_options_bottomsheet.dart';

@@ -4,6 +4,8 @@ class AppbarWidget extends StatelessWidget {
   final String appBarTitle;
   final bool hasActions;
   final Widget? trailingWidget;
+  final Widget? leadingWidget;
+  final Color? leadingWidgetColor;
   final Color? itemsColor;
 
   const AppbarWidget({
@@ -11,6 +13,8 @@ class AppbarWidget extends StatelessWidget {
     required this.appBarTitle,
     required this.hasActions,
     this.trailingWidget,
+    this.leadingWidgetColor,
+    this.leadingWidget,
     this.itemsColor = Colors.black,
   }) : super(key: key);
 

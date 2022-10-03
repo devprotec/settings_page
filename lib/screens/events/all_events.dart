@@ -1,3 +1,5 @@
+import 'package:settings_page/screens/events/general_info_page.dart';
+
 import '../../util/exports.dart';
 
 class AllEvents extends StatefulWidget {
@@ -40,12 +42,25 @@ class _AllEventsState extends State<AllEvents> {
     double _width = Get.width;
     return SafeArea(
       child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: AppbarWidget(
+            appBarTitle: "lbl_events".tr,
+            hasActions: true,
+            trailingWidget:
+                CommonImageView(imagePath: "assets/images/filter.png"),
+          ),
+        ),
         floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ButtonIcon(
-              icon: Icons.add_rounded, onPressed: () {}, text: 'create program'),
+              icon: Icons.add_rounded,
+              onPressed: () {
+                Get.to(GeneralInfoPage());
+              },
+              text: "lbl_create_program".tr),
         ),
         body: Container(
           height: _height,
@@ -53,12 +68,11 @@ class _AllEventsState extends State<AllEvents> {
           color: Colors.white,
           child: Column(
             children: [
-              Constants.spaceLargeColumn,
-              Constants.spaceSmallColumn,
-              Constants.spaceSmallColumn,
+             
+              Constants.spaceMediumColumn,
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                    const EdgeInsets.symmetric( horizontal: 16),
                 child: CustomTabs(
                   tabs: tabs,
                   switchTab: (index) {
@@ -70,8 +84,8 @@ class _AllEventsState extends State<AllEvents> {
               ),
               Expanded(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 8.0, left: 16, right: 16, bottom: 100),
+                  padding: const EdgeInsets.only(
+                      top: 8.0, left: 16, right: 16, bottom: 100),
                   child: currentTab == 0
                       ? ListView.builder(
                           physics: const BouncingScrollPhysics(),
@@ -79,8 +93,10 @@ class _AllEventsState extends State<AllEvents> {
                           itemCount: eventsList.length,
                           itemBuilder: ((context, index) {
                             return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 5),
-                              child: EventCard(eventDataModel: eventsList[index]));
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 4.0, horizontal: 5),
+                                child: EventCard(
+                                    eventDataModel: eventsList[index]));
                           }),
                         )
                       : currentTab == 1
@@ -90,10 +106,11 @@ class _AllEventsState extends State<AllEvents> {
                               itemCount: activeEventsList.length,
                               itemBuilder: ((context, index) {
                                 return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: EventCard(eventDataModel: activeEventsList[index])
-                                );
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 4.0),
+                                    child: EventCard(
+                                        eventDataModel:
+                                            activeEventsList[index]));
                               }),
                             )
                           : currentTab == 2
@@ -103,26 +120,28 @@ class _AllEventsState extends State<AllEvents> {
                                   itemCount: draftEventsList.length,
                                   itemBuilder: ((context, index) {
                                     return Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: EventCard(eventDataModel: draftEventsList[index])
-                                    );
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 4.0),
+                                        child: EventCard(
+                                            eventDataModel:
+                                                draftEventsList[index]));
                                   }),
                                 )
-                          : currentTab == 3
-                              ? ListView.builder(
-                                  physics: const BouncingScrollPhysics(),
-                                  padding: EdgeInsets.zero,
-                                  itemCount: expiredEventsList.length,
-                                  itemBuilder: ((context, index) {
-                                    return Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: EventCard(eventDataModel: expiredEventsList[index])
-                                    );
-                                  }),
-                                )
-                              : const SizedBox(),
+                              : currentTab == 3
+                                  ? ListView.builder(
+                                      physics: const BouncingScrollPhysics(),
+                                      padding: EdgeInsets.zero,
+                                      itemCount: expiredEventsList.length,
+                                      itemBuilder: ((context, index) {
+                                        return Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 4.0),
+                                            child: EventCard(
+                                                eventDataModel:
+                                                    expiredEventsList[index]));
+                                      }),
+                                    )
+                                  : const SizedBox(),
                 ),
               ),
             ],

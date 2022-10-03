@@ -1,15 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:get/get_connect/sockets/src/socket_notifier.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:settings_page/screens/events/mhc_gallery.dart';
 import 'package:settings_page/util/exports.dart';
 import 'package:settings_page/widgets/timeline_widget.dart';
 import 'package:widget_mask/widget_mask.dart';
-import '../../util/exports.dart';
+
 
 class EmptyCreateEventPage extends StatefulWidget {
   @override

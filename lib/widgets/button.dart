@@ -32,7 +32,7 @@ class Button extends StatelessWidget {
 
            // height: height ?? null,
             //  margin: const EdgeInsets.symmetric(vertical: 10),
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            //padding: const EdgeInsets.symmetric(vertical: 20),
 
             width: double.infinity,
             decoration: BoxDecoration(
@@ -147,17 +147,18 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color textColor;
   final Color backgroundColor;
+  final double? width;
   const CustomButton(
       {
       required this.text,
       required this.textColor,
-      required this.backgroundColor});
+      required this.backgroundColor, this.width});
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      height: 35,
-      width: 70,
+      height: 48,
+      width: width ?? 70,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: backgroundColor,

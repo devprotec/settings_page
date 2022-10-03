@@ -753,5 +753,6 @@ final Map<String, String> enUs = {
   "msg_arrival_of_part": "Arrival of Participants",
   "msg_search_for_locati":"Search for Location",
   "msg_share_your_locati":"Share Your Location",
+  "msg_add_schedule":"add schedule"
   
 };

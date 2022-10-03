@@ -1,4 +1,6 @@
-import 'package:settings_page/widgets/bottomsheet_top_widgets.dart';
+import 'package:settings_page/controllers/events_controller.dart';
+import 'package:settings_page/screens/events/add_location.dart';
+import 'package:settings_page/screens/events/choose_organizer.dart';
 
 import '../../util/exports.dart';
 
@@ -20,7 +22,12 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
   bool isOnline = false;
   String sortBy = "msg_individual_rate";
   int distance = 0;
-
+  final sortOptions = [
+    "msg_individual_rate",
+    "msg_individual_rate_h",
+    "msg_group_rate_l",
+    "msg_group_rate_h",
+  ];
   onNutritionTap() {
     setState(() {
       isNutrition = !isNutrition;
@@ -71,6 +78,7 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(EventsController());
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -128,13 +136,21 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
                 Constants.spaceMediumColumn,
                 titleText("lbl_sort_by".tr),
                 Constants.spaceSmallColumn,
-                GestureDetector(
-                  child: containterAndRow(sortBy.tr),
+                Obx(
+                  () => GestureDetector(
+                    onTap: () {
+                      Get.bottomSheet(OptionsBottomSheet(items: sortOptions));
+                    },
+                    child: containterAndRow(controller.sortByOption.value.tr),
+                  ),
                 ),
                 Constants.spaceMediumColumn,
                 titleText("lbl_your_location".tr),
                 Constants.spaceSmallColumn,
                 GestureDetector(
+                  onTap: () {
+                    Get.to(AddLocation());
+                  },
                   child: containterAndRow("msg_national_museum".tr),
                 ),
                 Constants.spaceMediumColumn,
@@ -193,6 +209,14 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
                         onTap: onOnlineTap),
                   ],
                 ),
+                Constants.spaceLargeColumn,
+                Button(
+                    text: "lbl_apply".tr,
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => ChooseOrganizer()));
+                    }),
+                Constants.spaceMediumColumn,
               ],
             ),
           ),

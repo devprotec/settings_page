@@ -84,7 +84,7 @@ ProfesionalDataModel oswald = ProfesionalDataModel(
     );
 ProfesionalDataModel simon = ProfesionalDataModel(
     Name: "Simon Suuk",
-    rating: 5,
+    rating: 3.2,
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_unsplashkvmirq_32X32.png",

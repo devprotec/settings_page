@@ -66,19 +66,22 @@ class _ProfessionalCardState extends State<ProfessionalCard> {
                     Row(
                       // direction: Axis.horizontal,
                       children: [
-                        RatingBar.builder(
-                          itemSize: 15,
-                          initialRating: widget.profesionalDataModel.rating!,
-                          minRating: 1,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                          itemBuilder: (context, _) =>
-                              Icon(Icons.star, color: Constants.lightBlue500),
-                          onRatingUpdate: (rating) {
-                            print(rating);
-                          },
+                        IgnorePointer(
+                          ignoring: true,
+                          child: RatingBar.builder(
+                            itemSize: 15,
+                            initialRating: widget.profesionalDataModel.rating!,
+                            minRating: 1,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                            itemBuilder: (context, _) =>
+                                Icon(Icons.star, color: Constants.lightBlue500),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 4),

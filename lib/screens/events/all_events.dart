@@ -1,4 +1,4 @@
-import 'package:settings_page/screens/events/general_info_page.dart';
+
 
 import '../../util/exports.dart';
 

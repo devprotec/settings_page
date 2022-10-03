@@ -1,5 +1,4 @@
 import 'package:settings_page/util/exports.dart';
-import 'package:settings_page/widgets/bottomsheet_top_widgets.dart';
 
 class LanguageBottomSheet extends GetView<SettingsController> {
   final settingsController = Get.put(SettingsController());

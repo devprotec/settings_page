@@ -3,6 +3,7 @@ import 'package:settings_page/util/exports.dart';
 
 class EventsController extends GetxController{
   var addedOrganizers = <ProfesionalDataModel>[].obs;
+  var sortByOption = "msg_individual_rate".obs;
 
   addOrganizer(ProfesionalDataModel organiser){
     if(addedOrganizers.indexOf(organiser) == -1){

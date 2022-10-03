@@ -1,5 +1,6 @@
 import 'package:settings_page/controllers/events_controller.dart';
 import 'package:settings_page/screens/events/choose_organizer.dart';
+import 'package:settings_page/screens/events/event_schedule.dart';
 import 'package:settings_page/util/exports.dart';
 
 import '../../widgets/professional_card.dart';
@@ -221,8 +222,8 @@ class GeneralInfoPage extends GetView<EventsController> {
               SizedBox(
                 width: double.infinity,
                 child: InputForms(
-                  maxLines: 25,
-                  filled: true,
+                    maxLines: 25,
+                    filled: true,
                     contentPadding: 40,
                     color: Constants.gray150,
                     notifier: otherDetails,
@@ -232,24 +233,22 @@ class GeneralInfoPage extends GetView<EventsController> {
                     }),
               ),
               Constants.spaceMediumColumn,
-             
               Text(
                 "lbl_organiser".tr,
                 style: Constants.titleTextStyle,
               ),
               Obx(
-                ()=> ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
+                () => ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     itemCount: controller.addedOrganizers.length,
                     itemBuilder: ((context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 5),
                         child: ProfessionalCard(
-                          profesionalDataModel: controller.addedOrganizers[index],
-                          
+                          profesionalDataModel:
+                              controller.addedOrganizers[index],
                           isCard: false,
-              
                         ),
                       );
                     })),
@@ -257,33 +256,45 @@ class GeneralInfoPage extends GetView<EventsController> {
               Constants.spaceMediumColumn,
               Constants.spaceSmallColumn,
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Get.to(ChooseOrganizer());
                 },
-                child: Row(
-                  children: [
-                    Constants.spaceMediumRow,
-                    CommonImageView(
-                        svgPath: "assets/images/add_icon.svg",
-                        height: getSize(14.00),
-                        width: getSize(14.00)),
-                    Constants.spaceMediumRow,
-                    Text("lbl_add_organiser".tr.toUpperCase(),style: AppStyle.txtPoppinsSemiBold14LightBlue700,)
-                  ],
-                ),
+                child: GeneralAddButton(text: "lbl_add_organiser".tr.toUpperCase(),)
               ),
               Constants.spaceMediumColumn,
               Constants.spaceSmallColumn,
               Button(
                   text: "Next",
                   onPressed: () {
-                    //go to event schedule
+                    Get.to(EventSchdule());
                   })
             ],
           ),
         ),
       ),
     ));
+  }
+}
+
+class GeneralAddButton extends StatelessWidget {
+  final String text;
+  const GeneralAddButton ({required this.text});
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Constants.spaceMediumRow,
+        CommonImageView(
+            svgPath: "assets/images/add_icon.svg",
+            height: getSize(14.00),
+            width: getSize(14.00)),
+        Constants.spaceMediumRow,
+        Text(
+          "lbl_add_organiser".tr.toUpperCase(),
+          style: AppStyle.txtPoppinsSemiBold14LightBlue700,
+        )
+      ],
+    );
   }
 }
 
@@ -297,7 +308,7 @@ class DateAndCalender extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 18, vertical: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color:Constants.gray150,
+        color: Constants.gray150,
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         Text(

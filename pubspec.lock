@@ -174,7 +174,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.3.0"
-
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -182,7 +181,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.7"
-
   flutter_rating_bar:
     dependency: "direct main"
     description:
@@ -190,7 +188,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
-
   flutter_svg:
     dependency: "direct main"
     description:
@@ -555,8 +552,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-
-    version: "0.4.9"
+    version: "0.4.12"
   timeline_tile:
     dependency: "direct main"
     description:
@@ -564,9 +560,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-
-    version: "0.4.12"
-
   typed_data:
     dependency: transitive
     description:

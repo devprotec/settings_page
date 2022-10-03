@@ -30,7 +30,7 @@ class Button extends StatelessWidget {
 
             height: 48.0,
 
-            height: height ?? null,
+           // height: height ?? null,
             //  margin: const EdgeInsets.symmetric(vertical: 10),
             padding: const EdgeInsets.symmetric(vertical: 20),
 

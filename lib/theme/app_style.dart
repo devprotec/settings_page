@@ -222,6 +222,29 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static poppinsTextstyle(double fontSize, FontWeight fontWeight,Color textColor, ){
+    return TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: fontSize,
+      color: textColor,
+      fontWeight: fontWeight
+
+
+    );
+
+  }
+
+  static sfProDisplayextstyle(double fontSize, FontWeight fontWeight,Color textColor, ){
+    return TextStyle(
+      fontFamily: 'SF Pro Display',
+      fontSize: fontSize,
+      color: textColor,
+      fontWeight: fontWeight
+
+
+    );
+
+  }
   static TextStyle normalTextStyle = TextStyle(
       fontSize: 16,
       fontFamily: 'Poppins',

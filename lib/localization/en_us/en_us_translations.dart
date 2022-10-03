@@ -617,10 +617,10 @@ final Map<String, String> enUs = {
   "msg_s_programs_ne": "S: Programs: New Program Created",
   "msg_cp_preview_act5": "CP: Preview Activity User : Location",
   "msg_cp_preview_act6": "CP: Preview Activity User : Online Two",
-  "msg_individual_rate": "Individual Rate: Lowest first ",
-  "msg_individual_rate_h": "Individual Rate: Highest first ",
-  "msg_group_rate_l": "Group Rate: Lowest first ",
-  "msg_group_rate_h": "Group Rate: Highest first ",
+  "msg_individual_rate": "Individual Rate: Lowest First ",
+  "msg_individual_rate_h": "Individual Rate: Highest First ",
+  "msg_group_rate_l": "Group Rate: Lowest First ",
+  "msg_group_rate_h": "Group Rate: Highest First ",
   "msg_cp_preview_act3": "CP: Preview Activity Coach : Hybrid",
   "msg_cp_preview_act4": "CP: Preview Activity Coach : Hybrid One",
   "msg_cp_preview_act2": "CP: Preview Activity Coach : Online One",
@@ -747,7 +747,11 @@ final Map<String, String> enUs = {
   "lbl_jacob_c": "Jacob C.",
   "lbl_march_8_2021": "March 8, 2021",
   "msg_use_your_locati": "Use Your Location",
+  "msg_add_your_locati": "Add Your Location",
   "lbl_address": "Address",
   "lbl_event_duration": "Event Duration",
-  "msg_arrival_of_part": "Arrival of Participants"
+  "msg_arrival_of_part": "Arrival of Participants",
+  "msg_search_for_locati":"Search for Location",
+  "msg_share_your_locati":"Share Your Location",
+  
 };

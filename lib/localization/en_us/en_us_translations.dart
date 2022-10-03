@@ -752,6 +752,7 @@ final Map<String, String> enUs = {
   "lbl_event_duration": "Event Duration",
   "lbl_my_sched": "My Schedule",
   "lbl_there_is_no_sched": "There is No Scheduled Classes",
+  "lbl_setup_sched": "Set Up Schedule",
   "msg_arrival_of_part": "Arrival of Participants",
   "msg_search_for_locati": "Search for Location",
   "msg_share_your_locati": "Share Your Location",

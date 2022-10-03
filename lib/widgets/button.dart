@@ -27,13 +27,7 @@ class Button extends StatelessWidget {
           elevation: buttonElevation ?? 5,
           borderRadius: BorderRadius.circular(8),
           child: Container(
-
             height: 48.0,
-
-           // height: height ?? null,
-            //  margin: const EdgeInsets.symmetric(vertical: 10),
-            padding: const EdgeInsets.symmetric(vertical: 20),
-
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -64,7 +58,6 @@ class Button extends StatelessWidget {
   }
 }
 
-
 class ButtonIcon extends StatelessWidget {
   final String text;
   final IconData icon;
@@ -88,8 +81,7 @@ class ButtonIcon extends StatelessWidget {
           elevation: 5,
           borderRadius: BorderRadius.circular(10),
           child: Container(
-            //  margin: const EdgeInsets.symmetric(vertical: 10),
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            height: 48,
             width: double.infinity,
             decoration: BoxDecoration(
               boxShadow: const [
@@ -126,8 +118,8 @@ class ButtonIcon extends StatelessWidget {
                 Text(
                   text.toUpperCase(),
                   style: const TextStyle(
-                    letterSpacing: 1.8,
-                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.8,
+                    fontWeight: FontWeight.w600,
                     color: Colors.white,
                     fontSize: 14,
                   ),
@@ -141,15 +133,12 @@ class ButtonIcon extends StatelessWidget {
   }
 }
 
-
 class CustomButton extends StatelessWidget {
-  
   final String text;
   final Color textColor;
   final Color backgroundColor;
   const CustomButton(
-      {
-      required this.text,
+      {required this.text,
       required this.textColor,
       required this.backgroundColor});
   @override

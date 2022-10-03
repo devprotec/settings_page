@@ -10,7 +10,6 @@ import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/util/exports.dart';
 import 'package:settings_page/widgets/timeline_widget.dart';
 import 'package:widget_mask/widget_mask.dart';
-import '../../util/exports.dart';
 
 class EmptyCreateEventPage extends StatefulWidget {
   @override
@@ -212,72 +211,76 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-          child: Container(
-            height: height,
-            width: width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Constants.inactiveStatusColorGray,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                        child: Text(
-                          "lbl_draft".tr,
-                          style: AppStyle.crumbTextColor,
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: SingleChildScrollView(
+            child: Container(
+              width: width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Constants.inactiveStatusColorGray,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                          child: Text(
+                            "lbl_draft".tr,
+                            style: AppStyle.crumbTextColor,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 24.0,
-                    ),
-                    _editTitleTextField(),
-                    SizedBox(
-                      height: showError ? 14.0 : 24,
-                    ),
-                    TimelineWidget(
-                      isLast: false,
-                      isFirst: true,
-                      tileText: "msg_general_informa".tr,
-                      tileIcon: showError
-                          ? "assets/images/img_general_err.svg"
-                          : "assets/images/img_general.svg",
-                      indicatorColor: Constants.gray100,
-                      tileTextColor: Constants.gray900,
-                      showError: showError,
-                    ),
-                    TimelineWidget(
-                      isLast: true,
-                      isFirst: false,
-                      tileText: "lbl_event_schedule".tr,
-                      tileIcon: showError
-                          ? "assets/images/img_event_sch_err.svg"
-                          : "assets/images/img_even_sch.svg",
-                      indicatorColor: Constants.gray100,
-                      tileTextColor: Constants.gray900,
-                      showError: showError,
-                    ),
-                  ],
-                ),
-                Button(
-                  onPressed: () {
-                    //Get.to(AccountDeletedPage());
-                    setState(() {
-                      showError = !showError;
-                    });
-                  },
-                  text: "lbl_publish_event".tr,
-                ),
-              ],
+                      SizedBox(
+                        height: 24.0,
+                      ),
+                      _editTitleTextField(),
+                      SizedBox(
+                        height: showError ? 14.0 : 24,
+                      ),
+                      TimelineWidget(
+                        isLast: false,
+                        isFirst: true,
+                        tileText: "msg_general_informa".tr,
+                        tileIcon: showError
+                            ? "assets/images/img_general_err.svg"
+                            : "assets/images/img_general.svg",
+                        indicatorColor: Constants.gray100,
+                        tileTextColor: Constants.gray900,
+                        showError: showError,
+                      ),
+                      TimelineWidget(
+                        isLast: true,
+                        isFirst: false,
+                        tileText: "lbl_event_schedule".tr,
+                        tileIcon: showError
+                            ? "assets/images/img_event_sch_err.svg"
+                            : "assets/images/img_even_sch.svg",
+                        indicatorColor: Constants.gray100,
+                        tileTextColor: Constants.gray900,
+                        showError: showError,
+                      ),
+                    ],
+                  ),
+                  Constants.spaceLargeColumn,
+                  Constants.spaceLargeColumn,
+                  Constants.spaceLargeColumn,
+                  Button(
+                    onPressed: () {
+                      //Get.to(AccountDeletedPage());
+                      setState(() {
+                        showError = !showError;
+                      });
+                    },
+                    text: "lbl_publish_event".tr,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

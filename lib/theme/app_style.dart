@@ -240,7 +240,7 @@ class AppStyle {
       fontSize: fontSize,
       color: textColor,
       fontWeight: fontWeight
-
+//
 
     );
 

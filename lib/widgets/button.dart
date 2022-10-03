@@ -6,12 +6,14 @@ class Button extends StatelessWidget {
   final Color? buttonColor;
   final Color? textColor;
   final double? buttonElevation;
+  final double? height;
   const Button(
       {Key? key,
       required this.text,
       required this.onPressed,
       this.buttonColor,
       this.textColor,
+      this.height,
       this.buttonElevation})
       : super(key: key);
 
@@ -25,6 +27,7 @@ class Button extends StatelessWidget {
           elevation: buttonElevation ?? 5,
           borderRadius: BorderRadius.circular(8),
           child: Container(
+            height: height ?? null,
             //  margin: const EdgeInsets.symmetric(vertical: 10),
             padding: const EdgeInsets.symmetric(vertical: 20),
             width: double.infinity,

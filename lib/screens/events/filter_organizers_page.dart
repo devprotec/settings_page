@@ -20,7 +20,6 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
   bool isOnline = false;
   String sortBy = "msg_individual_rate";
   int distance = 0;
-  
 
   onNutritionTap() {
     setState(() {
@@ -51,6 +50,7 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
       is4Stars = !is4Stars;
     });
   }
+
   onAllLocationsTap() {
     setState(() {
       isAllLocations = !isAllLocations;
@@ -101,20 +101,23 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
                 titleText("msg_professional_ty".tr),
                 Constants.spaceSmallColumn,
                 Row(
-                  
                   children: [
                     ProfessionalTypeContainer(
                         hasRow: false,
                         isSelected: isNutrition,
                         text: "lbl_nutrition".tr,
                         onTap: onNutritionTap),
-                     SizedBox(width: 15,),
+                    SizedBox(
+                      width: 15,
+                    ),
                     ProfessionalTypeContainer(
                         hasRow: false,
                         isSelected: isFitness,
                         text: "lbl_fitness".tr,
                         onTap: onFitnessTap),
-                     SizedBox(width: 15,),
+                    SizedBox(
+                      width: 15,
+                    ),
                     ProfessionalTypeContainer(
                         hasRow: false,
                         isSelected: isWellness,
@@ -141,42 +144,48 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
                 Constants.spaceMediumColumn,
                 titleText("lbl_rating".tr),
                 Constants.spaceSmallColumn,
-                Row(children: [
-                  ProfessionalTypeContainer(
-                    hasRow: false,
-                    isSelected: isAllRatings,
-                    text: "lbl_all".tr,
-                    onTap: () {
-                      onAllTap();
-                    }),
-                    SizedBox(width: 15,),
+                Row(
+                  children: [
                     ProfessionalTypeContainer(
-                    hasRow: true,
-                    isSelected: is4Stars,
-                    text: "4+".tr,
-                    onTap: () {
-                      on4PlusTap();
-                    }),
-                    
-                ],),
+                        hasRow: false,
+                        isSelected: isAllRatings,
+                        text: "lbl_all".tr,
+                        onTap: () {
+                          onAllTap();
+                        }),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    ProfessionalTypeContainer(
+                        hasRow: true,
+                        isSelected: is4Stars,
+                        text: "4+".tr,
+                        onTap: () {
+                          on4PlusTap();
+                        }),
+                  ],
+                ),
                 Constants.spaceMediumColumn,
                 titleText("lbl_location".tr),
                 Constants.spaceSmallColumn,
                 Row(
-                  
                   children: [
                     ProfessionalTypeContainer(
                         hasRow: false,
                         isSelected: isAllLocations,
                         text: "lbl_all".tr,
                         onTap: onAllLocationsTap),
-                     SizedBox(width: 15,),
+                    SizedBox(
+                      width: 15,
+                    ),
                     ProfessionalTypeContainer(
                         hasRow: false,
                         isSelected: isInSportPlace,
                         text: "lbl_in_sport_place".tr,
                         onTap: onInSportPlaceTap),
-                     SizedBox(width: 15,),
+                    SizedBox(
+                      width: 15,
+                    ),
                     ProfessionalTypeContainer(
                         hasRow: false,
                         isSelected: isOnline,
@@ -215,7 +224,10 @@ class _FilterOrganizerPageState extends State<FilterOrganizerPage> {
                     Icons.star,
                     color: Constants.inactiveIconColor,
                     size: 16,
-                  ),SizedBox(width: 5,),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
                   Text(
                     text,
                     style: isSelected

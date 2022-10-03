@@ -81,6 +81,7 @@ class ButtonIcon extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
+        height: 48,
         margin: const EdgeInsets.all(10),
         child: PhysicalModel(
           color: const Color(0xFF0095E9),
@@ -89,7 +90,7 @@ class ButtonIcon extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           child: Container(
             //  margin: const EdgeInsets.symmetric(vertical: 10),
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            //padding: const EdgeInsets.symmetric(vertical: 20),
             width: double.infinity,
             decoration: BoxDecoration(
               boxShadow: const [

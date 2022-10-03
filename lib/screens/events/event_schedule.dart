@@ -33,7 +33,7 @@ class EventSchdule extends StatelessWidget {
                               16, FontWeight.w500, Constants.fromHex("#34405E"))),
                       Constants.spaceLargeColumn,
                       GeneralAddButton(
-                        text: "lbl_add_activity".tr,
+                        text: "lbl_add_activity",
                         mainAxisAlignment: MainAxisAlignment.center,
                       ),
                       Constants.spaceLargeColumn,

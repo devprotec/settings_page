@@ -292,7 +292,7 @@ class GeneralAddButton extends StatelessWidget {
             width: getSize(14.00)),
         Constants.spaceMediumRow,
         Text(
-          "lbl_add_organiser".tr.toUpperCase(),
+          text.tr.toUpperCase(),
           style: AppStyle.txtPoppinsSemiBold14LightBlue700,
         )
       ],

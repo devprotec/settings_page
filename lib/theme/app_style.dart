@@ -223,7 +223,6 @@ class AppStyle {
     Color textColor,
   ) {
     return TextStyle(
-
         fontFamily: 'SF Pro Display',
         fontSize: fontSize,
         color: textColor,
@@ -231,15 +230,14 @@ class AppStyle {
 //
         );
 
-      fontFamily: 'SF Pro Display',
+    /* fontFamily: 'SF Pro Display',
       fontSize: fontSize,
       color: textColor,
       fontWeight: fontWeight
 //
 
     );
-
-
+ */
   }
 
   static TextStyle normalTextStyle = TextStyle(

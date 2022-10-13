@@ -7,6 +7,7 @@ class Button extends StatelessWidget {
   final Color? textColor;
   final double? buttonElevation;
   final double? height;
+  final double? width;
   const Button(
       {Key? key,
       required this.text,
@@ -14,7 +15,7 @@ class Button extends StatelessWidget {
       this.buttonColor,
       this.textColor,
       this.height,
-      this.buttonElevation})
+      this.buttonElevation, this.width})
       : super(key: key);
 
   @override
@@ -34,7 +35,7 @@ class Button extends StatelessWidget {
             //  margin: const EdgeInsets.symmetric(vertical: 10),
             //padding: const EdgeInsets.symmetric(vertical: 20),
 
-            width: double.infinity,
+            width: width ?? double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [

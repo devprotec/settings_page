@@ -237,16 +237,8 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                         ),
                       ),
 
-                      SizedBox(
-                        height: 24.0,
-                      ),
-                      _editTitleTextField(),
-                      SizedBox(
-                        height: showError ? 14.0 : 24,
-                      ),
-                      TimelineWidget(
-
-                    ),
+                      
+                      
                     SizedBox(
                       height: 24.0,
                     ),
@@ -269,11 +261,11 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                         indicatorColor: Constants.gray100,
                         tileTextColor: Constants.gray900,
                         showError: showError,
-                      ),
+                      ),),
 
-                      TimelineWidget(
+                    //   TimelineWidget(
 
-                    ),
+                    // ),
                     GestureDetector(
                       onTap: (){
                         Get.to(()=>EventSchdule());
@@ -291,7 +283,7 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                         showError: showError,
                       ),
 
-                    ],
+                    
                   ),
                   Constants.spaceLargeColumn,
                   Constants.spaceLargeColumn,
@@ -308,25 +300,17 @@ class _EmptyCreateEventPageState extends State<EmptyCreateEventPage> {
                 ],
               ),
 
-                    ),
-                  ],
-                ),
-                Button(
-                  onPressed: () {
-                    //Get.to(AccountDeletedPage());
-                    setState(() {
-                      showError = !showError;
-                    });
-                  },
-                  text: "lbl_publish_event".tr,
-                ),
+                    
+                  
+                
+               
               ],
 
             ),
           ),
         ),
       ),
-    );
+    ));
   }
 
   Widget _editTitleTextField() {

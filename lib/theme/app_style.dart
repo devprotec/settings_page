@@ -205,6 +205,18 @@ class AppStyle {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w500,
   );
+
+  static poppinsTextStyle(
+      {required double fontSize,
+      required FontWeight fontWeight,
+      required Color color}) {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: fontSize,
+        color: color,
+        fontWeight: fontWeight);
+  }
+
   static poppinsTextstyle(
     double fontSize,
     FontWeight fontWeight,
@@ -223,7 +235,6 @@ class AppStyle {
     Color textColor,
   ) {
     return TextStyle(
-
         fontFamily: 'SF Pro Display',
         fontSize: fontSize,
         color: textColor,
@@ -231,15 +242,13 @@ class AppStyle {
 //
         );
 
-      fontFamily: 'SF Pro Display',
-      fontSize: fontSize,
-      color: textColor,
-      fontWeight: fontWeight
-//
+//       fontFamily: 'SF Pro Display',
+//       fontSize: fontSize,
+//       color: textColor,
+//       fontWeight: fontWeight
+// //
 
-    );
-
-
+    //);
   }
 
   static TextStyle normalTextStyle = TextStyle(

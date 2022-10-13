@@ -195,7 +195,7 @@ class GeneralInfoPage extends GetView<EventsController> {
               SizedBox(
                 width: double.infinity,
                 child: InputForms(
-                    maxLines: 25,
+                    maxLines: 5,
                     contentPadding: 30,
                     filled: true,
                     color: Constants.gray150,
@@ -222,7 +222,7 @@ class GeneralInfoPage extends GetView<EventsController> {
               SizedBox(
                 width: double.infinity,
                 child: InputForms(
-                    maxLines: 25,
+                    maxLines: 10,
                     filled: true,
                     contentPadding: 40,
                     color: Constants.gray150,

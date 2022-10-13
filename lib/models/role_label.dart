@@ -1,0 +1,1 @@
+enum RoleLabel { CUSTOMER, PROFESSIONAL }

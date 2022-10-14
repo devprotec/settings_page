@@ -24,6 +24,7 @@ class InputForms extends StatefulWidget {
   final bool? filled;
   final Widget? prefixIcon;
   final int? maxLines;
+  final TextStyle? textStyle;
 
   // ignore: use_key_in_widget_constructors
   InputForms(
@@ -46,7 +47,7 @@ class InputForms extends StatefulWidget {
       this.color,
       this.filled,
       this.prefixIcon,
-      this.maxLines});
+      this.maxLines, this.textStyle});
   @override
   _InputFormsState createState() => _InputFormsState();
 }
@@ -116,7 +117,7 @@ class _InputFormsState extends State<InputForms> {
                 controller: controller,
                 onChanged: widget.onChange,
                 obscureText: widget.obscure ? seePassword : false,
-                style: const TextStyle(
+                style: widget.textStyle ?? const TextStyle(
                   fontSize: 15,
                   letterSpacing: 1.8,
                 ),

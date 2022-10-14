@@ -36,6 +36,11 @@ dependencies:
   permission_handler: ^7.1.0
   flutter_rating_bar: ^4.0.1
   grouped_list: ^5.1.2
+  form_builder_validators:
+  country_code_picker:
+  share_plus: ^4.5.0
+  flutter_ruler_picker:
+    path: ./libraries/flutter_ruler_picker-master/
 
 dev_dependencies: 
   flutter_test: 
@@ -43,7 +48,7 @@ dev_dependencies:
 flutter: 
   uses-material-design: true
   assets: 
-    - assets/
+    - assets/svgs/
     - assets/images/
   fonts:
     - family: CustomIcons

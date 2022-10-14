@@ -3,7 +3,8 @@ import '../util/exports.dart';
 class CustomTabs extends StatefulWidget {
   final List<Tab> tabs;
   final Function(int) switchTab;
-  const CustomTabs({Key? key, required this.tabs, required this.switchTab})
+  final double? height;
+  const CustomTabs({Key? key, required this.tabs, required this.switchTab, this.height})
       : super(key: key);
 
   @override
@@ -28,7 +29,7 @@ class _CustomTabsState extends State<CustomTabs> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 50,
+        height: widget.height ?? 50,
         decoration: BoxDecoration(
             color: Constants.bluegray90066.withOpacity(0.1),
             borderRadius: BorderRadius.circular(10)),

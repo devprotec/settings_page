@@ -18,7 +18,7 @@ class SettingListTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      //minVerticalPadding: 25.0,
+      minVerticalPadding: 25.0,
       onTap: voidCallback,
       leading: ImageWidget(imageFile: imageFile),
       title: Text(

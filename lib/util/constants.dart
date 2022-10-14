@@ -74,6 +74,11 @@ class Constants {
   static Color lightgray900 = fromHex('#34405E');
   static Color lightbuttonTextColor = fromHex('#0064A7');
   static Color healthDetailsBackground = fromHex('#E6F7FD');
+  static Color pColor = const Color(0xFF0095E9);
+  static Color highlight = const Color(0xffD4D9F5);
+  static Color background = const Color(0xffF4F5FB);
+  static const Color textColor = Color(0xff161B46);
+  static const Color textColor2 = Color(0xff6E768D);
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,
@@ -102,6 +107,26 @@ class Constants {
   static Widget spaceSemiBigColumn = SizedBox(
     height: 30,
   );
+  static Widget spaceMedium = Builder(builder: (context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.02,
+    );
+  });
+  static Widget spaceLarge = Builder(builder: (context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.03,
+    );
+  });
+  static Widget spaceSmall = Builder(builder: (context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.01,
+    );
+  });
+  static Widget space = Builder(builder: (context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.02,
+    );
+  });
 
   static TextStyle normalTextStyle = TextStyle(
       fontSize: 16,

@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         title: 'settings_page',
         //home: EditBillingAddressScreen(),
         //home: AddressDetails(),
-        //home: BillingDetailsScreen(),
+        //home: CoachDetailsScreen(),
         home: UserProfile(
           user: customerUser,
         ),

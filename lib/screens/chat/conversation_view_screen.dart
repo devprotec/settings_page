@@ -354,9 +354,7 @@ class _bottomTextFieldState extends State<bottomTextField> {
                   Positioned(
                     right: 18,
                     child: GestureDetector(
-                      onTap: () {
-                        Get.to(() => BillingDetailsScreen());
-                      },
+                      onTap: () {},
                       child: CommonImageView(
                         svgPath: "assets/images/img_send.svg",
                         color: enabled

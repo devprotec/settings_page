@@ -6,6 +6,9 @@ import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/screens/settings_page/profile.dart';
 import 'package:settings_page/util/exports.dart';
 
+import 'screens/user_profile/coach_details_screen.dart';
+import 'screens/user_profile/edit_billing_address.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

@@ -46,7 +46,7 @@ class _LandingPageState extends State<LandingPage> {
       ),
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
-          "assets/svgs/studio.svg",
+          "assets/svgs/explore.svg",
           color: _index == 1 ? Constants.pColor : Constants.textColor2,
         ),
         title: "Explore",
@@ -64,7 +64,7 @@ class _LandingPageState extends State<LandingPage> {
       ),
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
-          "assets/svgs/income.svg",
+          "assets/svgs/studio.svg",
           color: _index == 3 ? Constants.pColor : Constants.textColor2,
         ),
         title: "Journal",

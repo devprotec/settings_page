@@ -242,6 +242,14 @@ class AppStyle {
 //
         );
 
+    /* fontFamily: 'SF Pro Display',
+      fontSize: fontSize,
+      color: textColor,
+      fontWeight: fontWeight
+//
+
+    );
+ */
 //       fontFamily: 'SF Pro Display',
 //       fontSize: fontSize,
 //       color: textColor,

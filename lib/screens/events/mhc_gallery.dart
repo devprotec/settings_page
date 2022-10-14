@@ -9,7 +9,7 @@ class MHCGallery extends StatefulWidget {
 }
 
 class _MHCGalleryState extends State<MHCGallery> {
-  bool isSelected = false;
+  //bool isSelected = false;
   String selectedImage = "";
 
   List imageFileLocations = [

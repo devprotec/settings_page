@@ -51,7 +51,7 @@ class Constants {
 
   static Color lightBlueA70099 = fromHex('#990196ea');
   static Color mainColor = const Color(0xff161B46);
-  static Color bottomSheetTextColor = fromHex('#007AF');
+  static Color bottomSheetTextColor = fromHex('#007AFF');
 
   static Color whiteA700 = fromHex('#ffffff');
   static Color insideIconCircleColor = fromHex('#CDF1FF');
@@ -68,6 +68,12 @@ class Constants {
   static Color deepPurple100 = fromHex('#d4d9f5');
   static Color bluegray90066 = fromHex('#66151b46');
   static Color red51 = fromHex('#fff2f0');
+  static Color chatPageColor = fromHex('#F4F5FB');
+  static Color sentMessageBoxColor = fromHex('#ABE8FF');
+  static Color conversationDateColor = fromHex('#022364');
+  static Color lightgray900 = fromHex('#34405E');
+  static Color lightbuttonTextColor = fromHex('#0064A7');
+  static Color healthDetailsBackground = fromHex('#E6F7FD');
   static Color pColor = const Color(0xFF0095E9);
   static Color highlight = const Color(0xffD4D9F5);
   static Color background = const Color(0xffF4F5FB);

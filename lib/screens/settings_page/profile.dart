@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:settings_page/screens/settings_page/main_settings_page.dart';
+import 'package:settings_page/screens/user_profile/address_details.dart';
+import 'package:settings_page/screens/user_profile/billing_details_screen.dart';
+import 'package:settings_page/screens/user_profile/coach_details_screen.dart';
 
 import '../../../models/user.dart';
 import '../../models/role_label.dart';
@@ -53,19 +56,19 @@ class UserProfileState extends State<UserProfile> {
         'title': 'Address Details'.tr,
         'icon': CupertinoIcons.location_solid,
         'onTap': () {
-          Get.to(() => Container());
+          Get.to(() => AddressDetails());
         },
       },
       {
         'title': 'Billing Details'.tr,
         'icon': Icons.receipt_long_rounded,
         // 'icon': Icons.person_pin_circle_sharp,
-        'onTap': () {},
+        'onTap': () {Get.to(()=>BillingDetailsScreen());},
       },
       {
         'title': 'Professional Details'.tr,
         'icon': Icons.school_rounded,
-        'onTap': () {},
+        'onTap': () {Get.to(()=>CoachDetailsScreen());},
         // 'subtitle': 'english'.tr,
       },
       {

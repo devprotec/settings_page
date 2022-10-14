@@ -7,15 +7,17 @@ class Button extends StatelessWidget {
   final Color? textColor;
   final double? buttonElevation;
   final double? height;
-  const Button(
-      {Key? key,
-      required this.text,
-      required this.onPressed,
-      this.buttonColor,
-      this.textColor,
-      this.height,
-      this.buttonElevation})
-      : super(key: key);
+  final Widget? icon;
+  const Button({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    this.buttonColor,
+    this.textColor,
+    this.height,
+    this.buttonElevation,
+    this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +31,7 @@ class Button extends StatelessWidget {
           child: Container(
             height: 48.0,
 
-
-           // height: height ?? null,
+            // height: height ?? null,
             //  margin: const EdgeInsets.symmetric(vertical: 10),
             //padding: const EdgeInsets.symmetric(vertical: 20),
 
@@ -49,15 +50,32 @@ class Button extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Center(
-              child: Text(
-                text.toUpperCase(),
-                style: TextStyle(
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w600,
-                  color: textColor ?? Colors.white,
-                  fontSize: 14,
-                ),
-              ),
+              child: icon == null
+                  ? Text(
+                      text.toUpperCase(),
+                      style: TextStyle(
+                        letterSpacing: 0.8,
+                        fontWeight: FontWeight.w600,
+                        color: textColor ?? Colors.white,
+                        fontSize: 14,
+                      ),
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        icon!,
+                        const SizedBox(width: 10),
+                        Text(
+                          text.toUpperCase(),
+                          style: TextStyle(
+                            letterSpacing: 0.8,
+                            fontWeight: FontWeight.w600,
+                            color: textColor ?? Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
             ),
           ),
         ));
@@ -68,12 +86,12 @@ class ButtonIcon extends StatelessWidget {
   final String text;
   final IconData icon;
   final VoidCallback onPressed;
-  const ButtonIcon(
-      {Key? key,
-      required this.text,
-      required this.onPressed,
-      required this.icon})
-      : super(key: key);
+  const ButtonIcon({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +106,6 @@ class ButtonIcon extends StatelessWidget {
           elevation: 5,
           borderRadius: BorderRadius.circular(10),
           child: Container(
-
             height: 48,
 
             //  margin: const EdgeInsets.symmetric(vertical: 10),
@@ -153,7 +170,8 @@ class CustomButton extends StatelessWidget {
   const CustomButton(
       {required this.text,
       required this.textColor,
-      required this.backgroundColor, this.width});
+      required this.backgroundColor,
+      this.width});
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,3 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/services.dart';
+
 import 'package:settings_page/util/exports.dart';
 
 class InputForms extends StatefulWidget {
@@ -21,7 +24,6 @@ class InputForms extends StatefulWidget {
   final bool? filled;
   final Widget? prefixIcon;
   final int? maxLines;
-
 
   // ignore: use_key_in_widget_constructors
   InputForms(
@@ -53,7 +55,7 @@ class _InputFormsState extends State<InputForms> {
   final FocusNode _focus = FocusNode();
   final _inFocus = ValueNotifier<bool>(false);
   TextEditingController controller = TextEditingController();
-  
+
   bool seePassword = true;
   @override
   void initState() {
@@ -121,7 +123,7 @@ class _InputFormsState extends State<InputForms> {
                 decoration: InputDecoration(
                   filled: widget.filled ?? false,
                   //prefix: widget.prefixIcon ?? null,
-                  fillColor:widget.color,
+                  fillColor: widget.color,
                   suffixStyle: TextStyle(fontSize: 12),
                   isDense: true,
                   contentPadding: EdgeInsets.symmetric(
@@ -190,9 +192,10 @@ class _InputFormsState extends State<InputForms> {
                                 ? Constants.mainColor
                                 : Colors.black54,
                           ),
-
                         )
-                      : widget.prefixIcon != null ? widget.prefixIcon: null,
+                      : widget.prefixIcon != null
+                          ? widget.prefixIcon
+                          : null,
                   suffixIcon: widget.obscure
                       ? IconButton(
                           iconSize: widget.suffixIconSize ?? 18.0,
@@ -606,5 +609,145 @@ validateVoterNumber(String value) {
     return 'enter_a_valid_voter'.tr;
   } else {
     return null;
+  }
+}
+
+class TextFieldTemplate extends StatelessWidget {
+  final String? hintText;
+  final TextEditingController controller;
+  final bool obscureText;
+  final double? height;
+  final TextInputType textInputType;
+  final TextInputAction textInputAction;
+  final double? leftContentPadding;
+  final double? rightContentPadding;
+  final int? maxLines;
+  final int? maxLenght;
+
+  TextFieldTemplate({
+    this.hintText,
+    required this.controller,
+    required this.obscureText,
+    this.height,
+    required this.textInputType,
+    required this.textInputAction,
+    this.leftContentPadding,
+    this.rightContentPadding,
+    this.maxLines,
+    this.maxLenght,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+      height: height ?? 48,
+      width: width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        color: Constants.inactiveStatusColorGray,
+      ),
+      child: Center(
+        child: TextField(
+          key: key,
+          controller: controller,
+          obscureText: obscureText,
+          autofocus: false,
+          keyboardType: textInputType,
+          textInputAction: textInputAction,
+          maxLines: maxLines ?? null,
+          maxLength: maxLenght ?? null,
+          autocorrect: false,
+          decoration: InputDecoration(
+            counterText: '',
+            contentPadding: EdgeInsets.only(
+              left: leftContentPadding ?? 16,
+              right: rightContentPadding ?? 16,
+            ),
+            border: InputBorder.none,
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Constants.indigo700),
+                borderRadius: BorderRadius.circular(10)),
+            hintStyle: TextStyle(
+              color: Constants.inactiveIconColor,
+              fontSize: 14.0,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.8,
+            ),
+            hintText: hintText ?? "Type a message...",
+          ),
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 14.0,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.8,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class DropDownFieldTemplate extends StatefulWidget {
+  String initialValue;
+  List<String> dropDownListItems;
+
+  DropDownFieldTemplate({
+    Key? key,
+    required this.initialValue,
+    required this.dropDownListItems,
+  }) : super(key: key);
+
+  @override
+  State<DropDownFieldTemplate> createState() => _DropDownFieldTemplateState();
+}
+
+class _DropDownFieldTemplateState extends State<DropDownFieldTemplate> {
+  @override
+  Widget build(BuildContext context) {
+    double width = Get.width;
+    return Container(
+      height: 50,
+      width: width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        color: Constants.inactiveStatusColorGray,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton(
+            // Initial Value
+            value: widget.initialValue,
+            isDense: false,
+            isExpanded: true,
+            style: AppStyle.feedbackTextStyle,
+            icon: Icon(
+              Icons.keyboard_arrow_down,
+              color: Constants.bluegray504,
+            ),
+
+            items: widget.dropDownListItems.map((String items) {
+              return DropdownMenuItem(
+                value: items,
+                child: Text(
+                  items,
+                  style: AppStyle.feedbackTextStyle,
+                ),
+              );
+            }).toList(),
+            // After selecting the desired option,it will
+            // change button value to selected value
+            onChanged: (String? newValue) {
+              setState(() {
+                widget.initialValue = newValue!;
+              });
+            },
+          ),
+        ),
+      ),
+    );
   }
 }

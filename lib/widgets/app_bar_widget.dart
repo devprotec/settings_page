@@ -60,3 +60,73 @@ class AppbarWidget extends StatelessWidget {
     );
   }
 }
+
+class AppbarWidgetNew extends StatelessWidget {
+  final String appBarTitle;
+  final bool? hasActions;
+  final Widget? trailingWidget;
+  final Widget? leadingWidget;
+  final Color? leadingWidgetColor;
+  final Color? itemsColor;
+  final VoidCallback? trailingWidgetFunction;
+
+  const AppbarWidgetNew({
+    Key? key,
+    required this.appBarTitle,
+    this.hasActions,
+    this.trailingWidget,
+    this.leadingWidgetColor,
+    this.leadingWidget,
+    this.itemsColor = Colors.black,
+    this.trailingWidgetFunction,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: const EdgeInsets.only(top: 10.0),
+      child: Stack(
+        children: [
+          Container(
+            width: width,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: Text(
+                appBarTitle,
+                style: itemsColor == Colors.white
+                    ? Constants.titleTextStyleWhite
+                    : Constants.titleTextStyle,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 5.0,
+            ),
+            child: Container(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    leadingWidget ??
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                    GestureDetector(
+                      onTap: trailingWidgetFunction,
+                      child: trailingWidget ??
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                    ),
+                  ]),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

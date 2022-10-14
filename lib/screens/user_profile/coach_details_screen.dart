@@ -41,10 +41,11 @@ class CoachDetailsScreen extends StatelessWidget {
                 top: height * 0.2958,
                 left: width * 0.0533,
                 right: width * 0.0533,
-                bottom: 20,
+                bottom: 5,
               ),
               child: Container(
                 width: width,
+                height: height * 0.308,
                 decoration: AppDecoration.outlineLightblue90019.copyWith(
                   borderRadius: BorderRadiusStyle.roundedBorder16,
                   color: Colors.white,

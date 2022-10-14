@@ -42,14 +42,16 @@ class UserProfileState extends State<UserProfile> {
         'title': 'personal_details'.tr,
         'icon': CupertinoIcons.person,
         'onTap': () {
-          Get.to( PersonalDetailsScreen(user: customerUser,));
+          Get.to(PersonalDetailsScreen(
+            user: customerUser,
+          ));
         },
       },
       {
         'title': 'fitness_details'.tr,
         'icon': Icons.fitness_center_rounded,
         'onTap': () {
-          Get.to(()=>const ProfileFitnessDetailsScreen());
+          Get.to(() => const ProfileFitnessDetailsScreen());
         },
       },
       {
@@ -112,12 +114,12 @@ class UserProfileState extends State<UserProfile> {
               children: [
                 Constants.spaceLarge,
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, top:20),
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
                   child: IconAppBar(
                     text: 'Profile'.tr,
                     icon: IconButton(
                       onPressed: () {
-                        Get.to( MainSettingsPage());
+                        Get.to(MainSettingsPage());
                       },
                       icon: const Icon(
                         Icons.settings_outlined,
@@ -188,7 +190,7 @@ class UserProfileState extends State<UserProfile> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                 Expanded(
+                                Expanded(
                                   child: MetricStar(
                                     icon: CupertinoIcons.heart,
                                     color: Color(0XFFE6E8F3),
@@ -205,7 +207,7 @@ class UserProfileState extends State<UserProfile> {
                                     text: '300 kcal  burned    ',
                                   ),
                                 ),
-                                 Expanded(
+                                Expanded(
                                   child: MetricStar(
                                     icon: Icons.coffee_rounded,
                                     color: Color(0XFFE6E8F3),
@@ -221,102 +223,129 @@ class UserProfileState extends State<UserProfile> {
                     Constants.spaceSmall,
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 19.0),
-                      child: Stack(children: [
-                        InkWell(
-                           onTap: (){
-                            Get.to(()=>const WalletPage());
-                           },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              //color: const Color(0XFF0095E9),
-                              gradient:
-                                  widget.user.roleLabel == RoleLabel.CUSTOMER
-                                      ? LinearGradient(colors: [
-                                          Constants.fromHex('#F79F1B'),
-                                          Constants.fromHex('#E46E2C'),
-                                        ])
-                                      : LinearGradient(colors: [
-                                          Constants.fromHex('#00ACE9'),
-                                          Constants.fromHex('#0095E9'),
-                                        ]),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color(0XFFE6E8F3),
-                                  spreadRadius: 1,
-                                  blurRadius: 10,
-                                  offset:
-                                      Offset(0, 0), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(children: [
-                              CircleAvatar(
-                                backgroundColor:
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.to(() => const WalletPage());
+                        },
+                        child: Stack(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16),
+                                //color: const Color(0XFF0095E9),
+                                gradient:
                                     widget.user.roleLabel == RoleLabel.CUSTOMER
-                                        ? Constants.fromHex('#E57E25')
-                                        : Constants.fromHex('#0064A7'),
-                                radius: 20,
-                                child: const Icon(
-                                  Icons.account_balance_wallet_rounded,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(width: 20),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'my_balance'.tr,
-                                    style: const TextStyle(
-                                      color: Colors.white60,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 5),
-                                  Text(
-                                    "\$ " + widget.user.balance.toString().tr,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 18,
-                                    ),
+                                        ? LinearGradient(colors: [
+                                            Constants.fromHex('#F79F1B'),
+                                            Constants.fromHex('#E46E2C'),
+                                          ])
+                                        : LinearGradient(colors: [
+                                            Constants.fromHex('#00ACE9'),
+                                            Constants.fromHex('#0095E9'),
+                                          ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color(0XFFE6E8F3),
+                                    spreadRadius: 1,
+                                    blurRadius: 10,
+                                    offset: Offset(
+                                        0, 0), // changes position of shadow
                                   ),
                                 ],
                               ),
-                            ]),
-                          ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 13.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(children: [
+                                    CircleAvatar(
+                                      backgroundColor: widget.user.roleLabel ==
+                                              RoleLabel.CUSTOMER
+                                          ? Constants.fromHex('#E57E25')
+                                          : Constants.fromHex('#0064A7'),
+                                      radius: 20,
+                                      child: const Icon(
+                                        Icons.account_balance_wallet_rounded,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 20),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'my_balance'.tr,
+                                          style: const TextStyle(
+                                            color: Colors.white60,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          "\$ " +
+                                              widget.user.balance.toString().tr,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ]),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      widget.user.roleLabel ==
+                                              RoleLabel.CUSTOMER
+                                          ? Positioned.fill(
+                                              top: 35,
+                                              left: 240,
+                                              child: Text(
+                                                "top_up".tr.toUpperCase(),
+                                                style:
+                                                    AppStyle.poppinsTextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            )
+                                          : const SizedBox.shrink()
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                            Positioned.fill(
+                              top: 10,
+                              left: 150,
+                              child: CommonImageView(
+                                svgPath: 'assets/svgs/vector22.svg',
+                                color: Colors.white54,
+                              ),
+                            ),
+                            Positioned.fill(
+                              top: 25,
+                              left: 150,
+                              child: CommonImageView(
+                                svgPath: 'assets/svgs/vector23.svg',
+                                color: Colors.white54,
+                              ),
+                            ),
+                          ],
                         ),
-                        Positioned.fill(
-                          top: 10,
-                          left: 150,
-                          child: CommonImageView(
-                            svgPath: 'assets/svgs/vector22.svg',
-                            color: Colors.white54,
-                          ),
-                        ),
-                        Positioned.fill(
-                          top: 25,
-                          left: 150,
-                          child: CommonImageView(
-                            svgPath: 'assets/svgs/vector23.svg',
-                            color: Colors.white54,
-                          ),
-                        ),
-                        widget.user.roleLabel == RoleLabel.CUSTOMER
-                            ? Positioned.fill(
-                                top: 35,
-                                left: 240,
-                                child: Text(
-                                  "top_up".tr.toUpperCase(),
-                                  style: AppStyle.poppinsTextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 17,),
-                                ),)
-                            : const SizedBox.shrink()
-                      ],),
+                      ),
                     ),
                     Constants.spaceMedium,
                     ...detailList
@@ -349,29 +378,27 @@ class UserProfileState extends State<UserProfile> {
 }
 
 User customerUser = User(
-  username: "Hannah Burnell",
-  roleLabel: RoleLabel.CUSTOMER,
-  dataOfBirth: DateTime.now(),
-  balance: 0.00,
-  gender: Genders.FEMALE,
-  phonenumber: '+233 446 545 895',
-  email: 'customer.user@example.com',
-  height: 160,
-  weight: 60,
-  bloodType: 'A',
-  allergies: "cow_milk"
-);
+    username: "Hannah Burnell",
+    roleLabel: RoleLabel.CUSTOMER,
+    dataOfBirth: DateTime.now(),
+    balance: 0.00,
+    gender: Genders.FEMALE,
+    phonenumber: '+233 446 545 895',
+    email: 'customer.user@example.com',
+    height: 160,
+    weight: 60,
+    bloodType: 'A',
+    allergies: "cow_milk");
 
 User professionalUser = User(
-  username: "Hannah Burnell",
-  roleLabel: RoleLabel.PROFESSIONAL,
-  dataOfBirth: DateTime.now(),
-  balance: 10000.50,
-  gender: Genders.FEMALE,
-  phonenumber: '+233 446 545 895',
-  email: 'professional.user@example.com',
-  height: 160,
-  weight: 60,
-  bloodType: 'A',
-  allergies: "cow_milk"
-);
+    username: "Hannah Burnell",
+    roleLabel: RoleLabel.PROFESSIONAL,
+    dataOfBirth: DateTime.now(),
+    balance: 10000.50,
+    gender: Genders.FEMALE,
+    phonenumber: '+233 446 545 895',
+    email: 'professional.user@example.com',
+    height: 160,
+    weight: 60,
+    bloodType: 'A',
+    allergies: "cow_milk");

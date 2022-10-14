@@ -86,6 +86,7 @@ class ChatHomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           elevation: 1,
           flexibleSpace: PreferredSize(

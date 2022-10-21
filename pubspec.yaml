@@ -40,6 +40,7 @@ dependencies:
   country_code_picker:
   share_plus: ^4.5.0
   persistent_bottom_nav_bar_v2: ^4.2.5
+  google_maps_flutter: ^2.2.1
   flutter_ruler_picker:
     path: ./libraries/flutter_ruler_picker-master/
 

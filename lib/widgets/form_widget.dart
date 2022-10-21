@@ -25,6 +25,9 @@ class InputForms extends StatefulWidget {
   final Widget? prefixIcon;
   final int? maxLines;
   final TextStyle? textStyle;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final double? preffixIconSize;
 
   // ignore: use_key_in_widget_constructors
   InputForms(
@@ -34,6 +37,7 @@ class InputForms extends StatefulWidget {
       this.suffixicon,
       this.placeholder,
       this.suffixIconSize,
+      this.preffixIconSize,
       this.inputType = TextInputType.text,
       this.enabled = true,
       required this.obscure,
@@ -47,7 +51,10 @@ class InputForms extends StatefulWidget {
       this.color,
       this.filled,
       this.prefixIcon,
-      this.maxLines, this.textStyle});
+      this.hintText,
+      this.hintStyle,
+      this.maxLines,
+      this.textStyle});
   @override
   _InputFormsState createState() => _InputFormsState();
 }
@@ -117,19 +124,22 @@ class _InputFormsState extends State<InputForms> {
                 controller: controller,
                 onChanged: widget.onChange,
                 obscureText: widget.obscure ? seePassword : false,
-                style: widget.textStyle ?? const TextStyle(
-                  fontSize: 15,
-                  letterSpacing: 1.8,
-                ),
+                style: widget.textStyle ??
+                    const TextStyle(
+                      fontSize: 15,
+                      letterSpacing: 1.8,
+                    ),
                 decoration: InputDecoration(
+                  //hintText:hintText,
+                  //hintStyle:hintStyle,
                   filled: widget.filled ?? false,
                   //prefix: widget.prefixIcon ?? null,
                   fillColor: widget.color,
                   suffixStyle: TextStyle(fontSize: 12),
                   isDense: true,
-                  contentPadding: EdgeInsets.symmetric(
-                      vertical: widget.contentPadding ?? 16,
-                      horizontal: widget.horizontalContentPadding ?? 16),
+                  // contentPadding: EdgeInsets.symmetric(
+                  //     vertical: widget.contentPadding ?? 16,
+                  //     horizontal: widget.horizontalContentPadding ?? 16),
                   errorStyle: const TextStyle(
                     fontSize: 11,
                     color: Colors.red,
@@ -189,6 +199,7 @@ class _InputFormsState extends State<InputForms> {
                           valueListenable: _inFocus,
                           builder: (_, focus, __) => Icon(
                             widget.icon,
+                            size: widget.preffixIconSize ?? 24,
                             color: focus as bool
                                 ? Constants.mainColor
                                 : Colors.black54,
@@ -210,7 +221,7 @@ class _InputFormsState extends State<InputForms> {
                                   Icons.visibility_off)
                               : Icon(widget.hiddenPasswordIcon ??
                                   Icons.visibility))
-                      : null,
+                      : widget.suffixicon
                 ),
               ),
             ),
@@ -748,6 +759,226 @@ class _DropDownFieldTemplateState extends State<DropDownFieldTemplate> {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class InputFormsV2 extends StatefulWidget {
+  final String? description;
+  final String? placeholder;
+  final ValueNotifier<String> notifier;
+  final TextInputType inputType;
+  final IconData? icon;
+  final Widget? suffixicon;
+  final TextStyle? descriptionTextStyle;
+  final bool enabled;
+  final bool obscure;
+  final double? suffixIconSize;
+  final IconData? visiblePasswordIcon;
+  final IconData? hiddenPasswordIcon;
+  final Function(String)? validation;
+  final Function(String?)? onChange;
+  final double? contentPadding;
+  final double? horizontalContentPadding;
+  final Color? color;
+  final bool? filled;
+  final Widget? prefixIcon;
+  final int? maxLines;
+  final TextStyle? textStyle;
+
+  // ignore: use_key_in_widget_constructors
+  InputFormsV2(
+      {this.description,
+      required this.notifier,
+      this.icon,
+      this.suffixicon,
+      this.placeholder,
+      this.suffixIconSize,
+      this.inputType = TextInputType.text,
+      this.enabled = true,
+      required this.obscure,
+      required this.onChange,
+      this.validation,
+      this.visiblePasswordIcon,
+      this.hiddenPasswordIcon,
+      this.descriptionTextStyle,
+      this.contentPadding,
+      this.horizontalContentPadding,
+      this.color,
+      this.filled,
+      this.prefixIcon,
+      this.maxLines,
+      this.textStyle});
+  @override
+  _InputFormsV2State createState() => _InputFormsV2State();
+}
+
+class _InputFormsV2State extends State<InputFormsV2> {
+  final FocusNode _focus = FocusNode();
+  final _inFocus = ValueNotifier<bool>(false);
+  TextEditingController controller = TextEditingController();
+
+  bool seePassword = true;
+  @override
+  void initState() {
+    super.initState();
+
+    controller.text = widget.notifier.value;
+    _focus.addListener(_onFocusChange);
+    if (!widget.enabled) {
+      widget.notifier.addListener(() {
+        controller.text = widget.notifier.value;
+      });
+    }
+  }
+
+  void _onFocusChange() {
+    _inFocus.value = _focus.hasFocus;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: 8,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (widget.description != null) ...[
+            ValueListenableBuilder(
+              valueListenable: _inFocus,
+              builder: (_, focus, __) => Text(
+                widget.description!,
+                style: widget.descriptionTextStyle ??
+                    TextStyle(
+                      fontSize: 13,
+                      color: focus as bool
+                          ? Constants.mainColor
+                          : const Color(0xff34405E),
+                    ),
+              ),
+            ),
+          ],
+          const SizedBox(height: 5),
+          ValueListenableBuilder(
+            valueListenable: widget.notifier,
+            builder: (_, value, __) => Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color(0xffF4F5FB),
+              ),
+              child: TextFormField(
+                maxLines: widget.maxLines ?? 1,
+                autocorrect: false,
+                keyboardType: widget.inputType,
+                focusNode: _focus,
+                enabled: widget.enabled,
+                controller: controller,
+                onChanged: widget.onChange,
+                obscureText: widget.obscure ? seePassword : false,
+                style: widget.textStyle ??
+                    const TextStyle(
+                      fontSize: 15,
+                      letterSpacing: 1.8,
+                    ),
+                decoration: InputDecoration(
+                  filled: widget.filled ?? false,
+                  //prefix: widget.prefixIcon ?? null,
+                  fillColor: widget.color,
+                  suffixStyle: TextStyle(fontSize: 12),
+                  isDense: true,
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: widget.contentPadding ?? 16,
+                      horizontal: widget.horizontalContentPadding ?? 16),
+                  errorStyle: const TextStyle(
+                    fontSize: 11,
+                    color: Colors.red,
+                  ),
+                  focusColor: Constants.mainColor,
+                  hintText: widget.placeholder,
+                  errorText: widget.validation == null
+                      ? null
+                      : widget.validation!(value as String),
+                  errorBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 1,
+                      color: Colors.red,
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  focusedErrorBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 1,
+                      color: Colors.red,
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 0,
+                      color: Colors.grey.withOpacity(0.2),
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 0,
+                      color: Colors.grey.withOpacity(0.2),
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 1,
+                      color: Constants.mainColor,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  prefixIcon: widget.icon != null
+                      ? ValueListenableBuilder(
+                          valueListenable: _inFocus,
+                          builder: (_, focus, __) => Icon(
+                            widget.icon,
+                            color: focus as bool
+                                ? Constants.mainColor
+                                : Colors.black54,
+                          ),
+                        )
+                      : widget.prefixIcon != null
+                          ? widget.prefixIcon
+                          : null,
+                  suffixIcon: widget.obscure
+                      ? IconButton(
+                          iconSize: widget.suffixIconSize ?? 18.0,
+                          onPressed: () {
+                            setState(() {
+                              seePassword = !seePassword;
+                            });
+                          },
+                          icon: seePassword
+                              ? Icon(widget.visiblePasswordIcon ??
+                                  Icons.visibility_off)
+                              : Icon(widget.hiddenPasswordIcon ??
+                                  Icons.visibility))
+                      : null,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

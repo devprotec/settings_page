@@ -137,7 +137,7 @@ class RowWithinContainer extends StatelessWidget {
                   color: textColor ?? Colors.white,
                   fontFamily: "Poppins",
                   fontSize: 14,
-                  fontWeight: FontWeight.w600))
-        ]));
+                  fontWeight: FontWeight.w600,),),
+        ],),);
   }
 }

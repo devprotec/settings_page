@@ -40,6 +40,8 @@ dependencies:
   country_code_picker:
   share_plus: ^4.5.0
   persistent_bottom_nav_bar_v2: ^4.2.5
+  material_design_icons_flutter: ^5.0.6996
+  carousel_slider: ^4.1.1
   flutter_ruler_picker:
     path: ./libraries/flutter_ruler_picker-master/
 

@@ -1033,4 +1033,12 @@ final Map<String, String> enUs = {
   'top_up_success': r"Top Up Successful! Paid $100.00",
   "new_balance": "New Balance",
   'choose_payment': 'Choose Payment Method',
+  'explore':'Explore',
+  'popular_programs':'Popular Programs',
+  'new_on_mhc':'New on MHC',
+  'popular_articles':'Popular Articles',
+  'recent':'Recent',
+  'coaches':"Coaches",
+  'activity':"Activity",
+  'trending':"Trending"
 };

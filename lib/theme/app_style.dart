@@ -216,6 +216,16 @@ class AppStyle {
         color: color,
         fontWeight: fontWeight);
   }
+  static interTextStyle(
+      {required double fontSize,
+      required FontWeight fontWeight,
+      required Color color}) {
+    return TextStyle(
+        fontFamily: 'Inter',
+        fontSize: fontSize,
+        color: color,
+        fontWeight: fontWeight);
+  }
 
   static poppinsTextstyle(
     double fontSize,

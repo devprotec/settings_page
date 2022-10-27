@@ -1,5 +1,8 @@
 import '../../util/exports.dart';
 
+
+import 'package:uuid/uuid.dart';
+
 class AddLocation extends StatefulWidget {
   const AddLocation({Key? key}) : super(key: key);
 
@@ -8,9 +11,12 @@ class AddLocation extends StatefulWidget {
 }
 
 class _AddLocationState extends State<AddLocation> {
+  final sessionToken = Uuid().v4();
+               
   var searchNotifier = ValueNotifier<String>('');
   @override
   Widget build(BuildContext context) {
+     print(sessionToken);
     return SafeArea(
         child: Scaffold(
       appBar: PreferredSize(
@@ -25,6 +31,14 @@ class _AddLocationState extends State<AddLocation> {
               },
             ),
           )),
+          floatingActionButton: Padding(
+          padding: const EdgeInsets.only(left: 30.0),
+          child: Button(
+            text: 'lbl_next'.tr,
+            onPressed: () {},
+            width: double.infinity,
+          ),
+        ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -38,6 +52,7 @@ class _AddLocationState extends State<AddLocation> {
                   "assets/images/search.png",
                   height: 1,
                 ),
+                
                 notifier: searchNotifier,
                 obscure: false,
                 onChange: (val) {

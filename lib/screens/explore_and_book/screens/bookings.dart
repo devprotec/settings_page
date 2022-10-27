@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:settings_page/screens/events/add_location.dart';
 import 'package:settings_page/screens/explore_and_book/models.dart/artilce_model.dart';
+import 'package:settings_page/screens/explore_and_book/screens/select_activity.dart';
+import 'package:settings_page/screens/explore_and_book/screens/add_your_location.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/articles_card.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/event_card.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/explore_container.dart';
@@ -39,7 +42,9 @@ class _BookingState extends State<Bookings> {
       text: "Coaches",
       containerColor: colors[0],
       iconData: Icons.people_alt,
-      onTap: () {},
+      onTap: () {
+        Get.to(()=>SelectActivity());
+      },
     );
     final wellness_professional = ExploreContainer(
       text: "Wellness Professionals",
@@ -108,22 +113,27 @@ class _BookingState extends State<Bookings> {
           },
           icon: Icon(Icons.search),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "msg_add_your_locati".tr,
-              style: AppStyle.interTextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Constants.fromHex('#0E1339')),
-            ),
-            IconButton(
-              color: Colors.black,
-              onPressed: () {},
-              icon: Icon(Icons.arrow_drop_down),
-            ),
-          ],
+        title: GestureDetector(
+          onTap: (){
+            Get.to(AddYourLocation());
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "msg_add_your_locati".tr,
+                style: AppStyle.interTextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Constants.fromHex('#0E1339')),
+              ),
+              IconButton(
+                color: Colors.black,
+                onPressed: () {},
+                icon: Icon(Icons.arrow_drop_down),
+              ),
+            ],
+          ),
         ),
         actions: [
           IconButton(
@@ -178,38 +188,41 @@ class _BookingState extends State<Bookings> {
                 'popular_programs'.tr,
               ),
             ),
-            CarouselSlider(
-              options: CarouselOptions(
-                height: 215,
-                padEnds: false,
-                disableCenter: true,
-                viewportFraction: 0.8,
-                initialPage: 0,
-                //enableInfiniteScroll: true,
-                reverse: false,
-                // autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enlargeCenterPage: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    programCurrent = index;
-                  });
-                },
-                scrollDirection: Axis.horizontal,
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 215,
+                  padEnds: false,
+                  disableCenter: true,
+                  viewportFraction: 0.9,
+                  initialPage: 0,
+                  //enableInfiniteScroll: true,
+                  reverse: false,
+                  // autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 3),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      programCurrent = index;
+                    });
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
+                items: [
+                  EventCardCustomer(
+                    eventDataModel: programs[0],
+                  ),
+                  EventCardCustomer(
+                    eventDataModel: programs[1],
+                  ),
+                  EventCardCustomer(
+                    eventDataModel: programs[2],
+                  )
+                ],
               ),
-              items: [
-                EventCardCustomer(
-                  eventDataModel: programs[0],
-                ),
-                EventCardCustomer(
-                  eventDataModel: programs[1],
-                ),
-                EventCardCustomer(
-                  eventDataModel: programs[2],
-                )
-              ],
             ),
             Constants.spaceMedium,
             Padding(
@@ -226,38 +239,41 @@ class _BookingState extends State<Bookings> {
                 'new_on_mhc'.tr,
               ),
             ),
-            CarouselSlider(
-              options: CarouselOptions(
-                height: 215,
-                padEnds: false,
-                disableCenter: true,
-                viewportFraction: 0.8,
-                initialPage: 0,
-                //enableInfiniteScroll: true,
-                reverse: false,
-                // autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enlargeCenterPage: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    newArticlesCurrent = index;
-                  });
-                },
-                scrollDirection: Axis.horizontal,
+            Padding(
+              padding: const EdgeInsets.only(left:16.0),
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 215,
+                  padEnds: false,
+                  disableCenter: true,
+                  viewportFraction: 0.9,
+                  initialPage: 0,
+                  //enableInfiniteScroll: true,
+                  reverse: false,
+                  // autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 3),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      newArticlesCurrent = index;
+                    });
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
+                items: [
+                  ArticlesCard(
+                    article: artilce1,
+                  ),
+                  ArticlesCard(
+                    article: artilce2,
+                  ),
+                  ArticlesCard(
+                    article: artilce3,
+                  )
+                ],
               ),
-              items: [
-                ArticlesCard(
-                  article: artilce1,
-                ),
-                ArticlesCard(
-                  article: artilce2,
-                ),
-                ArticlesCard(
-                  article: artilce3,
-                )
-              ],
             ),
             Constants.spaceMedium,
             Padding(
@@ -276,38 +292,42 @@ class _BookingState extends State<Bookings> {
                 'popular_articles'.tr,
               ),
             ),
-            CarouselSlider(
-              options: CarouselOptions(
-                height: 215,
-                padEnds: false,
-                disableCenter: true,
-                viewportFraction: 0.8,
-                initialPage: 0,
-                //enableInfiniteScroll: true,
-                reverse: false,
-                // autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enlargeCenterPage: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    popularArticlesCurrent = index;
-                  });
-                },
-                scrollDirection: Axis.horizontal,
+            Padding(
+              padding: const EdgeInsets.only(left:16.0),
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 215,
+                  padEnds: false,
+                  disableCenter: true,
+                  viewportFraction: 0.9,
+                  initialPage: 0,
+                  //enableInfiniteScroll: true,
+                  reverse: false,
+                  // autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 3),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      popularArticlesCurrent = index;
+                    });
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
+                items: [
+                  ArticlesCard(
+                    article: artilce4,
+                  ),
+                  ArticlesCard(
+                    article: artilce5,
+                  ),
+                  ArticlesCard(
+                    article: artilce6,
+                  )
+                ],
               ),
-              items: [
-                ArticlesCard(
-                  article: artilce4,
-                ),
-                ArticlesCard(
-                  article: artilce5,
-                ),
-                ArticlesCard(
-                  article: artilce6,
-                )
-              ],
             ),
             Constants.spaceMedium,
             Padding(

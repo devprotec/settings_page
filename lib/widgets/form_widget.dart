@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:ui';
+
 import 'package:flutter/services.dart';
 
 import 'package:settings_page/util/exports.dart';
@@ -28,6 +30,7 @@ class InputForms extends StatefulWidget {
   final String? hintText;
   final TextStyle? hintStyle;
   final double? preffixIconSize;
+  final Function()? onTap;
 
   // ignore: use_key_in_widget_constructors
   InputForms(
@@ -54,6 +57,7 @@ class InputForms extends StatefulWidget {
       this.hintText,
       this.hintStyle,
       this.maxLines,
+      this.onTap,
       this.textStyle});
   @override
   _InputFormsState createState() => _InputFormsState();
@@ -221,8 +225,10 @@ class _InputFormsState extends State<InputForms> {
                                   Icons.visibility_off)
                               : Icon(widget.hiddenPasswordIcon ??
                                   Icons.visibility))
-                      : widget.suffixicon
+                      : widget.suffixicon,
+                    
                 ),
+                onTap:widget.onTap ?? null,
               ),
             ),
           ),

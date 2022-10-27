@@ -1,4 +1,4 @@
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
 import 'package:settings_page/util/exports.dart';
 
 class ExploreContainer extends StatelessWidget {

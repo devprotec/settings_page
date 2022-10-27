@@ -1040,5 +1040,6 @@ final Map<String, String> enUs = {
   'recent':'Recent',
   'coaches':"Coaches",
   'activity':"Activity",
-  'trending':"Trending"
+  'trending':"Trending",
+  'select_activity':'Select Activity',
 };

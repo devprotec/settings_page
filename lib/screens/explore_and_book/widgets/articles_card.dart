@@ -11,7 +11,7 @@ class ArticlesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 14, left: 16),
+      margin: EdgeInsets.only(top: 14,),
       padding: EdgeInsets.all(10),
       width: 320,
       height: 210,

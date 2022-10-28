@@ -254,6 +254,7 @@ final Map<String, String> enUs = {
   "msg_activities_sche": "Activities Schedule",
   "lbl_done": "Done",
   "lbl_organiser": "Organisers",
+  "lbl_organiser_sing": "Organiser",
   "msg_6391_elgin_st2": "6391 Elgin St. Celina, Delaware 102...",
   "lbl_23_nov_2021": "23 Nov, 2021",
   "msg_there_are_no_bo": "There are no bootcamps yet",
@@ -1042,4 +1043,8 @@ final Map<String, String> enUs = {
   'activity':"Activity",
   'trending':"Trending",
   'select_activity':'Select Activity',
+  'what_to_expect': 'What to Expect',
+  'general_availability': 'General Availability',
+  'what_to_expect_long':
+      'We service clients who have various goals such as weight loss, bulking up, toning up, getting limber, staying healthy, and relieving stress. We provides all of the workout equipment and bring a portable workout bench, resistance bands, and adjustable weights',
 };

@@ -107,6 +107,7 @@ class AppbarWidgetNew extends StatelessWidget {
               vertical: 5.0,
             ),
             child: Container(
+              width: width,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,

@@ -81,6 +81,7 @@ class Constants {
   static const Color textColor2 = Color(0xff6E768D);
   static double height = Get.height;
   static double width = Get.width;
+  static Color textColorViolet = fromHex("#B75FDC");
 
   static Widget spaceMediumColumn = SizedBox(
     height: 20,

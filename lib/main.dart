@@ -5,6 +5,7 @@ import 'package:settings_page/screens/events/empty_create_event_page.dart';
 import 'package:settings_page/screens/explore_and_book/screens/bookings.dart';
 import 'package:settings_page/screens/explore_and_book/screens/search_professional.dart';
 import 'package:settings_page/screens/explore_and_book/screens/select_coach_filter.dart';
+import 'package:settings_page/screens/explorer_booker/preview_program_screen.dart';
 import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/screens/settings_page/profile.dart';
 import 'package:settings_page/util/exports.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
       locale: Get.deviceLocale, //for setting localization strings
       fallbackLocale: Locale('en', 'US'),
       title: 'settings_page',
-      home: SearchProfessional(),
+      //home: LandingPage(),
+      home: PreviewProgramScreen(),
     );
   }
 }

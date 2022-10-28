@@ -23,39 +23,53 @@ class ProfesionalDataModel {
       this.type,
       this.locationType,
       this.isRemoved = false});
+
+
+  ProfesionalDataModel.fromJson(Map<String, dynamic> json)
+      : Name = json['Name'],
+        imagePath = json['imagePath'],
+        numberOfStars = json['numberOfStars'],
+        numberOfReviews = json['numberOfReviews'],
+        rating = json['rating'],
+        individualRate = json['individualRate'],
+        Location = json['Location'],
+        type = json['type'],
+        locationType = json['locationType'],
+        isRemoved = json['isRemoved'];
+
 }
 
 ProfesionalDataModel cooper = ProfesionalDataModel(
     Name: "Jacob Cooper",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_bg.png",
     );
 ProfesionalDataModel nancy = ProfesionalDataModel(
     Name: "Nancy Tailor",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashxmswve.png",
    );
 ProfesionalDataModel stefany = ProfesionalDataModel(
     Name: "Stefany Stewart",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Wellness.name + " Professional",
     imagePath: "assets/images/img_unsplashkvmirq.png",
     );
 ProfesionalDataModel guy = ProfesionalDataModel(
     Name: "Guy Hawkins",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_unsplashkvmirq_32X32.png",
     );
 ProfesionalDataModel amelia = ProfesionalDataModel(
     Name: "Amelia Blunt",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashj1oscm.png",
@@ -63,21 +77,21 @@ ProfesionalDataModel amelia = ProfesionalDataModel(
 
     ProfesionalDataModel david = ProfesionalDataModel(
     Name: "David Brewu",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_bg.png",
     );
 ProfesionalDataModel anthony = ProfesionalDataModel(
     Name: "Anthony Asamoah",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashxmswve.png",
    );
 ProfesionalDataModel oswald = ProfesionalDataModel(
     Name: "Oswald Gyabaah",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Wellness.name + " Professional",
     imagePath: "assets/images/img_unsplashkvmirq.png",
@@ -91,7 +105,7 @@ ProfesionalDataModel simon = ProfesionalDataModel(
     );
 ProfesionalDataModel bright = ProfesionalDataModel(
     Name: "Bright Okyere",
-    rating: 5,
+    rating: 5.0,
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashj1oscm.png",

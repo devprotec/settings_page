@@ -3,9 +3,20 @@ class Article {
   final String image;
   final String readTime;
 
-  const Article(
+   Article(
       {required this.title, required this.image, required this.readTime});
+
+      Article.fromJson(Map<String, dynamic> json)
+      :
+        title = json['title'],
+        image = json['image'],
+        readTime = json['readTime'];
+      
 }
+
+
+
+
 
 final artilce1 = Article(
   title: "7 benefits of regular physical activity",

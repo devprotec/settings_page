@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:settings_page/screens/explore_and_book/models.dart/coach_filter_controller.dart';
+import 'package:settings_page/screens/explore_and_book/models/coach_filter_controller.dart';
 //import 'package:google_place/google_place.dart';
 import 'package:settings_page/util/exports.dart';
 import 'package:google_place/google_place.dart' hide Location;

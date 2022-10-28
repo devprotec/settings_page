@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:settings_page/controllers/events_controller.dart';
 import 'package:settings_page/screens/events/add_location.dart';
 import 'package:settings_page/screens/events/choose_organizer.dart';
-import 'package:settings_page/screens/explore_and_book/models.dart/coach_filter_controller.dart';
+import 'package:settings_page/screens/explore_and_book/models/coach_filter_controller.dart';
 import 'package:settings_page/screens/explore_and_book/screens/add_your_location.dart';
 
 import '../../../util/exports.dart';

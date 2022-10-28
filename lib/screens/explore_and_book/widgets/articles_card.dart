@@ -1,4 +1,4 @@
-import 'package:settings_page/screens/explore_and_book/models.dart/artilce_model.dart';
+import 'package:settings_page/screens/explore_and_book/models/artilce_model.dart';
 import 'package:settings_page/util/exports.dart';
 
 class ArticlesCard extends StatelessWidget {

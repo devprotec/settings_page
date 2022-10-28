@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:settings_page/screens/events/add_location.dart';
-import 'package:settings_page/screens/explore_and_book/models.dart/artilce_model.dart';
+import 'package:settings_page/screens/explore_and_book/models/artilce_model.dart';
 import 'package:settings_page/screens/explore_and_book/screens/select_activity.dart';
 import 'package:settings_page/screens/explore_and_book/screens/add_your_location.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/articles_card.dart';

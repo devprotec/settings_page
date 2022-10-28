@@ -1,7 +1,9 @@
 import 'package:settings_page/models/professional_data_model.dart';
 import 'package:settings_page/util/exports.dart';
 
+
 class CoachFilterController extends GetxController{
+  
   var addedOrganizers = <ProfesionalDataModel>[].obs;
   var sortByOption = "msg_individual_rate".obs;
   var userLocation = ''.obs;

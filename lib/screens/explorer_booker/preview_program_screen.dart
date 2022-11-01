@@ -1,5 +1,6 @@
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:settings_page/screens/explorer_booker/card_adding_screen.dart';
 import 'package:settings_page/screens/explorer_booker/location_details_screen.dart';
 import 'package:settings_page/util/exports.dart';
 import 'package:widget_mask/widget_mask.dart';
@@ -182,7 +183,9 @@ class _PreviewProgramScreenState extends State<PreviewProgramScreen> {
                       ),
                       Button(
                         text: "BOOK A PROGRAM",
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => CardAddingScreen());
+                        },
                       ),
                     ],
                   ),

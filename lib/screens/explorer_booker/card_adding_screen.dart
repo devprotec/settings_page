@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:settings_page/screens/explorer_booker/payment_successful.dart';
+import 'package:settings_page/screens/user_profile/billing_details_screen.dart';
 import 'package:settings_page/util/exports.dart';
 
 class CardAddingScreen extends StatefulWidget {
@@ -239,23 +240,28 @@ class _CardAddingScreenState extends State<CardAddingScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      CommonImageView(
-                        svgPath: "assets/images/img_mastercard_logo.svg",
-                      ),
-                      SizedBox(
-                        width: 13,
-                      ),
-                      Text(
-                        "MasterCard 4567",
-                        style: AppStyle.poppinsTextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Constants.gray900,
+                  GestureDetector(
+                    onTap: () {
+                      //Get.to(() => BillingDetailsScreen());
+                    },
+                    child: Row(
+                      children: [
+                        CommonImageView(
+                          svgPath: "assets/images/img_mastercard_logo.svg",
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 13,
+                        ),
+                        Text(
+                          "MasterCard 4567",
+                          style: AppStyle.poppinsTextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Constants.gray900,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Icon(
                     Icons.arrow_forward_ios,

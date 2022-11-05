@@ -3,6 +3,7 @@ import 'package:settings_page/screens/Home/landing_page.dart';
 import 'package:settings_page/screens/events/all_events.dart';
 import 'package:settings_page/screens/events/empty_create_event_page.dart';
 import 'package:settings_page/screens/explorer_booker/preview_program_screen.dart';
+import 'package:settings_page/screens/explorer_booker/select_coach_screen.dart';
 import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/screens/settings_page/profile.dart';
 import 'package:settings_page/util/exports.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Locale('en', 'US'),
       title: 'settings_page',
       //home: LandingPage(),
-      home: PreviewProgramScreen(),
+      //home: PreviewProgramScreen(),
+      home: SelectCoachScreen(),
     );
   }
 }

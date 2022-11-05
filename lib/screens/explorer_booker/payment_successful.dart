@@ -140,8 +140,6 @@ class _PaymentSuccesfulState extends State<PaymentSuccesful> {
                                   ),
                                 ),
                                 Positioned(
-                                  //padding: const EdgeInsets.all(8.0),
-                                  //top: 206,
                                   left: 16,
                                   right: 16,
                                   bottom: 8,

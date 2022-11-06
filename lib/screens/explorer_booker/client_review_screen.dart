@@ -1,7 +1,55 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:settings_page/screens/explorer_booker/models/client_review_model.dart';
+
 import 'package:settings_page/util/exports.dart';
 
 class ClientReviewScreen extends StatelessWidget {
+  List<ClientReviewModel> clientReviewList = [
+    ClientReviewModel(
+      name: "Kwesi T.",
+      className: "3 Elements - Adult Class",
+      type: "Event",
+      message:
+          "Hannah is very positive, friendly, and effective as a customer. We developed a workout plan together to reach towards my goals. He is also eager to answer questions that I had about nutrition and workout trends!",
+      numberOfStars: 2,
+      date: "March 8, 2021",
+    ),
+    ClientReviewModel(
+      name: "David B.",
+      className: "3 Elements - Adult Class",
+      type: "Class",
+      message: "Class was boring today",
+      numberOfStars: 5,
+      date: "March 8, 2021",
+    ),
+    ClientReviewModel(
+      name: "Cameron W.",
+      className: "3 Elements - Adult Class",
+      type: "Program",
+      message: "Session was very interesting. Good caoch",
+      numberOfStars: 5,
+      date: "March 8, 2021",
+    ),
+    ClientReviewModel(
+      name: "Jane C.",
+      className: "3 Elements - Adult Class",
+      type: "Event",
+      message: "It ccan improve",
+      numberOfStars: 4,
+      date: "March 8, 2021",
+    ),
+    ClientReviewModel(
+      name: "Tereza C.",
+      className: "3 Elements - Adult Class",
+      type: "Program",
+      message: "Very intense. Keep it up coach. Health and wellness goals",
+      numberOfStars: 1,
+      date: "March 8, 2021",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -86,7 +134,7 @@ class ClientReviewScreen extends StatelessWidget {
                   height: 20,
                 ),
                 ListView.builder(
-                  itemCount: 9,
+                  itemCount: clientReviewList.length,
                   physics: BouncingScrollPhysics(
                       parent: NeverScrollableScrollPhysics()),
                   shrinkWrap: true,
@@ -94,7 +142,14 @@ class ClientReviewScreen extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(
                           left: 24.0, right: 24, bottom: 16),
-                      child: SingleReviewLayout(),
+                      child: SingleReviewLayout(
+                        name: clientReviewList[index].name,
+                        numberOfStars: clientReviewList[index].numberOfStars,
+                        className: clientReviewList[index].className,
+                        type: clientReviewList[index].type,
+                        message: clientReviewList[index].message,
+                        date: clientReviewList[index].date,
+                      ),
                     );
                   },
                 ),
@@ -108,13 +163,30 @@ class ClientReviewScreen extends StatelessWidget {
 }
 
 class SingleReviewLayout extends StatelessWidget {
+  String name;
+  String className;
+  String type;
+  String message;
+  int numberOfStars;
+  String date;
+
+  SingleReviewLayout({
+    Key? key,
+    required this.name,
+    required this.className,
+    required this.type,
+    required this.message,
+    required this.numberOfStars,
+    required this.date,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Tsan S.',
+          name,
           style: AppStyle.poppinsTextstyle(
             16,
             FontWeight.w500,
@@ -128,7 +200,7 @@ class SingleReviewLayout extends StatelessWidget {
               ignoring: true,
               child: RatingBar.builder(
                 itemSize: 12,
-                initialRating: 5.0,
+                initialRating: numberOfStars.toDouble(),
                 minRating: 1,
                 direction: Axis.horizontal,
                 allowHalfRating: true,
@@ -151,7 +223,7 @@ class SingleReviewLayout extends StatelessWidget {
               width: 6,
             ),
             Text(
-              '5.0',
+              numberOfStars.toString(),
               style: AppStyle.poppinsTextstyle(
                 12,
                 FontWeight.w500,
@@ -164,7 +236,7 @@ class SingleReviewLayout extends StatelessWidget {
           height: 10,
         ),
         Text(
-          '3 Elements  - Adult Class',
+          className,
           style: AppStyle.poppinsTextstyle(
             14,
             FontWeight.w500,
@@ -176,18 +248,27 @@ class SingleReviewLayout extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Constants.fromHex("#EFDAF7")),
+            borderRadius: BorderRadius.circular(8),
+            color: type == "Class"
+                ? Constants.fromHex("#EFDAF7")
+                : type == "Program"
+                    ? Constants.fromHex("#CDF1FF")
+                    : Constants.fromHex("#F9F2B2"),
+          ),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 6.0,
             ),
             child: Text(
-              "Class",
+              type,
               style: AppStyle.poppinsTextstyle(
                 12.0,
                 FontWeight.w500,
-                Constants.fromHex("#8E44AD"),
+                type == "Class"
+                    ? Constants.fromHex("#8E44AD")
+                    : type == "Program"
+                        ? Constants.fromHex("#0085C8")
+                        : Constants.fromHex("#A58D0E"),
               ),
             ),
           ),
@@ -196,7 +277,7 @@ class SingleReviewLayout extends StatelessWidget {
           height: 12,
         ),
         Text(
-          'Hannah is very positive, friendly, and effective as a customer. We developed a workout plan together to reach towards my goals. He is also eager to answer questions that I had about nutrition and workout trends. Jane finds a way to motivate and push you just the right amount, while not being overbearing. I am feeling great, more energetic, less stressed, and developing the physique that I want. Thank you Jane!',
+          message,
           style: AppStyle.poppinsTextstyle(
             14,
             FontWeight.w400,
@@ -207,7 +288,7 @@ class SingleReviewLayout extends StatelessWidget {
           height: 4,
         ),
         Text(
-          'March 8, 2021',
+          date,
           style: AppStyle.poppinsTextstyle(
             12,
             FontWeight.w400,

@@ -10,6 +10,7 @@ class ProfesionalDataModel {
   final String? individualRate;
   final String? Location;
   final String? locationType;
+  final List<String>? certificates;
   bool? isRemoved;
 
   ProfesionalDataModel(
@@ -22,7 +23,7 @@ class ProfesionalDataModel {
       this.Location,
       this.type,
       this.locationType,
-      this.isRemoved = false});
+      this.isRemoved = false, this.certificates});
 
 
   ProfesionalDataModel.fromJson(Map<String, dynamic> json)
@@ -35,7 +36,8 @@ class ProfesionalDataModel {
         Location = json['Location'],
         type = json['type'],
         locationType = json['locationType'],
-        isRemoved = json['isRemoved'];
+        isRemoved = json['isRemoved'],
+        certificates = json['certificates'];
 
 }
 
@@ -45,6 +47,7 @@ ProfesionalDataModel cooper = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_bg.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );
 ProfesionalDataModel nancy = ProfesionalDataModel(
     Name: "Nancy Tailor",
@@ -52,6 +55,7 @@ ProfesionalDataModel nancy = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashxmswve.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
    );
 ProfesionalDataModel stefany = ProfesionalDataModel(
     Name: "Stefany Stewart",
@@ -59,6 +63,7 @@ ProfesionalDataModel stefany = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Wellness.name + " Professional",
     imagePath: "assets/images/img_unsplashkvmirq.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );
 ProfesionalDataModel guy = ProfesionalDataModel(
     Name: "Guy Hawkins",
@@ -66,6 +71,8 @@ ProfesionalDataModel guy = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_unsplashkvmirq_32X32.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
+
     );
 ProfesionalDataModel amelia = ProfesionalDataModel(
     Name: "Amelia Blunt",
@@ -73,6 +80,7 @@ ProfesionalDataModel amelia = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashj1oscm.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );
 
     ProfesionalDataModel david = ProfesionalDataModel(
@@ -81,6 +89,7 @@ ProfesionalDataModel amelia = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_bg.png",
+     certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );
 ProfesionalDataModel anthony = ProfesionalDataModel(
     Name: "Anthony Asamoah",
@@ -88,6 +97,7 @@ ProfesionalDataModel anthony = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashxmswve.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
    );
 ProfesionalDataModel oswald = ProfesionalDataModel(
     Name: "Oswald Gyabaah",
@@ -95,6 +105,7 @@ ProfesionalDataModel oswald = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Wellness.name + " Professional",
     imagePath: "assets/images/img_unsplashkvmirq.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );
 ProfesionalDataModel simon = ProfesionalDataModel(
     Name: "Simon Suuk",
@@ -102,6 +113,7 @@ ProfesionalDataModel simon = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Fitness.name + " Coach",
     imagePath: "assets/images/img_unsplashkvmirq_32X32.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );
 ProfesionalDataModel bright = ProfesionalDataModel(
     Name: "Bright Okyere",
@@ -109,4 +121,5 @@ ProfesionalDataModel bright = ProfesionalDataModel(
     numberOfReviews: 13,
     type: ProfessionalType.Nutrition.name + " Professional",
     imagePath: "assets/images/img_unsplashj1oscm.png",
+    certificates: ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     );

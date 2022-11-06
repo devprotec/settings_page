@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../controllers/onboarding_controller.dart';
 import '../../../theme/app_style.dart';
 import '../../../util/constants.dart';
 import '../../../widgets/button.dart';

@@ -5,7 +5,8 @@ import '../../../util/exports.dart';
 import '../widgets/professionalcard.dart';
 
 class SearchProfessional extends StatefulWidget {
-  const SearchProfessional({Key? key}) : super(key: key);
+  final String title;
+  const SearchProfessional({Key? key, required this.title}) : super(key: key);
 
   @override
   State<SearchProfessional> createState() => _SearchProfessionalState();
@@ -38,10 +39,11 @@ class _SearchProfessionalState extends State<SearchProfessional> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          child: AppbarWidget(
-            hasActions: true,
-            appBarTitle: "Select Coach".tr,
-          ),
+          child: AppBar(
+            leading: Constants.arrowBacks(color: Colors.black),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            title: Text(widget.title.tr, style: Constants.titleTextStyle,),),
           preferredSize: Size.fromHeight(50),
         ),
         
@@ -70,11 +72,16 @@ class _SearchProfessionalState extends State<SearchProfessional> {
                             
                           },
                           filled: true,
+                          hintStyle: TextStyle(fontSize: 14, color: Colors.black54),
                           color: Constants.fromHex('#F4F5FB'),
-                          placeholder: "msg_search_for_orga".tr,
-                          prefixIcon: Image.asset(
-                            "assets/images/search.png",
-                            height: 1,
+                          placeholder: "Search for Coach".tr,
+                          prefixIcon: IconButton(
+                            iconSize: 32,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.search,
+                              color: Constants.fromHex('#B3B3B3'),
+                            ),
                           ),
                           notifier: searchNotifier,
                           obscure: false,
@@ -97,12 +104,8 @@ class _SearchProfessionalState extends State<SearchProfessional> {
                               borderRadius: BorderRadius.circular(8)),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 18),
-                            child: CommonImageView(
-                              imagePath: "assets/images/filter.png",
-                              height: 15,
-                              width: 18,
-                            ),
+                                horizontal: 20, vertical: 13),
+                            child:Icon(Icons.filter_list)
                           ),
                         ),
                       ),

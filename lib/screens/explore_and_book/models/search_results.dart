@@ -11,7 +11,8 @@
       "eventStartTime": "9:00 AM",
       "eventStatus": "Active",
       "eventSubCategory": "Meditation",
-      "isOnline": true
+      "isOnline": true,
+      "certificates": ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     },
     {
         "eventApprovalStatus": "Active",
@@ -24,7 +25,8 @@
         "eventStartTime": "9:00 AM",
         "eventStatus": "Active",
         "eventSubCategory": "Meditation",
-        "isOnline": true
+        "isOnline": true,
+        "certificates": ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
       }
   ],
 
@@ -40,7 +42,8 @@
       "eventStartTime": "9:00 AM",
       "eventStatus": "Active",
       "eventSubCategory": "Meditation",
-      "isOnline": true
+      "isOnline": true,
+      "certificates": ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     }
   ],
   "coaches": [
@@ -49,14 +52,16 @@
       "rating": 5.0,
       "numberOfReviews": 13,
       "type": "Nutrition Professional",
-      "imagePath": "assets/images/img_unsplashxmswve.png"
+      "imagePath": "assets/images/img_unsplashxmswve.png",
+      "certificates": ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     },
     {
       "Name": "Anthony Asamoah",
       "rating": 5.0,
       "numberOfReviews": 13,
       "type": "Nutrition Professional",
-      "imagePath": "assets/images/img_unsplashxmswve.png"
+      "imagePath": "assets/images/img_unsplashxmswve.png",
+      "certificates": ["Boxing", "Yoga", "Stretching", "Crossfit", "HIIT"],
     }
   ],
   "faqs": [

@@ -193,3 +193,40 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class CustomButton1 extends StatelessWidget {
+  final String text;
+  final Color textColor;
+  final Color backgroundColor;
+  final Function()? onTap;
+
+  const CustomButton1({
+    required this.text,
+    required this.textColor,
+    required this.backgroundColor,
+    this.onTap
+  });
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap ?? null,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: backgroundColor,
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: AppStyle.poppinsTextstyle(
+              15,
+              FontWeight.w500,
+              textColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

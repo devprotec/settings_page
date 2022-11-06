@@ -92,7 +92,7 @@ class _AllEventsState extends State<AllEvents> {
                               eventsList.length == 0 ? 1 : eventsList.length,
                           itemBuilder: ((context, index) {
                             return eventsList.length == 0
-                                ? emptyEvents()
+                                ? Constants.emptyEvents()
                                 : Padding(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 4.0, horizontal: 5),
@@ -109,7 +109,7 @@ class _AllEventsState extends State<AllEvents> {
                                   : activeEventsList.length,
                               itemBuilder: ((context, index) {
                                 return activeEventsList.length == 0
-                                    ? emptyEvents()
+                                    ? Constants.emptyEvents()
                                     : Padding(
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 4.0),
@@ -127,7 +127,7 @@ class _AllEventsState extends State<AllEvents> {
                                       : draftEventsList.length,
                                   itemBuilder: ((context, index) {
                                     return draftEventsList.length == 0
-                                        ? emptyEvents()
+                                        ? Constants.emptyEvents()
                                         : Padding(
                                             padding: const EdgeInsets.symmetric(
                                                 vertical: 4.0),
@@ -145,7 +145,7 @@ class _AllEventsState extends State<AllEvents> {
                                           : expiredEventsList.length,
                                       itemBuilder: ((context, index) {
                                         return expiredEventsList.length == 0
-                                            ? emptyEvents()
+                                            ? Constants.emptyEvents()
                                             : Padding(
                                                 padding:
                                                     const EdgeInsets.symmetric(
@@ -166,22 +166,5 @@ class _AllEventsState extends State<AllEvents> {
     );
   }
 
-  emptyEvents() {
-    return Column(
-      children: [
-        Constants.spaceLargeColumn,
-        Constants.spaceLargeColumn,
-        CommonImageView(
-            svgPath: "assets/images/img_ill.svg",
-            height: getVerticalSize(246.00),
-            width: getHorizontalSize(222.00)),
-        Constants.spaceLargeColumn,
-        Text("msg_there_is_no_eve".tr,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: AppStyle.poppinsTextstyle(
-                16, FontWeight.w500, Constants.fromHex("#34405E"))),
-      ],
-    );
-  }
+  
 }

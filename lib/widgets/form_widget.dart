@@ -120,6 +120,7 @@ class _InputFormsState extends State<InputForms> {
                 color: const Color(0xffF4F5FB),
               ),
               child: TextField(
+                
                 maxLines: widget.maxLines ?? 1,
                 autocorrect: false,
                 keyboardType: widget.inputType,
@@ -150,6 +151,7 @@ class _InputFormsState extends State<InputForms> {
                   ),
                   focusColor: Constants.mainColor,
                   hintText: widget.placeholder,
+                  hintStyle: widget.hintStyle ?? null,
                   errorText: widget.validation == null
                       ? null
                       : widget.validation!(value as String),

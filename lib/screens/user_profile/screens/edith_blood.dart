@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../controllers/onboarding_controller.dart';
 import '../../../theme/app_style.dart';
 import '../../../util/constants.dart';
 import '../../../widgets/button.dart';
+import '../../on_boarding/screens/blood_type.dart';
 import '../models/onboarding_controller.dart';
 import '../widgets/blood_type.dart';
 import 'edit_height_weight.dart';

@@ -77,6 +77,7 @@ class _SelectCoachFilterState extends State<SelectCoachFilter> {
       isOnline = !isOnline;
     });
   }
+
   onWorkingHoursSelected() {
     setState(() {
       isWorkingHours = true;
@@ -90,7 +91,6 @@ class _SelectCoachFilterState extends State<SelectCoachFilter> {
       isWorkingHours = false;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -296,43 +296,44 @@ class _SelectCoachFilterState extends State<SelectCoachFilter> {
                 Constants.spaceLargeColumn,
                 titleText("Rate Range".tr),
                 Constants.spaceSmallColumn,
-                Row(
-                   
-                    children: [
-                      ProfessionalTypeContainer(
-                        isSelected: isWorkingHours,
-                        text: 'Working Hours'.tr,
-                        onTap: onWorkingHoursSelected,
-                        hasRow: false,
-                       
-                      ),
-                      Constants.spaceMediumRow,
-                      ProfessionalTypeContainer(
-                        isSelected: isSpecifyHours,
-                        text: 'Specify the hours'.tr,
-                        onTap: onSpecifyHoursSelected,
-                        hasRow: false,
-                       
-                      ),
-                    ]),
-                    Constants.spaceMedium,
-                    isSpecifyHours ?
-                    GestureDetector(
-                  onTap: () {
-                    Get.bottomSheet( timeRangePicker());
-                  },
-                  child: Obx(
-                    () => containterAndRow(controller.userLocation.value == ''
-                        ? '8 AM - 9 PM'.tr
-                        : controller.userLocation.value),
+                Row(children: [
+                  ProfessionalTypeContainer(
+                    isSelected: isWorkingHours,
+                    text: 'Working Hours'.tr,
+                    onTap: onWorkingHoursSelected,
+                    hasRow: false,
                   ),
-                ):SizedBox.shrink(),
+                  Constants.spaceMediumRow,
+                  ProfessionalTypeContainer(
+                    isSelected: isSpecifyHours,
+                    text: 'Specify the hours'.tr,
+                    onTap: onSpecifyHoursSelected,
+                    hasRow: false,
+                  ),
+                ]),
+                Constants.spaceMedium,
+                isSpecifyHours
+                    ? GestureDetector(
+                        onTap: () {
+                          Get.bottomSheet(timeRangePicker());
+                        },
+                        child: Obx(
+                          () => containterAndRow(
+                              controller.userLocation.value == ''
+                                  ? '8 AM - 9 PM'.tr
+                                  : controller.userLocation.value),
+                        ),
+                      )
+                    : SizedBox.shrink(),
                 Constants.spaceMedium,
                 Button(
                     text: "lbl_apply".tr,
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => ChooseOrganizer(),),);
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => ChooseOrganizer(),
+                        ),
+                      );
                     }),
                 Constants.spaceMediumColumn,
               ],
@@ -345,12 +346,15 @@ class _SelectCoachFilterState extends State<SelectCoachFilter> {
 
   selectDays(String day) {
     return GestureDetector(
-      onTap:(){
-        if(controller.days.contains(day)){
-          controller.days.remove(day);}else{controller.days.add(day);}
+      onTap: () {
+        if (controller.days.contains(day)) {
+          controller.days.remove(day);
+        } else {
+          controller.days.add(day);
+        }
       },
-      child: Obx(()=>(
-        Container(
+      child: Obx(
+        () => (Container(
           width: 40,
           height: 40,
           padding: EdgeInsets.all(10),
@@ -522,27 +526,27 @@ class _SelectCoachFilterState extends State<SelectCoachFilter> {
     );
   }
 
-timeText(String time){
+  timeText(String time) {
     return Text(
       time.tr,
       style: AppStyle.txtPoppinsMedium14,
     );
   }
-  timeRangePicker(){
+
+  timeRangePicker() {
     return Container(
-      height: size.height*0.45,
+      height: size.height * 0.45,
       width: double.infinity,
       color: Colors.white,
       child: CupertinoPicker(
         //diameterRatio: 0.5,
         itemExtent: 40,
-        
+
         selectionOverlay: CupertinoPickerDefaultSelectionOverlay(
-          
           capEndEdge: false,
           capStartEdge: false,
         ),
-        onSelectedItemChanged: (val){},
+        onSelectedItemChanged: (val) {},
         children: [
           timeText('12 PM - 1 AM'),
           timeText('1 AM - 2 AM'),
@@ -561,10 +565,8 @@ timeText(String time){
           timeText('2 PM - 3 PM'),
           timeText('3 PM - 4 PM'),
           timeText('4 PM - 5 PM'),
-
         ],
       ),
     );
-    
   }
 }

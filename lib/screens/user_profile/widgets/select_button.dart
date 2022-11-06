@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../on_boarding/model/options.dart';
+import '../../../controllers/onboarding_controller.dart';
 import '../../../util/constants.dart';
 import '../models/onboarding_controller.dart';
 

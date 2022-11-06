@@ -13,3 +13,5 @@ enum PermissionAction {
   ACTIVATE,
   BULK_ACTION
 }
+
+enum Explore { SportPlaces, Classes, Coaches, None }

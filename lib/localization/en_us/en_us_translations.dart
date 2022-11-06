@@ -1045,6 +1045,7 @@ final Map<String, String> enUs = {
   'select_activity':'Select Activity',
   'what_to_expect': 'What to Expect',
   'general_availability': 'General Availability',
+  'about_coach':"Hi, I'm Jane from Jane's Mobile Personal Training Company. I provide services in Gold Country, the Sacramento Area, and in Roseville, CA. I bring the gym right to my clients with my mobile workout gear. I teach weight training, cardiovascular exercises, Krav Maga, Muay Thai Fitness, and Kickboxing Conditioning in personal training sessions. \n\nMy specialties are in weight loss and physique sculpting. I have three certifications through NESTA and am a Certified Personal Fitness Trainer, Certified MMA Conditioning Coach, and Certified Muay Thai Fitness Instructor. I teach clients of all ages.",
   'what_to_expect_long':
       'We service clients who have various goals such as weight loss, bulking up, toning up, getting limber, staying healthy, and relieving stress. We provides all of the workout equipment and bring a portable workout bench, resistance bands, and adjustable weights',
 };

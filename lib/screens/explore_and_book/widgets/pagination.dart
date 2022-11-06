@@ -5,18 +5,28 @@ import '../../../util/constants.dart';
 class Pagination extends StatelessWidget {
   final int itemsLength;
   final int current;
-  const Pagination({Key? key, required this.itemsLength, required this.current}) : super(key: key);
+  final Color? activeColor;
+  final Color? inactiveColor;
+  const Pagination(
+      {Key? key,
+      required this.itemsLength,
+      required this.current,
+      this.activeColor,
+      this.inactiveColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      for (int i = 0; i < itemsLength ; i++)
+      for (int i = 0; i < itemsLength; i++)
         Container(
-          width: i==0 ? 40:6,
-          height: i == 0 ? 5:6,
+          width: i == current ? 40 : 6,
+          height: i == current ? 5 : 6,
           margin: EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
-            color: current == i ? Constants.pColor : Colors.black12,
+            color: current == i
+                ? activeColor ?? Constants.pColor
+                : inactiveColor ?? Colors.black12,
             borderRadius: BorderRadius.circular(4),
           ),
         ),

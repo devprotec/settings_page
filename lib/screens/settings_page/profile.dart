@@ -8,6 +8,7 @@ import 'package:settings_page/screens/user_profile/coach_details_screen.dart';
 
 import '../../../models/user.dart';
 import '../../models/role_label.dart';
+import '../../controllers/onboarding_controller.dart';
 import '../../theme/app_style.dart';
 import '../../util/constants.dart';
 import '../../widgets/cards.dart';
@@ -382,7 +383,7 @@ User customerUser = User(
     roleLabel: RoleLabel.CUSTOMER,
     dataOfBirth: DateTime.now(),
     balance: 0.00,
-    gender: Genders.FEMALE,
+    gender: Genders.F,
     phonenumber: '+233 446 545 895',
     email: 'customer.user@example.com',
     height: 160,
@@ -395,7 +396,7 @@ User professionalUser = User(
     roleLabel: RoleLabel.PROFESSIONAL,
     dataOfBirth: DateTime.now(),
     balance: 10000.50,
-    gender: Genders.FEMALE,
+    gender: Genders.F,
     phonenumber: '+233 446 545 895',
     email: 'professional.user@example.com',
     height: 160,

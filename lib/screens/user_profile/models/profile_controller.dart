@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../../controllers/onboarding_controller.dart';
 import 'onboarding_controller.dart';
 
 class ProfileController extends GetxController {

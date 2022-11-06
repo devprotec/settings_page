@@ -46,7 +46,7 @@ class AppbarWidget extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Constants.arrowBacks(color: itemsColor),
+                      leadingWidget ?? Constants.arrowBacks(color: itemsColor),
                       trailingWidget ??
                           SizedBox(
                             width: 10.0,

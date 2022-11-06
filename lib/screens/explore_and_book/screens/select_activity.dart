@@ -1,7 +1,16 @@
+import 'package:settings_page/screens/explore_and_book/screens/search_professional.dart';
 import 'package:settings_page/util/exports.dart';
 
+import '../models/coach_filter_controller.dart';
+import 'search_sport_place.dart';
+import 'sport_places_event_programs.dart';
+
 class SelectActivity extends StatefulWidget {
-  const SelectActivity({Key? key}) : super(key: key);
+  final bool isOnline;
+  final Explore explore;
+  final String? buttonText;
+  const SelectActivity({Key? key, required this.explore, this.buttonText, required this.isOnline})
+      : super(key: key);
 
   @override
   State<SelectActivity> createState() => _SelectActivityState();
@@ -9,6 +18,8 @@ class SelectActivity extends StatefulWidget {
 
 class _SelectActivityState extends State<SelectActivity> {
   // SelectActivity({Key? key}) : super(key: key);
+  final controller = Get.put(CoachFilterController());
+
   bool isMeditation = false;
   bool isYoga = false;
   bool isRunning = false;
@@ -29,33 +40,67 @@ class _SelectActivityState extends State<SelectActivity> {
 
   onMeditationTap() {
     setState(() {
-      isMeditation = !isMeditation;
+      if (controller.activities.contains("Meditation")) {
+        controller.activities.remove("Meditation");
+      } else {
+        controller.activities.add("Meditation");
+      }
     });
     // });
   }
 
   onRunningTap() {
     setState(() {
-      isRunning = !isRunning;
+      if (controller.activities.contains("Running")) {
+        controller.activities.remove("Running");
+      } else {
+        controller.activities.add("Running");
+      }
     });
+     
   }
 
   onStretchingTap() {
     setState(() {
-      isStretching = !isStretching;
+      if (controller.activities.contains("Stretching")) {
+        controller.activities.remove("Stretching");
+      } else {
+        controller.activities.add("Stretching");
+      }
     });
+     
   }
 
   onCardioTap() {
     setState(() {
-      isCardio = !isCardio;
+      if (controller.activities.contains("Cardio")) {
+        controller.activities.remove("Cardio");
+      } else {
+        controller.activities.add("Cardio");
+      }
     });
+     
   }
 
   onYogaTap() {
     setState(() {
-      isYoga = !isYoga;
+      if (controller.activities.contains("Yoga")) {
+        controller.activities.remove("Yoga");
+      } else {
+        controller.activities.add("Yoga");
+      }
     });
+     
+  }
+
+  onNextTap() {
+    if (widget.explore == Explore.Coaches) {
+      Get.to(() => SearchProfessional(title: "Select Coach",));
+    } else if (widget.explore == Explore.SportPlaces) {
+      Get.to(() => SportPlacesEventsPrograms(isOnline: widget.isOnline,));
+    } else if (widget.explore == Explore.None) {
+      Get.back();
+    }
   }
 
   @override
@@ -84,8 +129,10 @@ class _SelectActivityState extends State<SelectActivity> {
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(left: 30.0),
           child: Button(
-            text: 'lbl_next'.tr,
-            onPressed: () {},
+            text: widget.buttonText ?? 'lbl_next'.tr,
+            onPressed: () {
+              onNextTap();
+            },
             width: double.infinity,
           ),
         ),
@@ -97,13 +144,13 @@ class _SelectActivityState extends State<SelectActivity> {
             crossAxisSpacing: 16.0,
             mainAxisSpacing: 16.0,
             children: [
+              activityCard(controller.activities.contains("Meditation"),
+                  'assets/svgs/meditation.svg', onMeditationTap),
+              activityCard(controller.activities.contains("Yoga"), 'assets/svgs/yoga.svg', onYogaTap),
               activityCard(
-                  isMeditation, 'assets/svgs/meditation.svg', onMeditationTap),
-              activityCard(isYoga, 'assets/svgs/yoga.svg', onYogaTap),
-              activityCard(
-                  isStretching, 'assets/svgs/stretching.svg', onStretchingTap),
-              activityCard(isRunning, 'assets/svgs/running.svg', onRunningTap),
-              activityCard(isCardio, 'assets/svgs/cardio.svg', onCardioTap),
+                  controller.activities.contains("Stretching"), 'assets/svgs/stretching.svg', onStretchingTap),
+              activityCard(controller.activities.contains("Running"), 'assets/svgs/running.svg', onRunningTap),
+              activityCard(controller.activities.contains("Cardio"), 'assets/svgs/cardio.svg', onCardioTap),
               //showSearch(context: context, delegate: delegate)
             ],
           ),

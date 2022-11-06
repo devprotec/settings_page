@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+API Integration Issues
+1. Inappropriate error format
+2. Users don't have to login anytime they open the application
+3. Users can't do onboarding if it is not done right after account creation.
+4. 

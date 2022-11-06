@@ -1,11 +1,28 @@
 import 'package:flutter/rendering.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:settings_page/screens/explore_and_book/widgets/professionalcard.dart';
 import 'package:settings_page/screens/explorer_booker/client_review_screen.dart';
 import 'package:settings_page/screens/explorer_booker/models/location_activities.dart';
 import 'package:settings_page/screens/explorer_booker/models/location_availability.dart';
 import 'package:settings_page/util/exports.dart';
+import 'package:settings_page/widgets/programs_card.dart';
+
+import '../../models/professional_data_model.dart';
 
 class LocationDetailsScreen extends StatelessWidget {
+  var organizerList = <ProfesionalDataModel>[
+    cooper,
+    nancy,
+    stefany,
+    guy,
+    amelia,
+    david,
+    anthony,
+    oswald,
+    simon,
+    bright
+  ];
+
   List<LocationActivites> activities = [
     LocationActivites(
       "Yoga",
@@ -26,31 +43,31 @@ class LocationDetailsScreen extends StatelessWidget {
 
   List<LocationAvailability> availability = [
     LocationAvailability(
-      "Sunday",
+      "Sun",
       "10AM - 6PM",
     ),
     LocationAvailability(
-      "Monday",
+      "Mon",
       "6AM - 10PM",
     ),
     LocationAvailability(
-      "Tuesday",
+      "Tue",
       "6AM - 10PM",
     ),
     LocationAvailability(
-      "Wednesday",
+      "Wed",
       "6AM - 10PM",
     ),
     LocationAvailability(
-      "Thursday",
+      "Thu",
       "6AM - 10PM",
     ),
     LocationAvailability(
-      "Friday",
+      "Fri",
       "6AM - 10PM",
     ),
     LocationAvailability(
-      "Saturday",
+      "Sat",
       "10AM - 6PM",
     ),
   ];
@@ -62,7 +79,7 @@ class LocationDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(height * 0.329),
+        preferredSize: Size.fromHeight(height * 0.27),
         child: Stack(
           clipBehavior: Clip.none,
           children: [
@@ -414,6 +431,87 @@ class LocationDetailsScreen extends StatelessWidget {
                 ),
               ),
               Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24.0,
+                ),
+                child: Text(
+                  "Coaches".tr,
+                  style: AppStyle.poppinsTextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Constants.bluegray900,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 160,
+                child: ListView.builder(
+                  padding: EdgeInsets.only(left: 24, top: 16, bottom: 5),
+                  scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  itemCount: organizerList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: NewProfessionalCard(
+                        width: size.width*0.95,
+                        profesionalDataModel: organizerList[index],
+                        isCard: true,
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 24.0, vertical: 24.0),
+                child: Container(
+                  width: Get.width,
+                  height: 1,
+                  color: Constants.indigo50,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24.0,
+                ),
+                child: Text(
+                  "Programs".tr,
+                  style: AppStyle.poppinsTextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Constants.bluegray900,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 245,
+                child: ListView.builder(
+                  padding: EdgeInsets.only(left: 24, top: 16, bottom: 5),
+                  scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right:16.0),
+                      child: ProgramCard(
+                        width: size.width*0.9,
+                       eventDataModel: programs[index]
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 24.0, vertical: 24.0),
+                child: Container(
+                  width: Get.width,
+                  height: 1,
+                  color: Constants.indigo50,
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(
                   'general_availability'.tr,
@@ -435,7 +533,7 @@ class LocationDetailsScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    mainAxisSpacing: height * 0.0374,
+                    mainAxisSpacing: height * 0.02,
                     mainAxisExtent: 57,
                     crossAxisSpacing: width * 0.0933,
                   ),

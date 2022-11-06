@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 
 import '../screens/user_profile/models/onboarding_controller.dart';
+import '../controllers/onboarding_controller.dart';
 import 'role.dart';
 import 'role_label.dart';
 

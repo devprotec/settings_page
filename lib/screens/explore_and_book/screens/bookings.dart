@@ -1,16 +1,18 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:settings_page/screens/events/add_location.dart';
 import 'package:settings_page/screens/explore_and_book/models/artilce_model.dart';
 import 'package:settings_page/screens/explore_and_book/screens/select_activity.dart';
 import 'package:settings_page/screens/explore_and_book/screens/add_your_location.dart';
+import 'package:settings_page/screens/explore_and_book/screens/search_sport_place.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/articles_card.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/event_card.dart';
 import 'package:settings_page/screens/explore_and_book/widgets/explore_container.dart';
 import 'package:settings_page/util/exports.dart';
 
+import '../widgets/article_row.dart';
 import '../widgets/pagination.dart';
 import '../widgets/recents.dart';
+import 'select_service.dart';
 
 class Bookings extends StatefulWidget {
   @override
@@ -43,14 +45,16 @@ class _BookingState extends State<Bookings> {
       containerColor: colors[0],
       iconData: Icons.people_alt,
       onTap: () {
-        Get.to(()=>SelectActivity());
+        Get.to(()=>SelectActivity(explore:  Explore.Coaches,isOnline: false,));
       },
     );
     final wellness_professional = ExploreContainer(
       text: "Wellness Professionals",
       containerColor: colors[1],
       iconData: MdiIcons.heartCircle,
-      onTap: () {},
+      onTap: () {
+        Get.to(()=>SelectService(explore: Explore.Coaches));
+      },
     );
     final events = ExploreContainer(
       text: "Events",
@@ -69,7 +73,9 @@ class _BookingState extends State<Bookings> {
       text: "Sport Places",
       containerColor: colors[4],
       iconData: Icons.location_on,
-      onTap: () {},
+      onTap: () {
+        Get.to(()=>SearchSportPlaces());
+      },
     );
 
     final activities = ExploreContainer(
@@ -82,7 +88,9 @@ class _BookingState extends State<Bookings> {
       text: "Online Classes",
       containerColor: colors[6],
       iconData: Icons.videocam,
-      onTap: () {},
+      onTap: () {
+        Get.to(()=>SelectActivity(explore: Explore.SportPlaces, isOnline: true,));
+      },
     );
     final faq = ExploreContainer(
       text: 'FAQ',
@@ -184,8 +192,8 @@ class _BookingState extends State<Bookings> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: articleRow(
-                'popular_programs'.tr,
+              child: ArticleRow(
+              text:  'popular_programs'.tr,
               ),
             ),
             Padding(
@@ -229,14 +237,14 @@ class _BookingState extends State<Bookings> {
               padding: const EdgeInsets.only(left: 16),
               child: Pagination(
                 current: programCurrent,
-                itemsLength: programs.length,
+                itemsLength: 3,
               ),
             ),
             SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: articleRow(
-                'new_on_mhc'.tr,
+              child: ArticleRow(
+               text: 'new_on_mhc'.tr,
               ),
             ),
             Padding(
@@ -280,7 +288,7 @@ class _BookingState extends State<Bookings> {
               padding: const EdgeInsets.only(left: 16),
               child: Pagination(
                 current: newArticlesCurrent,
-                itemsLength: programs.length,
+                itemsLength: 3,
               ),
             ),
             SizedBox(
@@ -288,8 +296,8 @@ class _BookingState extends State<Bookings> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: articleRow(
-                'popular_articles'.tr,
+              child: ArticleRow(
+                text:'popular_articles'.tr,
               ),
             ),
             Padding(
@@ -334,7 +342,7 @@ class _BookingState extends State<Bookings> {
               padding: const EdgeInsets.only(left: 16),
               child: Pagination(
                 current: popularArticlesCurrent,
-                itemsLength: programs.length,
+                itemsLength: 3,
               ),
             ),
             SizedBox(
@@ -346,27 +354,5 @@ class _BookingState extends State<Bookings> {
     );
   }
 
-  articleRow(String text) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          text.tr,
-          style: AppStyle.poppinsTextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            color: Constants.fromHex('#161B46'),
-          ),
-        ),
-        Text(
-          'lbl_more'.tr,
-          style: AppStyle.poppinsTextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: Constants.fromHex('#00ACE9'),
-          ),
-        ),
-      ],
-    );
-  }
+  
 }

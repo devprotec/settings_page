@@ -10,6 +10,7 @@ import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
 import 'package:settings_page/screens/settings_page/profile.dart';
 import 'package:settings_page/util/exports.dart';
 
+import 'screens/splash.dart';
 import 'screens/user_profile/coach_details_screen.dart';
 import 'screens/user_profile/edit_billing_address.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Locale('en', 'US'),
       title: 'settings_page',
       //home: LandingPage(),
-      home: PreviewProgramScreen(),
+      home: const SplashScreen(),
     );
   }
 }

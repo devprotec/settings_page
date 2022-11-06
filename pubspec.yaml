@@ -48,6 +48,12 @@ dependencies:
   geocoding: ^2.0.5
   baseflow_plugin_template:
   google_maps_flutter: ^2.2.1
+  graphql_flutter:
+  open_mail_app:
+  pinput:
+  flutter_datetime_picker:
+  filesize:
+  bubble_lens:
   flutter_ruler_picker:
     path: ./libraries/flutter_ruler_picker-master/
 

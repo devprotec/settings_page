@@ -1,17 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 
 
+import 'package:settings_page/screens/explore_and_book/screens/bookings.dart';
 import 'package:settings_page/util/exports.dart';
 
 
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
+import '../../controllers/global_controller.dart';
+import '../../models/profile.dart';
 import '../settings_page/profile.dart';
 import 'customer_homepage.dart';
+import 'homepage_customer.dart';
 
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key}) : super(key: key);
+  //final UserProfileModel user;
+   const LandingPage({Key? key,}) : super(key: key);
+   //const LandingPage({required this.user}) ;
 
   @override
   State<LandingPage> createState() => _LandingPageState();
@@ -19,21 +25,22 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   final PersistentTabController _controller = PersistentTabController();
+  var _globalController = Get.put(GlobalController());
   int _index = 0;
   Size size = Size(0, 0);
 
   List<Widget> _buildScreens() {
     return [
-      ComingSoonPage(text: "Coming Soon: Customer Homepage",),
-      ComingSoonPage(text: 'Coming Soon: Customer Explore and Book',),
+      CustomerHomePage(user: _globalController.userProfile.value),
+      Bookings(),
       ComingSoonPage(text: 'Coming Soon: Customer Bookings',),
-      ComingSoonPage(text: 'Coming Soon: Customer Journal',),
+      //ComingSoonPage(text: 'Coming Soon: Customer Journal',),
       UserProfile(user: customerUser),
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
-    print(_controller.index);
+    
     return [
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
@@ -62,15 +69,15 @@ class _LandingPageState extends State<LandingPage> {
         activeColorPrimary: Constants.pColor,
         inactiveColorPrimary: Constants.textColor2,
       ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(
-          "assets/svgs/studio.svg",
-          color: _index == 3 ? Constants.pColor : Constants.textColor2,
-        ),
-        title: "Journal",
-        activeColorPrimary: Constants.pColor,
-        inactiveColorPrimary: Constants.textColor2,
-      ),
+      // PersistentBottomNavBarItem(
+      //   icon: SvgPicture.asset(
+      //     "assets/svgs/studio.svg",
+      //     color: _index == 3 ? Constants.pColor : Constants.textColor2,
+      //   ),
+      //   title: "Journal",
+      //   activeColorPrimary: Constants.pColor,
+      //   inactiveColorPrimary: Constants.textColor2,
+      // ),
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
           "assets/svgs/profile.svg",
@@ -85,6 +92,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
+   // print(_globalController.userProfile.value.profile!.wellnessGoals);
     _index = _controller.index;
     size = MediaQuery.of(context).size;
     return WillPopScope(

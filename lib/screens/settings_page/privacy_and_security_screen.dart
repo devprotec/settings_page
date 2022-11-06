@@ -1,6 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-
 class PrivacyAndSecurityScreen extends StatefulWidget {
   const PrivacyAndSecurityScreen({Key? key}) : super(key: key);
   @override
@@ -13,16 +12,17 @@ class _PrivacyAndSecurityScreenPage extends State<PrivacyAndSecurityScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: Colors.white,
-            appBar: PreferredSize(
-                preferredSize: Size.fromHeight(50),
-                child: AppbarWidget(
-                  appBarTitle: "msg_privacy_secur".tr,
-                  hasActions: true,
-                )),
-            body: SingleChildScrollView(
-                child: Column(children: [
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(50),
+            child: AppbarWidget(
+              appBarTitle: "msg_privacy_secur".tr,
+              hasActions: true,
+            )),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
               AnimatedCrossFade(
                   firstChild: Center(
                       child: CommonImageView(
@@ -65,14 +65,19 @@ class _PrivacyAndSecurityScreenPage extends State<PrivacyAndSecurityScreen> {
               ),
               Obx((() => controller.passwordChangedIsSuccessful.value
                   ? Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: ErrorMessage(
-                        infoIcon: CustomIcons.checkmark,
-                        message: "msg_passwords_chang".tr,
-                        messageBackgroundColor: Constants.successBacgroundColor,
-                        messageColor: Constants.successColor),
-                  )
+                      padding: const EdgeInsets.all(15),
+                      child: ErrorMessageV1(
+                          infoIcon: CustomIcons.checkmark,
+                          message: "msg_passwords_chang".tr,
+                          messageBackgroundColor:
+                              Constants.successBacgroundColor,
+                          messageColor: Constants.successColor),
+                    )
                   : SizedBox.shrink()))
-            ]))));
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

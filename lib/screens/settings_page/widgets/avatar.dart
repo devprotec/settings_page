@@ -10,14 +10,6 @@ class UserAvatar extends StatelessWidget {
       height: size ?? 90,
       width: size ?? 80,
       decoration: const BoxDecoration(
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Color(0XFFE6E8F3),
-          //     spreadRadius: 5,
-          //     blurRadius: 10,
-          //     offset: Offset(0, 0), // changes position of shadow
-          //   ),
-          // ],
           shape: BoxShape.circle,
           image: DecorationImage(
             image: AssetImage(

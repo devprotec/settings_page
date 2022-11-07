@@ -1,7 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-
-
 class ImageWidget extends StatelessWidget {
   final String imageFile;
 

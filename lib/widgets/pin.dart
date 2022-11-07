@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:pinput/pinput.dart';
+import 'package:settings_page/util/exports.dart';
 
 // ignore: use_key_in_widget_constructors
 class PinField extends StatefulWidget {

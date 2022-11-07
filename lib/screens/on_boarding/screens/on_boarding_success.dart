@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/widgets/small_text.dart';
-//import 'package:mhc_consumer/widgets/title_text.dart';
-
-//import '../../../utils/constants.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/small_text_widget.dart';
-import '../../../widgets/title_text.dart';
+import 'package:settings_page/util/exports.dart';
 
 class OnBoardingSuccess extends StatelessWidget {
   const OnBoardingSuccess({Key? key}) : super(key: key);

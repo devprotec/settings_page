@@ -1,19 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/widgets/small_text.dart';
-import 'package:open_mail_app/open_mail_app.dart';
-// import 'package:get/get.dart';
-
-import '../../controllers/auth_controller.dart';
-//import '../../utils/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/custom_appbar.dart';
-import '../../../widgets/error_message.dart';
-//import '../login/login.dart';
-import '../../util/constants.dart';
-import '../../widgets/small_text_widget.dart';
-import 'login.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ResetSuccess extends StatelessWidget {
   final String email;

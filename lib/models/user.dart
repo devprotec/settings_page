@@ -1,9 +1,4 @@
-import 'package:intl/intl.dart';
-
-import '../screens/user_profile/models/onboarding_controller.dart';
-import '../controllers/onboarding_controller.dart';
-import 'role.dart';
-import 'role_label.dart';
+import 'package:settings_page/util/exports.dart';
 
 class User {
   String? createdAt;
@@ -62,12 +57,12 @@ class User {
         isVerified = json["is_verified"] as bool,
         modifiedAt = json["modified_at"] as String,
         phonenumber = json["phone_number"] as String,
-        roles = List<RoleAndPermissions>.from(json["roles"].map((x) => RoleAndPermissions.fromJson(x))),
+        roles = List<RoleAndPermissions>.from(
+            json["roles"].map((x) => RoleAndPermissions.fromJson(x))),
         username = json["username"];
 }
 
 List<String> mapDate(DateTime dateTime) {
-  
   final splitbyHyphene = dateTime.toString().split('-');
   final year = splitbyHyphene[0];
   final month = splitbyHyphene[1];

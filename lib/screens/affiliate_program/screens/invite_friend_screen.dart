@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:share_plus/share_plus.dart';
-
-import '../../../util/constants.dart';
-import '../../../widgets/common_image_view.dart';
-import '../model/invited_person_model.dart';
-import '../widget/bottomsheets.dart';
-import '../widget/invite_status_card.dart';
+import 'package:settings_page/util/exports.dart';
 
 class InviteFriends extends StatefulWidget {
   const InviteFriends({Key? key}) : super(key: key);
@@ -122,22 +114,29 @@ class RowWithinContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(vertical: 12),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: containerColor),
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8), color: containerColor),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
           CommonImageView(svgPath: imagePath, height: 24, width: 24),
           const SizedBox(
             width: 15,
           ),
-          Text(text.tr.toUpperCase(),
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: textColor ?? Colors.white,
-                  fontFamily: "Poppins",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,),),
-        ],),);
+          Text(
+            text.tr.toUpperCase(),
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: textColor ?? Colors.white,
+              fontFamily: "Poppins",
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

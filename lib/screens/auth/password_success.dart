@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/login/login.dart';
-//import 'package:mhc_consumer/widgets/custom_appbar.dart';
-// import 'package:get/get.dart';
-
-import '../../../widgets/button.dart';
-import '../../widgets/custom_appbar.dart';
-import 'login.dart';
+import 'package:settings_page/util/exports.dart';
 
 class PasswordSuccess extends StatelessWidget {
   const PasswordSuccess({

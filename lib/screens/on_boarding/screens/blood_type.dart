@@ -1,20 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/on_boarding/widget/select_button.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../../widgets/error_message.dart';
-//import '../../../widgets/forms.dart';
-//import '../../../widgets/small_text.dart';
-import '../../../../widgets/title_text.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/form_widget.dart';
-import '../../../widgets/small_text_widget.dart';
-import '../model/options.dart';
-import '../widget/blood_shape.dart';
-import '../widget/select_button.dart';
+import 'package:settings_page/util/exports.dart';
 
 class BloobType extends GetView<OnBoardingController> {
   const BloobType({Key? key}) : super(key: key);

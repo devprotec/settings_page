@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/button.dart';
-import '../../on_boarding/screens/blood_type.dart';
-import '../models/onboarding_controller.dart';
-import '../widgets/blood_type.dart';
-import 'edit_height_weight.dart';
-
+import 'package:settings_page/util/exports.dart';
 
 class EditBloodType extends GetView<OnBoardingController> {
   const EditBloodType({Key? key}) : super(key: key);
@@ -26,22 +15,20 @@ class EditBloodType extends GetView<OnBoardingController> {
               onPressed: () {
                 Get.back();
               },
-              icon:const  Icon(
+              icon: const Icon(
                 Icons.close,
                 size: 22,
               ),
             )
           ],
-          
           centerTitle: true,
           title: Text(
             'health_details'.tr,
             style: AppStyle.poppinsTextStyle(
-              color: Constants.fromHex('#0E1339'),
-              fontWeight: FontWeight.w600,
-              fontSize: 17),
-            ),
-
+                color: Constants.fromHex('#0E1339'),
+                fontWeight: FontWeight.w600,
+                fontSize: 17),
+          ),
           backgroundColor: Colors.white,
           elevation: 0,
           bottom: PreferredSize(
@@ -53,18 +40,18 @@ class EditBloodType extends GetView<OnBoardingController> {
                 children: [
                   Container(
                     height: 5,
-                    width: Get.size.width*0.45,
+                    width: Get.size.width * 0.45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Constants.pColor ,
+                      color: Constants.pColor,
                     ),
                   ),
                   Container(
                     height: 5,
-                    width: Get.size.width*0.45,
+                    width: Get.size.width * 0.45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color:const Color(0xffE6E8F3),
+                      color: const Color(0xffE6E8F3),
                     ),
                   )
                 ],
@@ -77,18 +64,15 @@ class EditBloodType extends GetView<OnBoardingController> {
             FocusScope.of(context).unfocus();
           },
           child: Column(
-            children:  [
-               Expanded(
-                child: BloobType()
-              ),
+            children: [
+              Expanded(child: BloobType()),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Button(
-                  text:'next'.tr,
-                  onPressed: () {   
-                    Get.to(()=>const EditHeightWeight());       
-                  }
-                ),
+                    text: 'next'.tr,
+                    onPressed: () {
+                      Get.to(() => const EditHeightWeight());
+                    }),
               ),
               Constants.spaceLarge,
               Constants.spaceSmall
@@ -97,4 +81,3 @@ class EditBloodType extends GetView<OnBoardingController> {
         ));
   }
 }
-

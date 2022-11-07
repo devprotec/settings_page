@@ -1,7 +1,3 @@
-import 'package:settings_page/controllers/events_controller.dart';
-import 'package:settings_page/models/professional_data_model.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
 import '../util/exports.dart';
 
 class ProfessionalCard extends StatefulWidget {

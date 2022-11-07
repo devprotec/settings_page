@@ -1,21 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/login/login.dart';
-//import 'package:mhc_consumer/shared_controllers/global_controller.dart';
-//import 'package:mhc_consumer/widgets/error_message.dart';
-import '../../controllers/auth_controller.dart';
-//import '../../utils/constants.dart';
-import '../../../widgets/button.dart';
-//import '../../widgets/forms.dart';
-//import '../../widgets/small_text.dart';
-import '../../../widgets/title_text.dart';
-import '../../controllers/global_controller.dart';
-import '../../util/constants.dart';
-import '../../widgets/error_message.dart';
-import '../../widgets/form_widget.dart';
-import '../../widgets/small_text_widget.dart';
-import 'login.dart';
+import 'package:settings_page/util/exports.dart';
 
 class AccountCreation extends StatefulWidget {
   const AccountCreation({Key? key}) : super(key: key);
@@ -66,7 +49,7 @@ class _AccountCreationState extends State<AccountCreation> {
             Constants.space,
             Constants.space,
             Obx(() => InputForms(
-              obscure: false,
+                  obscure: false,
                   description: 'email'.tr,
                   notifier: email,
                   validation: FormBuilderValidators.compose([

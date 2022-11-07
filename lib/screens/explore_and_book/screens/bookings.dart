@@ -1,18 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:settings_page/screens/explore_and_book/models/artilce_model.dart';
-import 'package:settings_page/screens/explore_and_book/screens/select_activity.dart';
-import 'package:settings_page/screens/explore_and_book/screens/add_your_location.dart';
-import 'package:settings_page/screens/explore_and_book/screens/search_sport_place.dart';
-import 'package:settings_page/screens/explore_and_book/widgets/articles_card.dart';
-import 'package:settings_page/screens/explore_and_book/widgets/event_card.dart';
-import 'package:settings_page/screens/explore_and_book/widgets/explore_container.dart';
 import 'package:settings_page/util/exports.dart';
-
-import '../widgets/article_row.dart';
-import '../widgets/pagination.dart';
-import '../widgets/recents.dart';
-import 'select_service.dart';
 
 class Bookings extends StatefulWidget {
   @override
@@ -45,7 +31,10 @@ class _BookingState extends State<Bookings> {
       containerColor: colors[0],
       iconData: Icons.people_alt,
       onTap: () {
-        Get.to(()=>SelectActivity(explore:  Explore.Coaches,isOnline: false,));
+        Get.to(() => SelectActivity(
+              explore: Explore.Coaches,
+              isOnline: false,
+            ));
       },
     );
     final wellness_professional = ExploreContainer(
@@ -53,7 +42,7 @@ class _BookingState extends State<Bookings> {
       containerColor: colors[1],
       iconData: MdiIcons.heartCircle,
       onTap: () {
-        Get.to(()=>SelectService(explore: Explore.Coaches));
+        Get.to(() => SelectService(explore: Explore.Coaches));
       },
     );
     final events = ExploreContainer(
@@ -74,7 +63,7 @@ class _BookingState extends State<Bookings> {
       containerColor: colors[4],
       iconData: Icons.location_on,
       onTap: () {
-        Get.to(()=>SearchSportPlaces());
+        Get.to(() => SearchSportPlaces());
       },
     );
 
@@ -89,7 +78,10 @@ class _BookingState extends State<Bookings> {
       containerColor: colors[6],
       iconData: Icons.videocam,
       onTap: () {
-        Get.to(()=>SelectActivity(explore: Explore.SportPlaces, isOnline: true,));
+        Get.to(() => SelectActivity(
+              explore: Explore.SportPlaces,
+              isOnline: true,
+            ));
       },
     );
     final faq = ExploreContainer(
@@ -99,9 +91,9 @@ class _BookingState extends State<Bookings> {
       onTap: () {},
       isLast: 16,
     );
-     exploreContainer1 = [coaches, wellness_professional, events, blog];
+    exploreContainer1 = [coaches, wellness_professional, events, blog];
 
-     exploreContainer2 = [sport_places, activities, online_class, faq];
+    exploreContainer2 = [sport_places, activities, online_class, faq];
 
     super.initState();
   }
@@ -117,12 +109,12 @@ class _BookingState extends State<Bookings> {
           color: Colors.black54,
           iconSize: 30,
           onPressed: () {
-            Get.to(()=>Recent());
+            Get.to(() => Recent());
           },
           icon: Icon(Icons.search),
         ),
         title: GestureDetector(
-          onTap: (){
+          onTap: () {
             Get.to(AddYourLocation());
           },
           child: Row(
@@ -170,7 +162,7 @@ class _BookingState extends State<Bookings> {
             SizedBox(
               height: 135,
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   itemCount: exploreContainer1.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
@@ -193,7 +185,7 @@ class _BookingState extends State<Bookings> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ArticleRow(
-              text:  'popular_programs'.tr,
+                text: 'popular_programs'.tr,
               ),
             ),
             Padding(
@@ -244,11 +236,11 @@ class _BookingState extends State<Bookings> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ArticleRow(
-               text: 'new_on_mhc'.tr,
+                text: 'new_on_mhc'.tr,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:16.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: CarouselSlider(
                 options: CarouselOptions(
                   height: 215,
@@ -297,11 +289,11 @@ class _BookingState extends State<Bookings> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ArticleRow(
-                text:'popular_articles'.tr,
+                text: 'popular_articles'.tr,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:16.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: CarouselSlider(
                 options: CarouselOptions(
                   height: 215,
@@ -353,6 +345,4 @@ class _BookingState extends State<Bookings> {
       ),
     );
   }
-
-  
 }

@@ -5,7 +5,7 @@ import '../../on_boarding/model/options.dart';
 import '../../../controllers/onboarding_controller.dart';
 import '../../../util/constants.dart';
 import '../../../widgets/title_text.dart';
-import '../models/onboarding_controller.dart';
+
 import 'ruler.dart';
 import 'select_button.dart';
 

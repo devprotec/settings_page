@@ -1,6 +1,3 @@
-
-import 'package:settings_page/models/professional_data_model.dart';
-
 import '../../../util/exports.dart';
 
 class CoachCard extends StatelessWidget {
@@ -10,10 +7,9 @@ class CoachCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: AppDecoration.outlineLightblue90019
-                  .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
-        
-      
+      decoration: AppDecoration.outlineLightblue90019.copyWith(
+        borderRadius: BorderRadiusStyle.roundedBorder16,
+      ),
     );
   }
 }

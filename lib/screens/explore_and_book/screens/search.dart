@@ -1,11 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:settings_page/models/professional_data_model.dart';
-import 'package:settings_page/screens/explore_and_book/models/artilce_model.dart';
-import 'package:settings_page/screens/explore_and_book/widgets/professionalcard.dart';
 import 'package:settings_page/util/exports.dart';
-
-import '../models/search_results.dart';
-import '../widgets/articles_card.dart';
 
 class Search extends StatefulWidget {
   final String? searchWord;
@@ -23,7 +16,6 @@ class _SearchState extends State<Search> {
   void initState() {
     keyword.value = widget.searchWord!;
     super.initState();
-    
   }
 
   @override
@@ -54,68 +46,68 @@ class _SearchState extends State<Search> {
                 ),
               ),
             ),
-            coaches  != null && coaches!.length > 0?
-            Flexible(
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                itemCount: coaches!.length+1,
-                itemBuilder: ((context, index) {
-                  return 
-                  index == 0 ? Padding(
-              padding: const EdgeInsets.only(bottom:16.0),
-              child: Text('Coaches'.tr,style:Constants.titleTextStyle),
-            ):
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 15.0, ),
-                    child: NewProfessionalCard(
-                      profesionalDataModel:ProfesionalDataModel.fromJson(coaches![index-1]),
-                      isCard: true,
+            coaches != null && coaches!.length > 0
+                ? Flexible(
+                    child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: coaches!.length + 1,
+                      itemBuilder: ((context, index) {
+                        return index == 0
+                            ? Padding(
+                                padding: const EdgeInsets.only(bottom: 16.0),
+                                child: Text('Coaches'.tr,
+                                    style: Constants.titleTextStyle),
+                              )
+                            : Padding(
+                                padding: const EdgeInsets.only(
+                                  bottom: 15.0,
+                                ),
+                                child: NewProfessionalCard(
+                                  profesionalDataModel:
+                                      ProfesionalDataModel.fromJson(
+                                          coaches![index - 1]),
+                                  isCard: true,
+                                ),
+                              );
+                      }),
                     ),
-                  );
-                }),
-              ),
-            ):SizedBox.shrink(),
-            blogs  != null && blogs!.length > 0?
-             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                Text('Blogs'.tr,style:Constants.titleTextStyle),
-                 CarouselSlider(
-                  options: CarouselOptions(
-                    height: 215,
-                    padEnds: false,
-                    disableCenter: true,
-                    viewportFraction: 0.9,
-                    initialPage: 0,
-                  
-                    reverse: false,
-                   
-                    autoPlayInterval: Duration(seconds: 3),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    enlargeCenterPage: true,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                       // newArticlesCurrent = index;
-                      });
-                    },
-                    scrollDirection: Axis.horizontal,
-                  ),
-                  items: [
-                    for (var i = 0; i < blogs!.length; i++)
-                      ArticlesCard(
-                        article: Article.fromJson(blogs![i]),
-                      )
-                   
-                  ],
-            ),
-               ],
-             )
-                
-              
-            :SizedBox.shrink()
-
+                  )
+                : SizedBox.shrink(),
+            blogs != null && blogs!.length > 0
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Blogs'.tr, style: Constants.titleTextStyle),
+                      CarouselSlider(
+                        options: CarouselOptions(
+                          height: 215,
+                          padEnds: false,
+                          disableCenter: true,
+                          viewportFraction: 0.9,
+                          initialPage: 0,
+                          reverse: false,
+                          autoPlayInterval: Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              // newArticlesCurrent = index;
+                            });
+                          },
+                          scrollDirection: Axis.horizontal,
+                        ),
+                        items: [
+                          for (var i = 0; i < blogs!.length; i++)
+                            ArticlesCard(
+                              article: Article.fromJson(blogs![i]),
+                            )
+                        ],
+                      ),
+                    ],
+                  )
+                : SizedBox.shrink()
           ],
         ),
       ),

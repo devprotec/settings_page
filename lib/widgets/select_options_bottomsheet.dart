@@ -1,5 +1,3 @@
-import 'package:settings_page/controllers/events_controller.dart';
-
 import "../util/exports.dart";
 
 class OptionsBottomSheet extends StatefulWidget {

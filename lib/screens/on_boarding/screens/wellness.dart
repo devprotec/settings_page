@@ -1,15 +1,4 @@
-import 'package:bubble_lens/bubble_lens.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/utils/utilities.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../../widgets/error_message.dart';
-import '../../../../widgets/title_text.dart';
-import '../../../util/constants.dart';
-import '../../../util/utilities.dart';
-import '../widget/bubble.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Wellness extends GetView<OnBoardingController> {
   const Wellness({Key? key}) : super(key: key);

@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/shared_controllers/global_controller.dart';
-
-//import '../../../utils/constants.dart';
-import '../../../controllers/global_controller.dart';
-import '../../../util/constants.dart';
+import 'package:settings_page/util/exports.dart';
 
 class BMIinfoCard extends StatelessWidget {
   const BMIinfoCard({Key? key}) : super(key: key);

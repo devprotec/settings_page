@@ -1,18 +1,5 @@
 import 'dart:developer';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/widgets/small_text.dart';
-
-//import '../../utils/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/custom_appbar.dart';
-//import '../../widgets/forms.dart';
-import '../../util/constants.dart';
-import '../../widgets/form_widget.dart';
-import '../../widgets/small_text_widget.dart';
-import 'password_success.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ChangePassword extends StatelessWidget {
   const ChangePassword({Key? key}) : super(key: key);

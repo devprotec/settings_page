@@ -1,7 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:ui';
-
-import 'package:flutter/services.dart';
 
 import 'package:settings_page/util/exports.dart';
 
@@ -120,7 +117,6 @@ class _InputFormsState extends State<InputForms> {
                 color: const Color(0xffF4F5FB),
               ),
               child: TextField(
-                
                 maxLines: widget.maxLines ?? 1,
                 autocorrect: false,
                 keyboardType: widget.inputType,
@@ -228,9 +224,8 @@ class _InputFormsState extends State<InputForms> {
                               : Icon(widget.hiddenPasswordIcon ??
                                   Icons.visibility))
                       : widget.suffixicon,
-                    
                 ),
-                onTap:widget.onTap ?? null,
+                onTap: widget.onTap ?? null,
               ),
             ),
           ),

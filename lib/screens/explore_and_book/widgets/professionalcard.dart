@@ -1,8 +1,3 @@
-import 'package:settings_page/controllers/events_controller.dart';
-import 'package:settings_page/models/professional_data_model.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:settings_page/screens/explore_and_book/screens/coach_details.dart';
-
 import '../../../util/exports.dart';
 
 class NewProfessionalCard extends StatefulWidget {
@@ -29,7 +24,9 @@ class _NewProfessionalCardState extends State<NewProfessionalCard> {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
-        Get.to(() => CoachDetails(coach: widget.profesionalDataModel,));
+        Get.to(() => CoachDetails(
+              coach: widget.profesionalDataModel,
+            ));
       },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
@@ -220,7 +217,10 @@ class _NewProfessionalCardState extends State<NewProfessionalCard> {
                 Positioned.fill(
                   top: -75,
                   right: -275,
-                  child: GestureDetector(child: Icon(Icons.favorite_outline),onTap: (){},),
+                  child: GestureDetector(
+                    child: Icon(Icons.favorite_outline),
+                    onTap: () {},
+                  ),
                 ),
               ],
             ),

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../util/constants.dart';
-
+import 'package:settings_page/util/exports.dart';
 
 class CustomSnackBars {
   void infoSnackBar({

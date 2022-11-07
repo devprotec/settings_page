@@ -1,28 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:settings_page/screens/settings_page/main_settings_page.dart';
-import 'package:settings_page/screens/user_profile/address_details.dart';
-import 'package:settings_page/screens/user_profile/billing_details_screen.dart';
-import 'package:settings_page/screens/user_profile/coach_details_screen.dart';
 
-import '../../../models/user.dart';
-import '../../models/role_label.dart';
-import '../../controllers/onboarding_controller.dart';
-import '../../theme/app_style.dart';
-import '../../util/constants.dart';
-import '../../widgets/cards.dart';
-import '../../widgets/common_image_view.dart';
-import '../../widgets/custom_appbar.dart';
-import '../../widgets/title_text.dart';
-import '../affiliate_program/screens/invite_friend_screen.dart';
-import '../user_profile/models/onboarding_controller.dart';
-import '../user_profile/screens/fitness_details.dart';
-import '../user_profile/screens/personal_details.dart';
-import '../user_profile/screens/wallet_page.dart';
-import 'widgets/avatar.dart';
-import 'widgets/badges.dart';
-import 'widgets/settings_items.dart';
+import 'package:settings_page/util/exports.dart';
 
 class UserProfile extends StatefulWidget {
   final User user;
@@ -66,12 +44,16 @@ class UserProfileState extends State<UserProfile> {
         'title': 'Billing Details'.tr,
         'icon': Icons.receipt_long_rounded,
         // 'icon': Icons.person_pin_circle_sharp,
-        'onTap': () {Get.to(()=>BillingDetailsScreen());},
+        'onTap': () {
+          Get.to(() => BillingDetailsScreen());
+        },
       },
       {
         'title': 'Professional Details'.tr,
         'icon': Icons.school_rounded,
-        'onTap': () {Get.to(()=>CoachDetailsScreen());},
+        'onTap': () {
+          Get.to(() => CoachDetailsScreen());
+        },
         // 'subtitle': 'english'.tr,
       },
       {

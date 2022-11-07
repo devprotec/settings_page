@@ -1,21 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'package:settings_page/screens/on_boarding/screens/sex_gender.dart';
-import 'package:settings_page/screens/on_boarding/screens/wellness.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-import '../../user_profile/widgets/blood_type.dart';
-import '../../user_profile/widgets/height_weight.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/small_text_widget.dart';
-import '../widget/indicator.dart';
-import 'blood_type.dart';
-import 'contact.dart';
-import 'on_boarding_success.dart';
-import 'summary.dart';
-import 'user_type.dart';
+import 'package:settings_page/util/exports.dart';
 
 class OnBoarding extends GetView<OnBoardingController> {
   const OnBoarding({Key? key}) : super(key: key);
@@ -26,15 +9,6 @@ class OnBoarding extends GetView<OnBoardingController> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          // actions: [
-          //   TextButton(
-          //     onPressed: () {},
-          //     child: SmallText(
-          //       'skip'.tr,
-          //       size: 14,
-          //     ),
-          //   )
-          // ],
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back,
@@ -120,10 +94,8 @@ class OnBoarding extends GetView<OnBoardingController> {
 List<Widget> views = [
   const Contact(),
   const SexGender(),
-  //const UserType(),
   const BloobType(),
   const HeightWeight(),
   const Wellness(),
   const Summary(),
-  //const OnBoardingSuccess(),
 ];

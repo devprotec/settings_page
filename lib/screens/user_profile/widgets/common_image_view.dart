@@ -2,9 +2,7 @@
 
 import 'dart:io';
 
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:settings_page/util/exports.dart';
 
 class CommonImageView extends StatelessWidget {
   ///[url] is required parameter for fetching network image
@@ -20,8 +18,8 @@ class CommonImageView extends StatelessWidget {
 
   ///a [CommonNetworkImageView] it can be used for showing any network images
   /// it will shows the placeholder image if image is not found on network
-   CommonImageView({
-    Key ? key,
+  CommonImageView({
+    Key? key,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -31,7 +29,7 @@ class CommonImageView extends StatelessWidget {
     this.color,
     this.fit = BoxFit.fill,
     this.placeHolder = 'assets/images/image_not_found.png',
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

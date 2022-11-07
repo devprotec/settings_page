@@ -1,8 +1,4 @@
-import 'package:settings_page/screens/explore_and_book/screens/search_professional.dart';
 import 'package:settings_page/util/exports.dart';
-
-import '../models/coach_filter_controller.dart';
-import 'sport_places_event_programs.dart';
 
 class SelectService extends StatefulWidget {
   final Explore explore;
@@ -87,9 +83,11 @@ class _SelectServiceState extends State<SelectService> {
 
   onNextTap() {
     if (widget.explore == Explore.Coaches) {
-      Get.to(() => SearchProfessional(title:"Select Wellness Professional"));
+      Get.to(() => SearchProfessional(title: "Select Wellness Professional"));
     } else if (widget.explore == Explore.SportPlaces) {
-      Get.to(() => SportPlacesEventsPrograms(isOnline: false,));
+      Get.to(() => SportPlacesEventsPrograms(
+            isOnline: false,
+          ));
     } else if (widget.explore == Explore.None) {
       Get.back();
     }

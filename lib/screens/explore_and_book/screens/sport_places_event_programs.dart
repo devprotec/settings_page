@@ -1,11 +1,4 @@
-import 'package:settings_page/screens/explore_and_book/screens/coach_details.dart';
-import 'package:settings_page/screens/explore_and_book/widgets/professionalcard.dart';
-import 'package:settings_page/screens/explorer_booker/location_details_screen.dart';
-import 'package:settings_page/widgets/programs_card.dart';
-
-import '../../../models/professional_data_model.dart';
 import '../../../util/exports.dart';
-import 'sport_places_filter.dart';
 
 class SportPlacesEventsPrograms extends StatefulWidget {
   final bool isOnline;
@@ -19,7 +12,14 @@ class SportPlacesEventsPrograms extends StatefulWidget {
 
 class _SportPlacesEventsProgramsState extends State<SportPlacesEventsPrograms> {
   int currentTab = 0;
-  final eventsList = <EventDataModel>[event1, event2, event3, event4, event5, event6];
+  final eventsList = <EventDataModel>[
+    event1,
+    event2,
+    event3,
+    event4,
+    event5,
+    event6
+  ];
   final List<Tab> tabs = <Tab>[
     const Tab(text: 'Coaches'),
     const Tab(text: 'Programs'),

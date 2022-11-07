@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/button.dart';
-import '../models/onboarding_controller.dart';
-import '../widgets/height_weight.dart';
+import 'package:settings_page/util/exports.dart';
 
 class EditHeightWeight extends GetView<OnBoardingController> {
   const EditHeightWeight({Key? key}) : super(key: key);
@@ -22,8 +14,8 @@ class EditHeightWeight extends GetView<OnBoardingController> {
             icon: const Icon(
               Icons.arrow_back,
               size: 22,
-            ), 
-            onPressed: (){
+            ),
+            onPressed: () {
               Get.back();
             },
           ),
@@ -33,21 +25,18 @@ class EditHeightWeight extends GetView<OnBoardingController> {
               onPressed: () {
                 Get.back();
               },
-              icon:const  Icon(
+              icon: const Icon(
                 Icons.close,
                 size: 22,
               ),
             )
           ],
-          
           centerTitle: true,
           title: Text(
             'health_details'.tr,
-            style: AppStyle.poppinsTextstyle(17,FontWeight.w600,
-               Constants.fromHex('#0E1339')
-             ),
-            ),
-
+            style: AppStyle.poppinsTextstyle(
+                17, FontWeight.w600, Constants.fromHex('#0E1339')),
+          ),
           backgroundColor: Colors.white,
           elevation: 0,
           bottom: PreferredSize(
@@ -59,19 +48,17 @@ class EditHeightWeight extends GetView<OnBoardingController> {
                 children: [
                   Container(
                     height: 5,
-                    width: Get.size.width*0.45,
+                    width: Get.size.width * 0.45,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color:  Constants.pColor
-                    ),
+                        borderRadius: BorderRadius.circular(20),
+                        color: Constants.pColor),
                   ),
                   Container(
                     height: 5,
-                    width: Get.size.width*0.45,
+                    width: Get.size.width * 0.45,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Constants.pColor
-                    ),
+                        borderRadius: BorderRadius.circular(20),
+                        color: Constants.pColor),
                   )
                 ],
               ),
@@ -83,17 +70,11 @@ class EditHeightWeight extends GetView<OnBoardingController> {
             FocusScope.of(context).unfocus();
           },
           child: Column(
-            children:  [
-               Expanded(
-                child: HeightWeight()
-              ),
+            children: [
+              Expanded(child: HeightWeight()),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Button(
-                  text:'save'.tr,
-                  onPressed: () {          
-                  }
-                ),
+                child: Button(text: 'save'.tr, onPressed: () {}),
               ),
               Constants.spaceLarge,
               Constants.spaceSmall
@@ -102,4 +83,3 @@ class EditHeightWeight extends GetView<OnBoardingController> {
         ));
   }
 }
-

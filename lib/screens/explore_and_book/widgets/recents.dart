@@ -1,7 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-import '../screens/search.dart';
-
 class Recent extends StatefulWidget {
   const Recent({Key? key}) : super(key: key);
 
@@ -86,7 +84,9 @@ class _RecentState extends State<Recent> {
                 for (int i = 0; i < recent.length; i++)
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => Search(searchWord: recent[i].tr,));
+                      Get.to(() => Search(
+                            searchWord: recent[i].tr,
+                          ));
                     },
                     child: Container(
                       height: 57,

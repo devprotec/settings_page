@@ -1,20 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/graphql/mutations/profile_mutation.dart';
-//import 'package:mhc_consumer/screens/on_boarding/model/options.dart';
-
-//import 'package:mhc_consumer/screens/settings/screens/user_roles.dart';
-//import 'package:mhc_consumer/shared_controllers/auth_controller.dart';
-//import 'package:mhc_consumer/utils/constants.dart';
-import 'package:settings_page/util/constants.dart';
-
-import '../graphql/mutations/profile_mutation.dart';
-import '../screens/on_boarding/model/options.dart';
-import '../screens/home/landing_page.dart';
-import '../screens/user_profile/models/onboarding_controller.dart';
-import '../widgets/snackbars.dart';
-import 'auth_controller.dart';
-import 'global_controller.dart';
+import 'package:settings_page/util/exports.dart';
 
 enum UserTypes { CUSTOMER, PROFESSIONAL, NONE }
 
@@ -99,9 +83,9 @@ class OnBoardingController extends GetxController {
       contactValidation();
     } else if (pageController.value.page!.toInt() == 1) {
       page2Validation();
-   // } 
-    //else if (pageController.value.page!.toInt() == 2) {
-    //  page3Validation();
+      // }
+      //else if (pageController.value.page!.toInt() == 2) {
+      //  page3Validation();
     } else if (pageController.value.page!.toInt() == 2) {
       page4Validation();
     } else if (pageController.value.page!.toInt() == 3) {
@@ -110,9 +94,9 @@ class OnBoardingController extends GetxController {
       page6Validation();
     } else if (pageController.value.page!.toInt() == 5) {
       Get.to(() => const LandingPage());
-    //} 
-   // else if (pageController.value.page!.toInt() == 6) {
-     // Get.to(() => const LandingPage());
+      //}
+      // else if (pageController.value.page!.toInt() == 6) {
+      // Get.to(() => const LandingPage());
     } else {}
   }
 

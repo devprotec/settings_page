@@ -1,13 +1,4 @@
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/widgets/button.dart';
-
-//import '../../../../utils/constants.dart';
-import '../../../../widgets/title_text.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/button.dart';
-import 'on_boarding.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);

@@ -1,10 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import 'package:settings_page/screens/events/choose_organizer.dart';
-import 'package:settings_page/screens/explore_and_book/models/coach_filter_controller.dart';
-import 'package:settings_page/screens/explore_and_book/screens/add_your_location.dart';
-import 'package:settings_page/screens/explore_and_book/screens/search_sport_place.dart';
-
 import '../../../util/exports.dart';
 
 class SelectSportPlaceFilter extends StatefulWidget {
@@ -22,7 +17,7 @@ class _SelectSportPlaceFilterState extends State<SelectSportPlaceFilter> {
   bool isAllRatings = true;
   bool is4Stars = false;
   int distance = 0;
-  
+
   onAllTap() {
     setState(() {
       isAllRatings = true;
@@ -44,9 +39,6 @@ class _SelectSportPlaceFilterState extends State<SelectSportPlaceFilter> {
       isSpecifyHours = false;
     });
   }
-
-  
-  
 
   onAnyTimeSelected() {
     setState(() {

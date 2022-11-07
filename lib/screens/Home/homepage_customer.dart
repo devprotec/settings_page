@@ -1,14 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:settings_page/models/profile.dart';
 import 'package:settings_page/util/exports.dart';
-import 'package:settings_page/widgets/programs_card.dart';
-
-import '../explore_and_book/models/artilce_model.dart';
-import '../explore_and_book/widgets/article_row.dart';
-import '../explore_and_book/widgets/articles_card.dart';
-import '../explore_and_book/widgets/event_card.dart';
-import '../explore_and_book/widgets/pagination.dart';
 
 class CustomerHomePage extends StatefulWidget {
   final UserProfileModel user;
@@ -177,10 +167,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   Positioned(
                     top: 160,
                     child: AnimatedContainer(
-                      
                       duration: const Duration(milliseconds: 1500),
-                      width:  closeStack ? 0 : size.width,
-                      height:  programCardHeight,
+                      width: closeStack ? 0 : size.width,
+                      height: programCardHeight,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: programs.length,

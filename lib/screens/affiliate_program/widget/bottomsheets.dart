@@ -1,13 +1,4 @@
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:share_plus/share_plus.dart';
-
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/form_widget.dart';
-
+import 'package:settings_page/util/exports.dart';
 
 class ShareLinkBottomSheet extends StatelessWidget {
   const ShareLinkBottomSheet({Key? key}) : super(key: key);

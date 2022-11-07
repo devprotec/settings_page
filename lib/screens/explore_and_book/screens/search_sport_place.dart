@@ -1,8 +1,4 @@
-import 'package:settings_page/screens/explore_and_book/screens/select_sportplace_filter.dart';
-import 'package:settings_page/screens/explore_and_book/widgets/sport_place.dart';
 import 'package:settings_page/util/exports.dart';
-
-import 'select_activity.dart';
 
 class SearchSportPlaces extends StatelessWidget {
   SearchSportPlaces({Key? key}) : super(key: key);
@@ -88,7 +84,8 @@ class SearchSportPlaces extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       Get.to(() => SelectActivity(
-                            explore: Explore.SportPlaces,isOnline: false,
+                            explore: Explore.SportPlaces,
+                            isOnline: false,
                           ));
                     },
                     child: SportPlace(),

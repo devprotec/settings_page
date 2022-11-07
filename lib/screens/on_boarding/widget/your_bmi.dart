@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../controllers/global_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../util/constants.dart';
+import 'package:settings_page/util/exports.dart';
 
 class YourBMI extends GetView<GlobalController> {
   const YourBMI({Key? key}) : super(key: key);

@@ -1,17 +1,6 @@
 import 'dart:developer';
-
-import 'package:get/get.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-//import 'package:mhc_consumer/models/api_response.dart';
-
-
-//import '../models/profile.dart';
-import '../models/api_response.dart';
-import '../models/profile.dart';
-import '../util/connectivity.dart';
-import '../util/constants.dart';
-//import '../utils/connectivity.dart';
-import '../widgets/snackbars.dart';
+import 'package:settings_page/util/exports.dart';
 
 class GlobalController extends GetxController {
   RxBool isLoading = false.obs;

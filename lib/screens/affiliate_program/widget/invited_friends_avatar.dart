@@ -1,8 +1,4 @@
-import 'package:get/get.dart';
-import 'package:flutter/material.dart';
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/common_image_view.dart';
+import 'package:settings_page/util/exports.dart';
 
 // ignore: must_be_immutable
 class InvitedFriendAvatar extends StatelessWidget {

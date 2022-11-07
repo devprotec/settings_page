@@ -1,13 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:grouped_list/grouped_list.dart';
-import 'package:settings_page/models/chat_model.dart';
-import 'package:settings_page/screens/user_profile/add_momo_screen.dart';
-import 'package:settings_page/screens/user_profile/billing_details_screen.dart';
+
 import 'package:settings_page/util/exports.dart';
-import 'package:settings_page/widgets/chat_item_layout.dart';
-import 'package:settings_page/widgets/message_item_view.dart';
 
 class ConversationViewScreen extends StatefulWidget {
   @override

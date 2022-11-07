@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../util/constants.dart';
-import '../screens/wellness.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Bubble extends GetView<OnBoardingController> {
   final String text;

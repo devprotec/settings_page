@@ -1,21 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/on_boarding/widget/select_button.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../../widgets/title_text.dart';
-import '../../../util/constants.dart';
-import '../model/options.dart';
-import '../widget/ruler.dart';
-import '../widget/select_button.dart';
+import 'package:settings_page/util/exports.dart';
 
 class HeightWeight extends GetView<OnBoardingController> {
   const HeightWeight({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
     Get.put(OnBoardingController());
     return Container(
       color: Colors.white,

@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-
+import 'package:settings_page/util/exports.dart';
 
 class CommonAppBAr extends StatelessWidget {
   final String title;
@@ -12,30 +7,26 @@ class CommonAppBAr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          color: Constants.fromHex('#6E768D'),
-          icon: const Icon(
-            Icons.arrow_back,
-            size: 24,
-            
-          ), 
-          onPressed: (){
-            Get.back();
-          },
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: IconButton(
+        color: Constants.fromHex('#6E768D'),
+        icon: const Icon(
+          Icons.arrow_back,
+          size: 24,
         ),
-        centerTitle: true,
-        title: Text(
-          title.tr,
-          style: AppStyle.poppinsTextStyle(
+        onPressed: () {
+          Get.back();
+        },
+      ),
+      centerTitle: true,
+      title: Text(
+        title.tr,
+        style: AppStyle.poppinsTextStyle(
             color: Constants.fromHex('#0E1339'),
             fontWeight: FontWeight.w600,
-            fontSize: 17
-          ),
-        ),
-      
-      );
+            fontSize: 17),
+      ),
+    );
   }
 }

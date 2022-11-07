@@ -1,19 +1,4 @@
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter/material.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/shared_controllers/onboarding_controller.dart';
-//import 'package:mhc_consumer/utils/constants.dart';
-//import 'package:mhc_consumer/widgets/error_message.dart';
-//import '../../../widgets/forms.dart';
-//import '../../../widgets/small_text.dart';
-import '../../../../widgets/title_text.dart';
-import '../../user_profile/models/onboarding_controller.dart';
-import '../../../controllers/onboarding_controller.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/error_message.dart';
-import '../../../widgets/form_widget.dart';
-import '../../../widgets/small_text_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Contact extends StatefulWidget {
   const Contact({Key? key}) : super(key: key);

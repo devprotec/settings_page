@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../util/constants.dart';
-import 'button.dart';
+import 'package:settings_page/util/exports.dart';
 
 class RowBottomedButtons extends StatelessWidget {
   final String leftButtonTitle, rightButtonTitle;

@@ -1,4 +1,3 @@
-import 'package:settings_page/models/professional_data_model.dart';
 import 'package:settings_page/util/exports.dart';
 
 class EventsController extends GetxController{

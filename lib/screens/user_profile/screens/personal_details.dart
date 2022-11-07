@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../models/user.dart';
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/common_image_view.dart';
-import 'edit_personal_details.dart';
-import 'edith_blood.dart';
+import 'package:settings_page/util/exports.dart';
 
 class PersonalDetailsScreen extends StatelessWidget {
   final User user;

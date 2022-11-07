@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
-
-import '../../../widgets/shapes.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Ruler extends StatefulWidget {
   final double currentValue;

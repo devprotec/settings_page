@@ -1,23 +1,6 @@
 import 'dart:developer';
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/auth/account_creation.dart';
-//import 'package:mhc_consumer/screens/auth/reset_password.dart';
-//import 'package:mhc_consumer/shared_controllers/auth_controller.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:settings_page/screens/auth/reset_password.dart';
-//import '../../utils/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/error_message.dart';
-//import '../../widgets/forms.dart';
-//import '../../widgets/small_text.dart';
-import '../../../widgets/title_text.dart';
-import '../../controllers/auth_controller.dart';
-import '../../util/constants.dart';
-import '../../widgets/form_widget.dart';
-import '../../widgets/small_text_widget.dart';
-import 'account_creation.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -71,7 +54,7 @@ class _LoginState extends State<Login> {
               Constants.space,
               Constants.space,
               Obx(() => InputForms(
-                obscure: false,
+                    obscure: false,
                     description: 'Email',
                     notifier: email,
                     validation: FormBuilderValidators.compose([
@@ -193,30 +176,6 @@ class _LoginState extends State<Login> {
             ]),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CircularItems extends StatelessWidget {
-  final String image;
-  final VoidCallback onPress;
-  const CircularItems({Key? key, required this.image, required this.onPress})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPress,
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.all(5),
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: const Color(0xffE6E8F3),
-            )),
-        child: Image.asset('assets/images/$image'),
       ),
     );
   }

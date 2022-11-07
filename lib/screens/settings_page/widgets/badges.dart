@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../widgets/title_text.dart';
+import 'package:settings_page/util/exports.dart';
 
 class TitleBadge extends StatelessWidget {
   final IconData icon;

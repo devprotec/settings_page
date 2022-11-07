@@ -1,8 +1,4 @@
-import 'package:settings_page/models/professional_data_model.dart';
-import 'package:settings_page/screens/explore_and_book/screens/select_coach_filter.dart';
-
 import '../../../util/exports.dart';
-import '../widgets/professionalcard.dart';
 
 class SearchProfessional extends StatefulWidget {
   final String title;
@@ -43,10 +39,13 @@ class _SearchProfessionalState extends State<SearchProfessional> {
             leading: Constants.arrowBacks(color: Colors.black),
             backgroundColor: Colors.white,
             elevation: 0,
-            title: Text(widget.title.tr, style: Constants.titleTextStyle,),),
+            title: Text(
+              widget.title.tr,
+              style: Constants.titleTextStyle,
+            ),
+          ),
           preferredSize: Size.fromHeight(50),
         ),
-        
         body: Column(
           children: [
             Container(
@@ -67,12 +66,10 @@ class _SearchProfessionalState extends State<SearchProfessional> {
                       SizedBox(
                         width: size.width * 0.7,
                         child: InputForms(
-                          onTap: (){
-                           
-                            
-                          },
+                          onTap: () {},
                           filled: true,
-                          hintStyle: TextStyle(fontSize: 14, color: Colors.black54),
+                          hintStyle:
+                              TextStyle(fontSize: 14, color: Colors.black54),
                           color: Constants.fromHex('#F4F5FB'),
                           placeholder: "Search for Coach".tr,
                           prefixIcon: IconButton(
@@ -87,26 +84,24 @@ class _SearchProfessionalState extends State<SearchProfessional> {
                           obscure: false,
                           onChange: (val) {
                             searchNotifier.value = val!;
-                             setState(() {
-                              filterProfessional( organizerList);
-                              
+                            setState(() {
+                              filterProfessional(organizerList);
                             });
                             print(organizerList.toList());
                           },
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => {Get.to(()=>SelectCoachFilter())},
+                        onTap: () => {Get.to(() => SelectCoachFilter())},
                         child: Container(
                           margin: EdgeInsets.only(top: 5),
                           decoration: BoxDecoration(
                               color: Constants.fromHex('#F4F5FB'),
                               borderRadius: BorderRadius.circular(8)),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 13),
-                            child:Icon(Icons.filter_list)
-                          ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 13),
+                              child: Icon(Icons.filter_list)),
                         ),
                       ),
                     ],
@@ -117,39 +112,39 @@ class _SearchProfessionalState extends State<SearchProfessional> {
             SizedBox(
               height: 5,
             ),
-            searchNotifier.value.isEmpty ?
-            Flexible(
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                itemCount: organizerList.length,
-                itemBuilder: ((context, index) {
-                  return Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 15.0, left: 15, right: 15),
-                    child: NewProfessionalCard(
-                      profesionalDataModel: organizerList[index],
-                      isCard: true,
+            searchNotifier.value.isEmpty
+                ? Flexible(
+                    child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: organizerList.length,
+                      itemBuilder: ((context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              bottom: 15.0, left: 15, right: 15),
+                          child: NewProfessionalCard(
+                            profesionalDataModel: organizerList[index],
+                            isCard: true,
+                          ),
+                        );
+                      }),
                     ),
-                  );
-                }),
-              ),
-            ):
-            Flexible(
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                itemCount: searchedList.length,
-                itemBuilder: ((context, index) {
-                  return Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 15.0, left: 15, right: 15),
-                    child: NewProfessionalCard(
-                      profesionalDataModel: searchedList[index],
-                      isCard: true,
+                  )
+                : Flexible(
+                    child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: searchedList.length,
+                      itemBuilder: ((context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              bottom: 15.0, left: 15, right: 15),
+                          child: NewProfessionalCard(
+                            profesionalDataModel: searchedList[index],
+                            isCard: true,
+                          ),
+                        );
+                      }),
                     ),
-                  );
-                }),
-              ),
-            ),
+                  ),
           ],
         ),
       ),
@@ -159,18 +154,17 @@ class _SearchProfessionalState extends State<SearchProfessional> {
   filterProfessional(List<ProfesionalDataModel> professionals) {
     searchedList.clear();
     if (searchNotifier.value.isNotEmpty) {
-      professionals.forEach((element) { 
-        if (element.Name!.toLowerCase().contains(searchNotifier.value.toLowerCase())) {
-          if(!searchedList.contains(element)){
-            
-          searchedList.add(element);
+      professionals.forEach((element) {
+        if (element.Name!
+            .toLowerCase()
+            .contains(searchNotifier.value.toLowerCase())) {
+          if (!searchedList.contains(element)) {
+            searchedList.add(element);
+          }
         }
-      }});
-      
-     
-    return professionals;
-  }
+      });
 
+      return professionals;
+    }
   }
-
 }

@@ -1,11 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import 'package:settings_page/screens/events/choose_organizer.dart';
-import 'package:settings_page/screens/explore_and_book/models/coach_filter_controller.dart';
-import 'package:settings_page/screens/explore_and_book/screens/select_activity.dart';
-import 'package:settings_page/screens/explore_and_book/screens/sport_places_event_programs.dart';
-import 'package:settings_page/screens/user_profile/screens/edit_personal_details.dart';
-
 import '../../../util/exports.dart';
 
 class SportPlacesFilter extends StatefulWidget {
@@ -109,7 +103,8 @@ class _SportPlacesFilterState extends State<SportPlacesFilter> {
                     ),
                     ProfessionalTypeContainer(
                       hasRow: false,
-                      isSelected: selectedWorkOut == "Programs" ||  selectedWorkOut == "All",
+                      isSelected: selectedWorkOut == "Programs" ||
+                          selectedWorkOut == "All",
                       onTap: () {
                         setState(() {
                           selectedWorkOut = "Programs";
@@ -119,7 +114,8 @@ class _SportPlacesFilterState extends State<SportPlacesFilter> {
                     ),
                     ProfessionalTypeContainer(
                       hasRow: false,
-                      isSelected: selectedWorkOut == "Classes" ||  selectedWorkOut == "All",
+                      isSelected: selectedWorkOut == "Classes" ||
+                          selectedWorkOut == "All",
                       onTap: () {
                         setState(() {
                           selectedWorkOut = "Classes";
@@ -129,7 +125,8 @@ class _SportPlacesFilterState extends State<SportPlacesFilter> {
                     ),
                     ProfessionalTypeContainer(
                       hasRow: false,
-                      isSelected: selectedWorkOut == "Events" || selectedWorkOut == "All",
+                      isSelected: selectedWorkOut == "Events" ||
+                          selectedWorkOut == "All",
                       onTap: () {
                         setState(() {
                           selectedWorkOut = "Events";
@@ -142,7 +139,8 @@ class _SportPlacesFilterState extends State<SportPlacesFilter> {
                 Constants.spaceSmallColumn,
                 ProfessionalTypeContainer(
                   hasRow: false,
-                  isSelected: selectedWorkOut == "Bootcamp" || selectedWorkOut == "All",
+                  isSelected:
+                      selectedWorkOut == "Bootcamp" || selectedWorkOut == "All",
                   onTap: () {
                     setState(() {
                       selectedWorkOut = "Bootcamp";
@@ -184,7 +182,15 @@ class _SportPlacesFilterState extends State<SportPlacesFilter> {
                       isSelected: controller.activities.contains("All"),
                       onTap: () {
                         setState(() {
-                          controller.activities.value = ["All", "Cardio", "Fitness","Meditation","Yoga","Running","Stretching"];
+                          controller.activities.value = [
+                            "All",
+                            "Cardio",
+                            "Fitness",
+                            "Meditation",
+                            "Yoga",
+                            "Running",
+                            "Stretching"
+                          ];
                         });
                       },
                       text: 'All',

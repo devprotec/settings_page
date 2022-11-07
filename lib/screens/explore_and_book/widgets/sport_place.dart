@@ -1,5 +1,3 @@
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
 import '../../../util/exports.dart';
 
 class SportPlace extends StatelessWidget {
@@ -9,7 +7,7 @@ class SportPlace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:  width ?? null,
+      width: width ?? null,
       padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       decoration: AppDecoration.outlineLightblue90019
           .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
@@ -58,8 +56,8 @@ class SportPlace extends StatelessWidget {
                                     direction: Axis.horizontal,
                                     allowHalfRating: true,
                                     itemCount: 5,
-                                    itemPadding: EdgeInsets.symmetric(
-                                        horizontal: 1.0),
+                                    itemPadding:
+                                        EdgeInsets.symmetric(horizontal: 1.0),
                                     itemBuilder: (context, _) => Container(
                                       child: Center(
                                         child: Icon(

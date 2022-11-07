@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/login/login.dart';
-
-import 'auth/login.dart';
-import '../util/constants.dart';
-//import '../utils/constants.dart';
-import '../widgets/shapes.dart';
-import '../widgets/title_text.dart';
-//import 'widgets/shapes.dart';
+import 'package:settings_page/util/exports.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

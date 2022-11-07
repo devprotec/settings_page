@@ -147,39 +147,39 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   }
 }
 
-class PasswordCriteria extends StatelessWidget {
-  final bool success;
-  final String text;
-  const PasswordCriteria({Key? key, required this.success, required this.text})
-      : super(key: key);
+// class PasswordCriteria extends StatelessWidget {
+//   final bool success;
+//   final String text;
+//   const PasswordCriteria({Key? key, required this.success, required this.text})
+//       : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 7),
-      child: Row(
-        children: [
-          success
-              ? Icon(
-                  Icons.check_circle,
-                  color: Constants.successPasswordColor,
-                  size: 20,
-                )
-              : Container(
-                  margin: const EdgeInsets.only(left: 2),
-                  height: 17,
-                  width: 17,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0xffDEE1EA))),
-                ),
-          const SizedBox(width: 5),
-          SmallText(
-            text,
-            textColor: !success ? Colors.red : null,
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(vertical: 7),
+//       child: Row(
+//         children: [
+//           success
+//               ? Icon(
+//                   Icons.check_circle,
+//                   color: Constants.successPasswordColor,
+//                   size: 20,
+//                 )
+//               : Container(
+//                   margin: const EdgeInsets.only(left: 2),
+//                   height: 17,
+//                   width: 17,
+//                   decoration: BoxDecoration(
+//                       shape: BoxShape.circle,
+//                       border: Border.all(color: const Color(0xffDEE1EA))),
+//                 ),
+//           const SizedBox(width: 5),
+//           SmallText(
+//             text,
+//             textColor: !success ? Colors.red : null,
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

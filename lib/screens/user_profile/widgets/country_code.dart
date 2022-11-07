@@ -1,14 +1,9 @@
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:settings_page/util/exports.dart';
 
-import '../../../widgets/form_widget.dart';
-
-
-
-class CountryCode extends StatelessWidget {
+class CountryCodeLocal extends StatelessWidget {
   final ValueNotifier<String> phoneNumber;
-  const CountryCode ({Key? key, required this.phoneNumber}) : super(key: key);
+  const CountryCodeLocal({Key? key, required this.phoneNumber})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,5 +49,3 @@ class CountryCode extends StatelessWidget {
     );
   }
 }
-
-

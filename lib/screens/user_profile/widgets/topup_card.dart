@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/common_image_view.dart';
-import '../screens/top_up_balance.dart';
-
+import 'package:settings_page/util/exports.dart';
 
 class TopUpCard extends StatelessWidget {
   final String balance;
@@ -27,7 +20,7 @@ class TopUpCard extends StatelessWidget {
           bottom: 0,
           left: 140,
           child: Padding(
-            padding: const EdgeInsets.only(top:8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: CommonImageView(
               svgPath: 'assets/svgs/vector22.svg',
               color: Constants.fromHex('#0064A7'),
@@ -40,7 +33,7 @@ class TopUpCard extends StatelessWidget {
           child: CommonImageView(
             svgPath: 'assets/svgs/vector23.svg',
             color: Constants.fromHex('#0064A7'),
-            width: Get.size.width*0.5,
+            width: Get.size.width * 0.5,
           ),
         ),
         Padding(
@@ -56,7 +49,9 @@ class TopUpCard extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 24,),
+              const SizedBox(
+                height: 24,
+              ),
               Text(
                 'my_balance'.tr,
                 style: AppStyle.poppinsTextStyle(
@@ -64,7 +59,9 @@ class TopUpCard extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 17),
               ),
-              const SizedBox(height: 8,),
+              const SizedBox(
+                height: 8,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -76,39 +73,40 @@ class TopUpCard extends StatelessWidget {
                         fontSize: 26),
                   ),
                   InkWell(
-                    onTap: (){
-                      Get.to(()=> TopUpBalanceScreen());
+                    onTap: () {
+                      Get.to(() => TopUpBalanceScreen());
                     },
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.add,
-                            size: 18,
-                            color: Constants.fromHex('#00ACE9'),
-                          ),
-                          const SizedBox(width: 10,),
-                          Text(
-                            'top_up'.tr.toUpperCase(),
-                            style: AppStyle.poppinsTextStyle(
-                                color: Constants.fromHex('#00ACE9'),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 13),
-                          ),
-                        ],
-                    )),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.add,
+                              size: 18,
+                              color: Constants.fromHex('#00ACE9'),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'top_up'.tr.toUpperCase(),
+                              style: AppStyle.poppinsTextStyle(
+                                  color: Constants.fromHex('#00ACE9'),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13),
+                            ),
+                          ],
+                        )),
                   ),
                 ],
               )
             ],
           ),
         ),
-        
       ]),
     );
   }

@@ -1,7 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-import 'privacy_and_security_screen.dart';
-
 class MainSettingsPage extends StatefulWidget {
   MainSettingsPage({Key? key}) : super(key: key);
 
@@ -43,7 +41,8 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(50),
-          child: AppbarWidget(appBarTitle: "lbl_settings".tr, hasActions: true)),
+          child:
+              AppbarWidget(appBarTitle: "lbl_settings".tr, hasActions: true)),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -156,7 +155,7 @@ class _MainSettingsPageState extends State<MainSettingsPage> {
                   ),
                   SettingListTitle(
                     imageFile: settingsPicturePath[9],
-                    settingsName:settingsName[9],
+                    settingsName: settingsName[9],
                     hasSubtitle: false,
                   ),
                 ])),

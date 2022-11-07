@@ -1,4 +1,3 @@
-
 import 'package:settings_page/util/exports.dart';
 
 class ExploreContainer extends StatelessWidget {
@@ -25,7 +24,7 @@ class ExploreContainer extends StatelessWidget {
         width: 140,
         height: 140,
         padding: const EdgeInsets.all(10),
-        margin:  EdgeInsets.only(top: 14, left: 16, right: isLast ?? 0),
+        margin: EdgeInsets.only(top: 14, left: 16, right: isLast ?? 0),
         decoration: BoxDecoration(
           color: containerColor.withOpacity(0.2),
           borderRadius: BorderRadius.circular(16),
@@ -57,5 +56,3 @@ class ExploreContainer extends StatelessWidget {
     );
   }
 }
-
-

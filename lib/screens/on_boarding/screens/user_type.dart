@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/widgets/error_message.dart';
-//import 'package:mhc_consumer/widgets/small_text.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../../widgets/title_text.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/error_message.dart';
-import '../../../widgets/small_text_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class UserType extends StatefulWidget {
   const UserType({Key? key}) : super(key: key);

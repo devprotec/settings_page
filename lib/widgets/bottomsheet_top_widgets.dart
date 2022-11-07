@@ -1,6 +1,3 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:settings_page/util/exports.dart';
 
 class BottomSheetTopWidgets extends StatelessWidget {
@@ -41,9 +38,7 @@ class BottomSheetTopWidgets extends StatelessWidget {
                       Padding(
                           padding: getPadding(left: 112, bottom: 5),
                           child: GestureDetector(
-                            onTap: () => Get.back(),
-                            child: closeButton()
-                          ))
+                              onTap: () => Get.back(), child: closeButton()))
                     ]))),
       ],
     );

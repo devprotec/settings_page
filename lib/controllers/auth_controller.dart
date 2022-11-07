@@ -1,19 +1,5 @@
-import 'package:get/get.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-//import 'package:mhc_consumer/models/profile.dart';
-//import 'package:mhc_consumer/utils/constants.dart';
-import '../screens/auth/reset_succes.dart';
-import '../graphql/mutations/auth_mutation.dart';
-import '../graphql/queries/auth_queries.dart';
-import '../graphql/queries/user_queries.dart';
-//import '../screens/auth/reset_succes.dart';
-import '../models/profile.dart';
-import '../screens/on_boarding/screens/welcome.dart';
-import '../screens/home/landing_page.dart';
-//import '../screens/on_boarding/screens/welcome.dart';
-import '../util/constants.dart';
-import '../widgets/snackbars.dart';
-import 'global_controller.dart';
+import 'package:settings_page/util/exports.dart';
 
 class AuthController extends GetxController {
   var isLoggingIn = false.obs;

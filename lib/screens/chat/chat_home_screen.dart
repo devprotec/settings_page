@@ -1,12 +1,7 @@
-import 'package:settings_page/screens/chat/conversation_view_screen.dart';
-import 'package:settings_page/screens/chat/notification_screen.dart';
 import 'package:settings_page/util/exports.dart';
-import 'package:settings_page/widgets/chat_item_layout.dart';
-
-import '../../models/chat_model.dart';
 
 class ChatHomeScreen extends StatelessWidget {
-  List<Chat> chatList = [
+  final List<Chat> chatList = [
     Chat(
         senderName: "Jane Cooper",
         messagePreview: "Hello",

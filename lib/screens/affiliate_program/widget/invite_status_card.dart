@@ -1,16 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/common_image_view.dart';
-import '../model/invited_person_model.dart';
-import 'invited_friends_avatar.dart';
-
+import 'package:settings_page/util/exports.dart';
 
 class InviteStatusCard extends StatefulWidget {
   final List<InvitedPersonModel> invitedPeople;
-  const InviteStatusCard({Key? key, required this.invitedPeople}) : super(key: key);
+  const InviteStatusCard({Key? key, required this.invitedPeople})
+      : super(key: key);
 
   @override
   State<InviteStatusCard> createState() => _InviteStatusCardState();
@@ -61,7 +54,7 @@ class _InviteStatusCardState extends State<InviteStatusCard> {
           Constants.spaceLarge,
           Expanded(
             child: ListView.builder(
-              scrollDirection: Axis.horizontal,
+                scrollDirection: Axis.horizontal,
                 itemCount: widget.invitedPeople.length,
                 itemBuilder: (context, index) {
                   return InvitedFriendAvatar(

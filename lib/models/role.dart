@@ -1,20 +1,16 @@
-
 import 'package:settings_page/models/permission.dart';
 
 import '../util/enum.dart';
 
-class Role {
+class ProfessionalRole {
   final String text;
   final Status status;
 
-  Role(
+  ProfessionalRole(
     this.text,
     this.status,
   );
 }
-
-
-
 
 class RoleAndPermissions {
   String? id;

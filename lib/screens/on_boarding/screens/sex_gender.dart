@@ -1,21 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/utils/utilities.dart';
-//import 'package:mhc_consumer/widgets/error_message.dart';
-//import 'package:mhc_consumer/widgets/small_text.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-//import '../../../widgets/forms.dart';
-import '../../../../widgets/title_text.dart';
-import '../../../util/constants.dart';
-import '../../../util/utilities.dart';
-import '../../../widgets/error_message.dart';
-import '../../../widgets/form_widget.dart';
-import '../../../widgets/small_text_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class SexGender extends StatefulWidget {
   const SexGender({Key? key}) : super(key: key);

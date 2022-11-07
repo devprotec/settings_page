@@ -1,7 +1,4 @@
-import 'package:get/get.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-import 'onboarding_controller.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ProfileController extends GetxController {
   var selectedRole = ''.obs;

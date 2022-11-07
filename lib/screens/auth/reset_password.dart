@@ -1,16 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:get/get.dart';
-
-import '../../controllers/auth_controller.dart';
-//import '../../utils/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/custom_appbar.dart';
-import '../../../widgets/error_message.dart';
-//import '../../widgets/forms.dart';
-import '../../util/constants.dart';
-import '../../widgets/form_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -80,7 +68,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               ),
               Constants.space,
               Obx(() => InputForms(
-                obscure: false,
+                    obscure: false,
                     description: 'Email',
                     notifier: email,
                     validation: FormBuilderValidators.compose([

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../util/constants.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Pagination extends StatelessWidget {
   final int itemsLength;

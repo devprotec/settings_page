@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-//import 'package:mhc_consumer/utils/constants.dart';
-
-import '../../../util/constants.dart';
+import 'package:settings_page/util/exports.dart';
 
 class Indicator extends StatelessWidget {
   final int index;

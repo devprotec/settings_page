@@ -1,17 +1,4 @@
-import 'package:get/get.dart';
-
-
-import '../../../theme/app_style.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/button.dart';
-import '../../../widgets/common_image_view.dart';
-import '../models/payment_method_model.dart';
-import '../models/top_up_controller.dart';
-import '../widgets/common_appBar.dart';
-import 'package:flutter/material.dart';
-
-import '../widgets/payment_methods_bottomsheet.dart';
-import 'top_up_successful.dart';
+import 'package:settings_page/util/exports.dart';
 
 class TopUpBalanceScreen extends StatefulWidget {
   const TopUpBalanceScreen({Key? key}) : super(key: key);
@@ -247,7 +234,6 @@ class _TopUpBalanceScreenState extends State<TopUpBalanceScreen> {
                       onPressed: () {
                         Get.to(() => const TopUpSuccessful());
                       },
-                      
                     ),
               Constants.spaceMedium,
               SizedBox(

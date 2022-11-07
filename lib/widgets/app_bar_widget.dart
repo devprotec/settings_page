@@ -104,13 +104,12 @@ class AppbarWidgetNew extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20,
-              vertical: 5.0,
+              vertical: 8.0,
             ),
             child: Container(
               width: width,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     leadingWidget ??
                         SizedBox(

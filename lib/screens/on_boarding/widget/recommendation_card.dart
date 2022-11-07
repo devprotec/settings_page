@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../controllers/global_controller.dart';
-//import '../../../utils/constants.dart';
-//import '../../../widgets/small_text.dart';
-import '../../../util/constants.dart';
-import '../../../widgets/small_text_widget.dart';
+import 'package:settings_page/util/exports.dart';
 
 class RecommendationCard extends StatelessWidget {
   const RecommendationCard({Key? key}) : super(key: key);

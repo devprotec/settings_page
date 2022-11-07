@@ -1,13 +1,5 @@
 import 'package:settings_page/util/exports.dart';
 
-
-
-//import 'package:flutter/material.dart';
-//import 'package:get/get.dart';
-//import 'package:mhc_consumer/utils/constants.dart';
-
-import '../controllers/global_controller.dart';
-
 class ErrorMessage extends StatelessWidget {
   final String? message;
   const ErrorMessage({Key? key, required this.message}) : super(key: key);
@@ -49,8 +41,6 @@ class ErrorMessage extends StatelessWidget {
   }
 }
 
-
-
 class ErrorMessageV1 extends StatelessWidget {
   final String message;
   final Color? messageBackgroundColor;
@@ -60,15 +50,13 @@ class ErrorMessageV1 extends StatelessWidget {
       {Key? key,
       required this.message,
       this.infoIcon,
-       this.messageBackgroundColor,
-      
-       this.messageColor})
+      this.messageBackgroundColor,
+      this.messageColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
@@ -77,10 +65,9 @@ class ErrorMessageV1 extends StatelessWidget {
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Icon(
-          
           infoIcon ?? Icons.info,
           color: messageColor ?? Color(0xffE74C3C),
-          size:18,
+          size: 18,
         ),
         const SizedBox(width: 10),
         Flexible(
@@ -95,5 +82,3 @@ class ErrorMessageV1 extends StatelessWidget {
     );
   }
 }
-
-

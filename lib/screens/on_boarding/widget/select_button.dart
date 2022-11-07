@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import 'package:mhc_consumer/screens/on_boarding/model/options.dart';
-
-import '../../../controllers/onboarding_controller.dart';
-//import '../../../utils/constants.dart';
-import '../../../util/constants.dart';
-import '../model/options.dart';
+import 'package:settings_page/util/exports.dart';
 
 class SelectButtons extends GetView<OnBoardingController> {
   final String label;

@@ -1,15 +1,16 @@
-import 'package:settings_page/screens/events/empty_create_event_page.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:settings_page/util/exports.dart';
 
 class SelectRolePage extends StatelessWidget {
-  List<Role> newRole = [
-    Role("msg_certified_sport".tr, Status.Active),
-    Role("msg_non_certified_s".tr, Status.Active),
-    Role("lbl_reseller".tr, Status.Active),
-    Role("lbl_b2b_partner".tr, Status.Active),
-    Role("msg_corporate_partn".tr, Status.Pending),
-    Role("msg_wellness_profes".tr, Status.Pending),
-    Role("msg_knowledge_profe".tr, Status.Inactive),
+  List<ProfessionalRole> newRole = [
+    ProfessionalRole("msg_certified_sport".tr, Status.Active),
+    ProfessionalRole("msg_non_certified_s".tr, Status.Active),
+    ProfessionalRole("lbl_reseller".tr, Status.Active),
+    ProfessionalRole("lbl_b2b_partner".tr, Status.Active),
+    ProfessionalRole("msg_corporate_partn".tr, Status.Pending),
+    ProfessionalRole("msg_wellness_profes".tr, Status.Pending),
+    ProfessionalRole("msg_knowledge_profe".tr, Status.Inactive),
   ];
 
   final settingsPicturePath = [

@@ -1,7 +1,4 @@
-
-
 import '../util/exports.dart';
-
 
 // ignore: must_be_immutable
 class EventCard extends StatelessWidget {
@@ -91,7 +88,8 @@ class EventCard extends StatelessWidget {
                     onPressed: () {
                       Get.bottomSheet(PopUpSheet(
                         listOfText: [
-                          TextAndDividerForPopUp(isRedText: false, text: "Edit"),
+                          TextAndDividerForPopUp(
+                              isRedText: false, text: "Edit"),
                           TextAndDividerForPopUp(
                               isRedText: false, text: "Unpublish"),
                           TextAndDividerForPopUp(
@@ -272,16 +270,15 @@ class PopUpSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric( horizontal: 16, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
             padding: EdgeInsets.only(top: 20),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 228, 222, 222),
-              borderRadius: BorderRadius.circular(8)
-            ),
+                color: Color.fromARGB(255, 228, 222, 222),
+                borderRadius: BorderRadius.circular(8)),
             width: double.infinity,
             child: Column(
               children: [

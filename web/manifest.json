@@ -1,6 +1,6 @@
 {
-    "name": "settings_page",
-    "short_name": "settings_page",
+    "name": "mhc_customer",
+    "short_name": "mhc_customer",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

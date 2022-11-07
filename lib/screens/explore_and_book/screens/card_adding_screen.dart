@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class CardAddingScreen extends StatefulWidget {
   @override

@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class MessageItemView extends StatelessWidget {
   String message;

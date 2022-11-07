@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:settings_page/screens/events/event_schedule.dart';
-import 'package:settings_page/screens/events/mhc_gallery.dart';
-import 'package:settings_page/screens/schedule/empty_schedule_screen.dart';
-import 'package:settings_page/util/exports.dart';
-import 'package:settings_page/widgets/timeline_widget.dart';
+import 'package:mhc_customer/screens/events/event_schedule.dart';
+import 'package:mhc_customer/screens/events/mhc_gallery.dart';
+import 'package:mhc_customer/screens/schedule/empty_schedule_screen.dart';
+import 'package:mhc_customer/util/exports.dart';
+import 'package:mhc_customer/widgets/timeline_widget.dart';
 import 'package:widget_mask/widget_mask.dart';
 
 class EmptyCreateEventPage extends StatefulWidget {

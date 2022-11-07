@@ -1,4 +1,4 @@
-import 'package:settings_page/models/permission.dart';
+import 'package:mhc_customer/models/permission.dart';
 
 import '../util/enum.dart';
 

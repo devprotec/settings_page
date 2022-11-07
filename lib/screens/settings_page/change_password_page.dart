@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   const ChangePasswordPage({Key? key}) : super(key: key);

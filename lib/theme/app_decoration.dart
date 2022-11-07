@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class AppDecoration {
   static BoxDecoration get outlineLightblue90019 => BoxDecoration(

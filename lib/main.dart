@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       translations: AppLocalization(),
       locale: Get.deviceLocale, //for setting localization strings
       fallbackLocale: Locale('en', 'US'),
-      title: 'settings_page',
+      title: 'mhc_customer',
       //home: LandingPage(),
       home: const SplashScreen(),
     );

@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class AppStyle {
   static TextStyle txtRobotoRegular20Black90012 = TextStyle(

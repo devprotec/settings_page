@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class SelectRolePage extends StatelessWidget {
   List<ProfessionalRole> newRole = [

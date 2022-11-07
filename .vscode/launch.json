@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "settings_page",
+            "name": "mhc_customer",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "settings_page (profile mode)",
+            "name": "mhc_customer (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "settings_page (release mode)",
+            "name": "mhc_customer (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

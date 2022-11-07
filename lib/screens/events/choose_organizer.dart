@@ -1,7 +1,7 @@
-import 'package:settings_page/models/professional_data_model.dart';
-import 'package:settings_page/screens/events/filter_organizers_page.dart';
-import 'package:settings_page/widgets/bottomsheet_top_widgets.dart';
-import 'package:settings_page/widgets/professional_card.dart';
+import 'package:mhc_customer/models/professional_data_model.dart';
+import 'package:mhc_customer/screens/events/filter_organizers_page.dart';
+import 'package:mhc_customer/widgets/bottomsheet_top_widgets.dart';
+import 'package:mhc_customer/widgets/professional_card.dart';
 
 import '../../util/exports.dart';
 import 'general_info_page.dart';

@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class CommonImageView extends StatelessWidget {
   ///[url] is required parameter for fetching network image

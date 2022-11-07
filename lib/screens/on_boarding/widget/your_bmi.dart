@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class YourBMI extends GetView<GlobalController> {
   const YourBMI({Key? key}) : super(key: key);

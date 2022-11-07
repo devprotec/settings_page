@@ -1,4 +1,4 @@
-import 'package:settings_page/screens/events/empty_create_event_page.dart';
+import 'package:mhc_customer/screens/events/empty_create_event_page.dart';
 
 import '../../util/exports.dart';
 

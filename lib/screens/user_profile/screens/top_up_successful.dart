@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class TopUpSuccessful extends StatelessWidget {
   const TopUpSuccessful({Key? key}) : super(key: key);

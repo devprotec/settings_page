@@ -1,5 +1,5 @@
-import 'package:settings_page/screens/schedule/setup_schedule.dart';
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/screens/schedule/setup_schedule.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class EmptyScheduleScreen extends StatelessWidget {
   @override

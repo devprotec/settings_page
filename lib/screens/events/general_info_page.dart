@@ -1,7 +1,7 @@
-import 'package:settings_page/controllers/events_controller.dart';
-import 'package:settings_page/screens/events/choose_organizer.dart';
-import 'package:settings_page/screens/events/event_schedule.dart';
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/controllers/events_controller.dart';
+import 'package:mhc_customer/screens/events/choose_organizer.dart';
+import 'package:mhc_customer/screens/events/event_schedule.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 import '../../widgets/professional_card.dart';
 

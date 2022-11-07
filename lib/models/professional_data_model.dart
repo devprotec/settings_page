@@ -1,4 +1,4 @@
-import 'package:settings_page/util/enum.dart';
+import 'package:mhc_customer/util/enum.dart';
 
 class ProfesionalDataModel {
   final String? Name;

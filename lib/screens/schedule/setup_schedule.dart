@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:settings_page/models/schedule_setup.dart';
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/models/schedule_setup.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class SetUpSchedule extends StatefulWidget {
   @override

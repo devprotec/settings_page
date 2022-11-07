@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 // ignore: must_be_immutable
 class InvitedFriendAvatar extends StatelessWidget {

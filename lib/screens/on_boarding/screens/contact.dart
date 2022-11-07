@@ -1,4 +1,4 @@
-import 'package:settings_page/util/exports.dart';
+import 'package:mhc_customer/util/exports.dart';
 
 class Contact extends StatefulWidget {
   const Contact({Key? key}) : super(key: key);
